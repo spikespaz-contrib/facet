@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.7](https://github.com/facet-rs/facet/compare/facet-v0.9.6...facet-v0.9.7) - 2025-04-21
+
+### Other
+
+- Implement the skip_serializing/skip_serializing_if attribute
+
 ## [0.9.6](https://github.com/facet-rs/facet/compare/facet-v0.9.5...facet-v0.9.6) - 2025-04-20
 
 ### Other

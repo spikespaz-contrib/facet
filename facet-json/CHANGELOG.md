@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0](https://github.com/facet-rs/facet/compare/facet-json-v0.11.1...facet-json-v0.12.0) - 2025-04-21
+
+### Other
+
+- Support tuple-enums in JSON
+- Maybe calling put on tuple variants, tuples, arrays, etc. — should just automatically do push?
+- Implement naive JSON variant
+- Support field-level default
+- Implement the skip_serializing/skip_serializing_if attribute
+- Only do struct-level default if facet(default) is set
+- Yay container-level default alright
+- WIP struct-level default
+- fewer asserts
+- Better test for struct with missing field
+- *(facet-json)* more test coverage for de/serialisation
+- Respect deny_unknown_fields (once again)
+- add ignored deserialization test
+- make tuples serialize into lists rather than objects
+- msrv/nostd fixes
+- Uncomment rest of JSON tests but ignore them
+- Add getters to Shape & Field
+- Map key/value
+- More colors, update snapshots
+- Improve number handling for JSON deserialization
+- option and number
+- very nice error reporting as it turns out
+- Use TryFrom to deserialize NonZero<T>
+- nested arrays
+- add docs, fix snapshots
+- ooh spicy
+- Save value/vec, etc.
+- Next up: empty vecs
+- Booleans
+- Works for structs
+- Ignore test for now
+- err tests
+- Introduce JSON tokenizer
+
 ## [0.11.1](https://github.com/facet-rs/facet/compare/facet-json-v0.11.0...facet-json-v0.11.1) - 2025-04-20
 
 ### Other

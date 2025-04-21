@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.13.0...facet-toml-v0.14.0) - 2025-04-21
+
+### Added
+
+- *(toml)* pretty error handling with a nice report
+- *(toml)* start properly handling errors
+
+### Fixed
+
+- *(toml)* parse all types implementing FromStr and improve errors
+- *(toml)* handle option cases in enums
+
+### Other
+
+- *(toml)* use `Facet` display implementation instead of creating wrapper type
+- *(toml)* improve coverage
+
 ## [0.3.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.2.0...facet-toml-v0.3.0) - 2025-04-12
 
 ### Other

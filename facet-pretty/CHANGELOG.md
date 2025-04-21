@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.13.0...facet-pretty-v0.14.0) - 2025-04-21
+
+### Other
+
+- Implement `Facet` for (subset of) function pointers
+
 ## [0.3.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.2.0...facet-pretty-v0.3.0) - 2025-04-12
 
 ### Other

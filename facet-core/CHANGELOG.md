@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0](https://github.com/facet-rs/facet/compare/facet-core-v0.10.1...facet-core-v0.11.0) - 2025-04-21
+
+### Fixed
+
+- fix!(core): Fix inconsistent naming
+
+### Other
+
+- Implement `Facet` for (subset of) function pointers
+- Support field-level default
+- Implement the skip_serializing/skip_serializing_if attribute
+- Add tests for `Rc`'s and `Arc`'s smart pointer VTables
+- Impl `Facet` for `Rc<T>`
+- Fix MSRV test
+- Add missing ToOwned import
+- Add getters to Shape & Field
+- Improve number handling for JSON deserialization
+- option and number
+- very nice error reporting as it turns out
+- Use TryFrom to deserialize NonZero<T>
+
 ## [0.10.1](https://github.com/facet-rs/facet/compare/facet-core-v0.10.0...facet-core-v0.10.1) - 2025-04-20
 
 ### Other

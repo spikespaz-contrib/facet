@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.13.0...facet-derive-emit-v0.14.0) - 2025-04-21
+
+### Other
+
+- replace format! with format_args! where ever possible
+- actually run compile test for skip_serializing_if
+- Implement the skip_serializing/skip_serializing_if attribute
+
 ## [0.13.0](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.12.0...facet-derive-emit-v0.13.0) - 2025-04-20
 
 ### Added

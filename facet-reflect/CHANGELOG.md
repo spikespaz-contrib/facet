@@ -6,6 +6,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.4](https://github.com/facet-rs/facet/compare/facet-reflect-v0.10.3...facet-reflect-v0.10.4) - 2025-04-21
+
+### Other
+
+- Implement `Facet` for (subset of) function pointers
+- Support tuple-enums in JSON
+- put into tuples works
+- replace format! with format_args! where ever possible
+- Support field-level default
+- Implement the skip_serializing/skip_serializing_if attribute
+- Respect deny_unknown_fields (once again)
+- Add tests for `Rc`'s and `Arc`'s smart pointer VTables
+- Impl `Facet` for `Rc<T>`
+- msrv/nostd fixes
+- very nice error reporting as it turns out
+- Use TryFrom to deserialize NonZero<T>
+- ooh spicy
+- Works for structs
+- Introduce JSON tokenizer
+
 ## [0.10.3](https://github.com/facet-rs/facet/compare/facet-reflect-v0.10.2...facet-reflect-v0.10.3) - 2025-04-20
 
 ### Other
