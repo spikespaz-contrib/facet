@@ -127,10 +127,6 @@ impl PrettyPrinter {
             state: StackState::Start,
         });
 
-        // shadow value so we don't use it accidentally
-        #[allow(unused_variables)]
-        let value = ();
-
         // Process items until the stack is empty
         while let Some(mut item) = stack.pop_back() {
             match item.state {
