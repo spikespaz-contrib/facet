@@ -30,7 +30,7 @@ struct TestSecrets {
 }
 
 #[test]
-fn test_pretty_print() {
+fn test_pretty_print_simple() {
     // This is a simplified test that just ensures the code runs without panicking
     // In a real test, we would verify the output format
 
