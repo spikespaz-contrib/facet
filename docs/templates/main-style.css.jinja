@@ -96,6 +96,12 @@ h1 {
     font-size: 500%;
 }
 
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 300%;
+    }
+}
+
 h2 {
     font-weight: 900;
     font-size: 190%;
@@ -123,7 +129,8 @@ h3 {
 }
 
 main {
-    max-width: 920px;
+    max-width: min(920px, 100%);
+    overflow-x: hidden;
 }
 
 p {
