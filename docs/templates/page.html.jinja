@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <style>
+        {% include "main-style.css" %}
+    </style>
+</head>
+<body>
+    {% block toc %}
+        <nav class="table-of-contents">
+            {{- get_media("/content/logo.jxl").markup(alt="facet logo", class="facet-logo") -}}
+            <menu>
+                <a href="#lith-page-top" class="toc-entry">
+                  <h2 class="toc-header">
+                      Contents
+                  </h2>
+                </a>
+
+                {% for entry in page.toc %}
+                <li data-level="{{entry.level}}">
+                  <a class="toc-entry" href="#{{entry.slug}}">{{entry.text}}</a>
+                </li>
+                {% endfor %}
+            </menu>
+        </nav>
+    {% endblock %}
+
+  <main class="content">
+    {% block content %}
+      {{ page.html }}
+    {% endblock %}
+  </main>
+</body>
+</html>
