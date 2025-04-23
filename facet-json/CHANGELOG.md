@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.1](https://github.com/facet-rs/facet/compare/facet-json-v0.12.0...facet-json-v0.12.1) - 2025-04-23
+
+### Other
+
+- Last few cleanups
+- BoundedGenericParams
+- WIP
+- Back to depot runners.
+
 ## [0.12.0](https://github.com/facet-rs/facet/compare/facet-json-v0.11.1...facet-json-v0.12.0) - 2025-04-21
 
 ### Other

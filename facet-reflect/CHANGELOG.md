@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.10.4...facet-reflect-v0.11.0) - 2025-04-23
+
+### Fixed
+
+- *(toml)* ensure alloc is properly used and deny unsafe code
+
+### Other
+
+- Remove outdated comment
+- Add missing file
+- Fix invariance for lifetime paramters in derive
+- Add (unsoundness proving) lifetime variance tests for facet-reflect
+- Clippy fixes
+- WIP
+- WIP
+- Back to depot runners.
+
 ## [0.10.4](https://github.com/facet-rs/facet/compare/facet-reflect-v0.10.3...facet-reflect-v0.10.4) - 2025-04-21
 
 ### Other

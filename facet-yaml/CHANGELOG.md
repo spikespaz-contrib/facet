@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0](https://github.com/facet-rs/facet/compare/facet-yaml-v0.14.0...facet-yaml-v0.15.0) - 2025-04-23
+
+### Other
+
+- WIP
+- Back to depot runners.
+- *(deps)* update dependencies
+
 ## [0.3.0](https://github.com/facet-rs/facet/compare/facet-yaml-v0.2.0...facet-yaml-v0.3.0) - 2025-04-12
 
 ### Added

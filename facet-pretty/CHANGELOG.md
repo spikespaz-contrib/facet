@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.14.0...facet-pretty-v0.15.0) - 2025-04-23
+
+### Other
+
+- WIP
+- Back to depot runners.
+- remove unneeded value shadow
+- Rename pretty print test
+
 ## [0.14.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.13.0...facet-pretty-v0.14.0) - 2025-04-21
 
 ### Other

@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.14.0...facet-toml-v0.15.0) - 2025-04-23
+
+### Added
+
+- *(toml)* include reflect path in error
+
+### Fixed
+
+- *(toml)* ensure alloc is properly used and deny unsafe code
+
+### Other
+
+- WIP
+- Back to depot runners.
+- *(toml)* set authors to me and @fasterthanlime
+
 ## [0.14.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.13.0...facet-toml-v0.14.0) - 2025-04-21
 
 ### Added

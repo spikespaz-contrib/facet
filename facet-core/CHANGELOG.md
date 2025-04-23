@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0](https://github.com/facet-rs/facet/compare/facet-core-v0.11.0...facet-core-v0.12.0) - 2025-04-23
+
+### Other
+
+- Fix camino implementations
+- Clippy fixes
+- WIP
+- Back to depot runners.
+- *(deps)* update dependencies
+
 ## [0.11.0](https://github.com/facet-rs/facet/compare/facet-core-v0.10.1...facet-core-v0.11.0) - 2025-04-21
 
 ### Fixed

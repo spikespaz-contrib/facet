@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.14.0...facet-derive-emit-v0.15.0) - 2025-04-23
+
+### Other
+
+- Fix doc tests (by removing them)
+- Fix unit test
+- Last few cleanups
+- Update snapshots
+- bgp.as_phantom_data()
+- 308 errors new record woo
+- Use bgp throughout the codebase
+- Add tests for boundedgenericparams
+- BoundedGenericParams
+- Fix support for C-style enums with the derive macro.
+- Fix invariance for lifetime paramters in derive
+- Update snapshots
+- Update snapshots
+- Clippy fixes
+- WIP
+- Back to depot runners.
+
 ## [0.14.0](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.13.0...facet-derive-emit-v0.14.0) - 2025-04-21
 
 ### Other

@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.8](https://github.com/facet-rs/facet/compare/facet-v0.9.7...facet-v0.9.8) - 2025-04-23
+
+### Other
+
+- Uncomment enum tests
+- bgp.as_phantom_data()
+- Use bgp throughout the codebase
+- Fix support for C-style enums with the derive macro.
+- WIP
+- Document known issues & add a DEVELOP.md
+- Back to depot runners.
+- Enable reflect and camino features on docs.rs
+
 ## [0.9.7](https://github.com/facet-rs/facet/compare/facet-v0.9.6...facet-v0.9.7) - 2025-04-21
 
 ### Other

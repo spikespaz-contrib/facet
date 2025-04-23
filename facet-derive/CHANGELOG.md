@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.8](https://github.com/facet-rs/facet/compare/facet-derive-v0.9.7...facet-derive-v0.9.8) - 2025-04-23
+
+### Other
+
+- Back to depot runners.
+
 ## [0.9.7](https://github.com/facet-rs/facet/compare/facet-derive-v0.9.6...facet-derive-v0.9.7) - 2025-04-21
 
 ### Other
