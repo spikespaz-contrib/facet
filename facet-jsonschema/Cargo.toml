@@ -6,6 +6,15 @@ edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
+description = "Generate JSON Schema from Facet types. Provides a `to_string` function to get a JSON Schema representation as a string. Useful for reflection, introspection, serialization, and deserialization."
+keywords = [
+    "reflection",
+    "introspection",
+    "serialization",
+    "deserialization",
+    "json-schema",
+]
+categories = ["development-tools", "encoding"]
 
 [dependencies]
 facet-core = { version = "0.12.0", path = "../facet-core" }
