@@ -1,6 +1,6 @@
 [package]
 name = "facet-core"
-version = "0.12.0"
+version = "0.16.0"
 authors = [
     "Amos Wenger <amos@bearcove.eu>",
     "Lukas Wirth <lukastw97@gmail.com>",

@@ -12,7 +12,7 @@ keywords = ["code-generation", "templates"]
 categories = ["development-tools"]
 
 [dependencies]
-facet-testhelpers = { version = "0.8.3", path = "../facet-testhelpers" }
+facet-testhelpers = { version = "0.16.0", path = "../facet-testhelpers" }
 fs-err = "3.1.0"
 log = "0.4.27"
 num_cpus = "1.16.0"
