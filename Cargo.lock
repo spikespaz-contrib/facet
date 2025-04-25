@@ -251,8 +251,8 @@ dependencies = [
 name = "facet-jsonschema"
 version = "0.15.0"
 dependencies = [
- "facet",
  "facet-core",
+ "facet-derive",
  "facet-reflect",
  "schemars",
  "serde_json",

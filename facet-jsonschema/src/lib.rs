@@ -4,7 +4,8 @@
 #![deny(unsafe_code)]
 #![doc = include_str!("../README.md")]
 
-use facet::{Def, Facet, ScalarDef, Shape};
+extern crate facet_core as facet;
+use facet_core::{Def, Facet, ScalarDef, Shape};
 
 use std::io::Write;
 
@@ -20,7 +21,7 @@ pub fn to_string<'a, T: Facet<'a>>() -> String {
 
     // Find the first attribute that starts with "id=", if it exists more than once is an error
     let mut id = T::SHAPE.attributes.iter().filter_map(|attr| match attr {
-        facet::ShapeAttribute::Arbitrary(attr_str) => {
+        facet_core::ShapeAttribute::Arbitrary(attr_str) => {
             if attr_str.starts_with("id") {
                 let id = attr_str
                     .split('=')
@@ -80,21 +81,21 @@ fn serialize_doc<W: Write>(doc: &[&str], writer: &mut W) -> Result<(), std::io::
 /// Serialize a scalar definition to JSON schema format.
 fn serialize_scalar<W: Write>(scalar_def: &ScalarDef, writer: &mut W) -> std::io::Result<()> {
     match scalar_def.affinity {
-        facet::ScalarAffinity::Number(number_affinity) => {
+        facet_core::ScalarAffinity::Number(number_affinity) => {
             match number_affinity.bits {
-                facet::NumberBits::Integer { bits, sign } => {
+                facet_core::NumberBits::Integer { bits, sign } => {
                     write!(writer, "\"type\": \"integer\"")?;
                     match sign {
-                        facet::Signedness::Unsigned => {
+                        facet_core::Signedness::Unsigned => {
                             write!(writer, ", \"format\": \"uint{bits}\"")?;
                             write!(writer, ", \"minimum\": 0")?;
                         }
-                        facet::Signedness::Signed => {
+                        facet_core::Signedness::Signed => {
                             write!(writer, ", \"format\": \"int{bits}\"")?;
                         }
                     }
                 }
-                facet::NumberBits::Float { .. } => {
+                facet_core::NumberBits::Float { .. } => {
                     write!(writer, "\"type\": \"number\"")?;
                     write!(writer, ", \"format\": \"double\"")?;
                 }
@@ -102,11 +103,11 @@ fn serialize_scalar<W: Write>(scalar_def: &ScalarDef, writer: &mut W) -> std::io
             }
             Ok(())
         }
-        facet::ScalarAffinity::String(_) => {
+        facet_core::ScalarAffinity::String(_) => {
             write!(writer, "\"type\": \"string\"")?;
             Ok(())
         }
-        facet::ScalarAffinity::Boolean(_) => {
+        facet_core::ScalarAffinity::Boolean(_) => {
             write!(writer, "\"type\": \"boolean\"")?;
             Ok(())
         }
@@ -118,7 +119,7 @@ fn serialize_scalar<W: Write>(scalar_def: &ScalarDef, writer: &mut W) -> std::io
 }
 
 fn serialize_struct<W: Write>(
-    struct_def: &facet::StructDef,
+    struct_def: &facet_core::StructDef,
     writer: &mut W,
 ) -> std::io::Result<()> {
     write!(writer, "\"type\": \"object\",")?;
@@ -145,7 +146,7 @@ fn serialize_struct<W: Write>(
 }
 
 /// Serialize a list definition to JSON schema format.
-fn serialize_list<W: Write>(list_def: facet::ListDef, writer: &mut W) -> std::io::Result<()> {
+fn serialize_list<W: Write>(list_def: facet_core::ListDef, writer: &mut W) -> std::io::Result<()> {
     write!(writer, "\"type\": \"array\",")?;
     write!(writer, "\"items\": {{")?;
     serialize(list_def.t(), &[], writer)?;
@@ -154,7 +155,10 @@ fn serialize_list<W: Write>(list_def: facet::ListDef, writer: &mut W) -> std::io
 }
 
 /// Serialize a slice definition to JSON schema format.
-fn serialize_slice<W: Write>(slice_def: facet::SliceDef, writer: &mut W) -> std::io::Result<()> {
+fn serialize_slice<W: Write>(
+    slice_def: facet_core::SliceDef,
+    writer: &mut W,
+) -> std::io::Result<()> {
     write!(writer, "\"type\": \"array\",")?;
     write!(writer, "\"items\": {{")?;
     serialize(slice_def.t(), &[], writer)?;
@@ -163,7 +167,10 @@ fn serialize_slice<W: Write>(slice_def: facet::SliceDef, writer: &mut W) -> std:
 }
 
 /// Serialize an array definition to JSON schema format.
-fn serialize_array<W: Write>(array_def: facet::ArrayDef, writer: &mut W) -> std::io::Result<()> {
+fn serialize_array<W: Write>(
+    array_def: facet_core::ArrayDef,
+    writer: &mut W,
+) -> std::io::Result<()> {
     write!(writer, "\"type\": \"array\",")?;
     write!(writer, "\"minItems\": {},", array_def.n)?;
     write!(writer, "\"maxItems\": {},", array_def.n)?;
@@ -175,7 +182,7 @@ fn serialize_array<W: Write>(array_def: facet::ArrayDef, writer: &mut W) -> std:
 
 /// Serialize an option definition to JSON schema format.
 fn serialize_option<W: Write>(
-    _option_def: facet::OptionDef,
+    _option_def: facet_core::OptionDef,
     writer: &mut W,
 ) -> std::io::Result<()> {
     write!(writer, "\"type\": \"[]\",")?;
@@ -185,6 +192,7 @@ fn serialize_option<W: Write>(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use facet_derive::Facet;
 
     #[test]
     fn test_basic() {
