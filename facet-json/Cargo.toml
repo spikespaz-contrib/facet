@@ -1,7 +1,10 @@
 [package]
 name = "facet-json"
 version = "0.12.1"
-authors.workspace = true
+authors = [
+    "Amos Wenger <amos@bearcove.eu>",
+    "Luuk Wester <luuk.wester@gmail.com>",
+]
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true

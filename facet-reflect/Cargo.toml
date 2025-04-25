@@ -1,7 +1,11 @@
 [package]
 name = "facet-reflect"
 version = "0.11.0"
-authors.workspace = true
+authors = [
+    "Amos Wenger <amos@bearcove.eu>",
+    "Lukas Wirth <lukastw97@gmail.com>",
+    "Asger Hautop Drewsen <asger@tyilo.com>",
+]
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true

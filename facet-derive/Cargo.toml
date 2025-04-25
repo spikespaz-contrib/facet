@@ -2,7 +2,10 @@
 name = "facet-derive"
 version = "0.9.8"
 edition.workspace = true
-authors.workspace = true
+authors = [
+    "Amos Wenger <amos@bearcove.eu>",
+    "Lukas Wirth <lukastw97@gmail.com>",
+]
 repository.workspace = true
 license.workspace = true
 rust-version.workspace = true
