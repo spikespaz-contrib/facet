@@ -16,9 +16,9 @@ keywords = [
 categories = ["development-tools", "encoding"]
 
 [dependencies]
-facet-core = { version = "0.17.0", path = "../facet-core" }
-facet-derive = { version = "0.17.0", path = "../facet-derive" }
-facet-reflect = { version = "0.17.0", path = "../facet-reflect" }
+facet-core = { version = "0.18.0", path = "../facet-core" }
+facet-derive = { version = "0.18.0", path = "../facet-derive" }
+facet-reflect = { version = "0.18.0", path = "../facet-reflect" }
 
 [dev-dependencies]
 insta = { git = "https://github.com/mitsuhiko/insta" }
