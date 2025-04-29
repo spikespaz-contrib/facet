@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.0](https://github.com/facet-rs/facet/compare/facet-json-v0.18.2...facet-json-v0.19.0) - 2025-04-29
+
+### Fixed
+
+- fix msrv issues
+
+### Other
+
+- Make sure attributes parse correctly
+- Post-quote cleanups
+- Used parsed enums
+- Add bench against `serde_json`
+- extract out a stack runner struct
+- split massive match statement into several functions
+- final cleanup
+- remove dbgs
+- delete silly idea from code, comment in test, we are golden it seems
+- allow enum variant attributes
+- Support #[facet(flatten)] in the deserializer
+- replace needless vecdeque with vec
+- iterative serializer
+- add test for deserializing flattened structs
+- support serialize flattening
+
 ## [0.18.2](https://github.com/facet-rs/facet/compare/facet-json-v0.18.1...facet-json-v0.18.2) - 2025-04-27
 
 ### Other

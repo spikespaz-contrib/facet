@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.19.0...facet-toml-v0.20.0) - 2025-04-29
+
+### Other
+
+- Post-quote cleanups
+
 ## [0.19.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.18.1...facet-toml-v0.19.0) - 2025-04-27
 
 ### Added

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.2](https://github.com/facet-rs/facet/compare/facet-args-v0.18.1...facet-args-v0.18.2) - 2025-04-29
+
+### Added
+
+- *(facet-args)* Expand error handling
+
+### Fixed
+
+- fix(args) - unspecified bool arguments should be assumed false instead of being a reflection error
+
 ## [0.18.1](https://github.com/facet-rs/facet/compare/facet-args-v0.18.0...facet-args-v0.18.1) - 2025-04-27
 
 ### Added

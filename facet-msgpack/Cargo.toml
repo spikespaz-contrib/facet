@@ -1,6 +1,6 @@
 [package]
 name = "facet-msgpack"
-version = "0.18.0"
+version = "0.18.1"
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
@@ -16,8 +16,8 @@ keywords = [
 categories = ["encoding", "parsing", "data-structures"]
 
 [dependencies]
-facet-core = { version = "0.18.0", path = "../facet-core" }
-facet-reflect = { version = "0.18.0", path = "../facet-reflect" }
+facet-core = { version = "0.19.0", path = "../facet-core" }
+facet-reflect = { version = "0.18.1", path = "../facet-reflect" }
 log = "0.4.27"
 
 [dev-dependencies]

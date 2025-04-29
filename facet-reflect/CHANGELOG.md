@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.1](https://github.com/facet-rs/facet/compare/facet-reflect-v0.18.0...facet-reflect-v0.18.1) - 2025-04-29
+
+### Other
+
+- Post-quote cleanups
+- final cleanup
+- delete silly idea from code, comment in test, we are golden it seems
+- iterative serializer
+
 ## [0.11.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.10.4...facet-reflect-v0.11.0) - 2025-04-23
 
 ### Fixed

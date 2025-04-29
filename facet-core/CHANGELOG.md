@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.0](https://github.com/facet-rs/facet/compare/facet-core-v0.18.0...facet-core-v0.19.0) - 2025-04-29
+
+### Other
+
+- Make sure attributes parse correctly
+- Post-quote cleanups
+- Add support for rename_all and arbitrary attributes on variants
+- allow enum variant attributes
+- support serialize flattening
+
 ## [0.12.0](https://github.com/facet-rs/facet/compare/facet-core-v0.11.0...facet-core-v0.12.0) - 2025-04-23
 
 ### Other

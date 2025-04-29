@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.19.0...facet-pretty-v0.20.0) - 2025-04-29
+
+### Other
+
+- Add bench against `serde_json`
+- Add bench against Debug
+
 ## [0.15.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.14.0...facet-pretty-v0.15.0) - 2025-04-23
 
 ### Other

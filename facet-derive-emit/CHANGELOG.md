@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.0](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.18.2...facet-derive-emit-v0.19.0) - 2025-04-29
+
+### Other
+
+- Reduce duplication in derive macro
+- Make sure attributes parse correctly
+- Post-quote cleanups
+- Fix tests
+- Use quote some more
+- Start using quote
+- Don't confuse repr(transparent) and facet(transparent)
+- Parse some more things (struct kind)
+- Parse everything about structs/containers
+- Used parsed enums
+- Introduce EnumParams, parsed structs
+- Add support for rename_all and arbitrary attributes on variants
+- split massive match statement into several functions
+- remove dbgs
+- allow enum variant attributes
+
 ## [0.18.2](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.18.1...facet-derive-emit-v0.18.2) - 2025-04-27
 
 ### Other

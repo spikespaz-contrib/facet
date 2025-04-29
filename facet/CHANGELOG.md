@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.3](https://github.com/facet-rs/facet/compare/facet-v0.18.2...facet-v0.18.3) - 2025-04-29
+
+### Other
+
+- Reduce duplication in derive macro
+- Make sure attributes parse correctly
+- Fix tests
+- Start using quote
+- Used parsed enums
+- Add support for rename_all and arbitrary attributes on variants
+- allow enum variant attributes
+
 ## [0.18.2](https://github.com/facet-rs/facet/compare/facet-v0.18.1...facet-v0.18.2) - 2025-04-27
 
 ### Other

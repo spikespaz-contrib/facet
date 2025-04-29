@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.0](https://github.com/facet-rs/facet/compare/facet-derive-parse-v0.19.0...facet-derive-parse-v0.20.0) - 2025-04-29
+
+### Other
+
+- Make sure attributes parse correctly
+- Post-quote cleanups
+
 ## [0.15.0](https://github.com/facet-rs/facet/compare/facet-derive-parse-v0.14.0...facet-derive-parse-v0.15.0) - 2025-04-23
 
 ### Other
