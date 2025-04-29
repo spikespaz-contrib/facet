@@ -1,5 +1,6 @@
 [package]
 name = "facet-kdl"
+publish = false # can't publish as long as we have a git dependency on kdl
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
