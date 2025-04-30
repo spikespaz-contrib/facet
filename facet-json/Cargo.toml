@@ -33,9 +33,8 @@ uuid = "1.16.0"
 ulid = "1.2.1"
 facet = { path = "../facet" }
 facet-testhelpers = { path = "../facet-testhelpers" }
-insta = { git = "https://github.com/mitsuhiko/insta" }
+insta = "1.43.1"
 ordered-float = "5.0.0"
-
 criterion = { version = "0.5", features = ["html_reports"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"

@@ -23,4 +23,4 @@ log = "0.4.27"
 eyre = "0.6.12"
 facet = { path = "../facet" }
 facet-testhelpers = { path = "../facet-testhelpers" }
-insta = "1.43.0"
+insta = "1.43.1"
