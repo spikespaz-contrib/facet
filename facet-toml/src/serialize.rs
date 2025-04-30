@@ -1,5 +1,6 @@
 //! Create and/or write TOML strings from Rust values.
 
+use alloc::format;
 use core::fmt::{Display, Error, Write};
 
 use facet_serialize::Serializer;
