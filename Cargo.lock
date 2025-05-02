@@ -415,6 +415,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "facet-deserialize-externally-driven"
+version = "0.21.0"
+dependencies = [
+ "eyre",
+ "facet",
+ "facet-core",
+ "facet-reflect",
+ "facet-testhelpers 0.17.0",
+ "insta",
+ "log",
+]
+
+[[package]]
 name = "facet-dev"
 version = "0.1.1"
 dependencies = [
@@ -464,6 +477,30 @@ dependencies = [
  "facet-testhelpers 0.17.0",
  "insta",
  "log",
+]
+
+[[package]]
+name = "facet-json3"
+version = "0.20.0"
+dependencies = [
+ "ariadne",
+ "camino",
+ "codspeed-divan-compat",
+ "eyre",
+ "facet",
+ "facet-core",
+ "facet-deserialize-externally-driven",
+ "facet-reflect",
+ "facet-serialize",
+ "facet-testhelpers 0.17.0",
+ "insta",
+ "log",
+ "ordered-float",
+ "owo-colors",
+ "serde",
+ "serde_json",
+ "ulid",
+ "uuid",
 ]
 
 [[package]]

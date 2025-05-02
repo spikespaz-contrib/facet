@@ -11,7 +11,7 @@ use bitflags::bitflags;
 use core::{fmt, marker::PhantomData};
 use facet_core::{
     Def, DefaultInPlaceFn, Facet, FieldError, PtrConst, PtrMut, PtrUninit, ScalarAffinity, Shape,
-    Variant,
+    TypeNameFn, TypeNameOpts, Variant,
 };
 use flat_map::FlatMap;
 
@@ -1554,7 +1554,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
         let seq_shape = frame.shape;
 
         // Determine element shape and context string based on the container type
-        let (element_shape, context_str): (&'static Shape, &'static str) = match seq_shape.def {
+        let (element_shape, context_str): (&'static Shape, _) = match seq_shape.def {
             Def::List(_) => {
                 // Check list initialization *before* getting element shape
                 if !frame.istate.fields.has(0) {
@@ -2625,5 +2625,73 @@ impl Drop for Wip<'_> {
                 frame.dealloc_if_needed();
             }
         }
+    }
+}
+
+impl core::fmt::Debug for Wip<'_> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        struct TypeName(TypeNameFn);
+        impl core::fmt::Display for TypeName {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                self.0(f, TypeNameOpts::default())
+            }
+        }
+        impl TypeName {
+            fn new(frame: &Frame) -> Self {
+                Self(frame.shape.vtable.type_name)
+            }
+        }
+
+        let frames_dbg = self
+            .frames
+            .iter()
+            .zip(self.frames.iter().skip(1))
+            .map(|(frame, next_frame)| {
+                let Some(index) = next_frame.field_index_in_parent else {
+                    return "(Child frame has no parent)".to_string();
+                };
+                let shape = frame.shape;
+                let field = match shape.def {
+                    Def::Struct(def) => {
+                        if index >= def.fields.len() {
+                            return format!("(Field {index} out of bounds)");
+                        }
+                        &def.fields[index]
+                    }
+                    Def::Enum(_) => {
+                        let Some(variant) = frame.istate.variant.as_ref() else {
+                            return "(Enum without variant selected)".to_string();
+                        };
+
+                        if index >= variant.data.fields.len() {
+                            return format!("(Enum {index} out of bounds)");
+                        }
+
+                        &variant.data.fields[index]
+                    }
+                    _ => {
+                        return "(Expected parent frame to be a struct or enum)".to_string();
+                    }
+                };
+                field.name.to_string()
+            })
+            .collect::<Vec<_>>()
+            .join(".");
+
+        let fmt_tyname = |optty: Option<TypeName>| {
+            optty
+                .map(|ty| ty.to_string())
+                .unwrap_or_else(|| "AAA WIP WITHOUT FRAMES AAAAA".to_string())
+        };
+        let outermost_tyname = self.frames.first().map(TypeName::new);
+        let innermost_tyname = self.frames.last().map(TypeName::new);
+        let cursor = format!(
+            "{}{}{} ({})",
+            fmt_tyname(outermost_tyname),
+            if frames_dbg.is_empty() { "" } else { "." },
+            frames_dbg,
+            fmt_tyname(innermost_tyname),
+        );
+        f.debug_struct("Wip").field("cursor", &cursor).finish()
     }
 }

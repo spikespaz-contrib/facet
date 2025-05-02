@@ -22,6 +22,7 @@ members = [
     # formats / ecosystem
     "facet-args",
     "facet-json",
+    "facet-json3",
     "facet-msgpack",
     "facet-pretty",
     "facet-toml",
@@ -32,6 +33,7 @@ members = [
     "facet-deserialize-eventbased",
     "facet-json2",
     "facet-bench",
+    "facet-deserialize-externally-driven",
 ]
 exclude = ["outside-workspace"]
 resolver = "3"

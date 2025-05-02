@@ -2,7 +2,9 @@ use facet_core::Field;
 
 /// Keeps track of which fields were initialized, up to 64 fields
 #[derive(Clone, Copy, Default, Debug)]
-pub struct ISet(pub(crate) u64);
+pub struct ISet {
+    flags: u64,
+}
 
 impl ISet {
     /// The maximum index that can be tracked.
@@ -22,7 +24,7 @@ impl ISet {
         if index >= 64 {
             panic!("ISet can only track up to 64 fields. Index {index} is out of bounds.");
         }
-        self.0 |= 1 << index;
+        self.flags |= 1 << index;
     }
 
     /// Unsets the bit at the given index.
@@ -30,7 +32,7 @@ impl ISet {
         if index >= 64 {
             panic!("ISet can only track up to 64 fields. Index {index} is out of bounds.");
         }
-        self.0 &= !(1 << index);
+        self.flags &= !(1 << index);
     }
 
     /// Checks if the bit at the given index is set.
@@ -38,7 +40,7 @@ impl ISet {
         if index >= 64 {
             panic!("ISet can only track up to 64 fields. Index {index} is out of bounds.");
         }
-        (self.0 & (1 << index)) != 0
+        (self.flags & (1 << index)) != 0
     }
 
     /// Checks if all bits up to the given count are set.
@@ -47,16 +49,16 @@ impl ISet {
             panic!("ISet can only track up to 64 fields. Count {count} is out of bounds.");
         }
         let mask = (1 << count) - 1;
-        self.0 & mask == mask
+        self.flags & mask == mask
     }
 
     /// Checks if any bit in the ISet is set.
     pub fn is_any_set(&self) -> bool {
-        self.0 != 0
+        self.flags != 0
     }
 
     /// Clears all bits in the ISet.
     pub fn clear(&mut self) {
-        self.0 = 0;
+        self.flags = 0;
     }
 }
