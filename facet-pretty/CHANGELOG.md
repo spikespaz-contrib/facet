@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.21.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.20.0...facet-pretty-v0.21.0) - 2025-05-02
+
+### Other
+
+- Migrate benches to divan, set up codspeed
+- support camino's &Utf8Path and Utf8PathBuf
+
 ## [0.20.0](https://github.com/facet-rs/facet/compare/facet-pretty-v0.19.0...facet-pretty-v0.20.0) - 2025-04-29
 
 ### Other

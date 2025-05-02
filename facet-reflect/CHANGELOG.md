@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.2](https://github.com/facet-rs/facet/compare/facet-reflect-v0.18.1...facet-reflect-v0.18.2) - 2025-05-02
+
+### Added
+
+- parse empty tuples, test cases
+
+### Other
+
+- Fix clone_into for collections
+- JSON facet-serialize?
+- Introduce facet-serialize
+- Fix clone_into functions
+
 ## [0.18.1](https://github.com/facet-rs/facet/compare/facet-reflect-v0.18.0...facet-reflect-v0.18.1) - 2025-04-29
 
 ### Other

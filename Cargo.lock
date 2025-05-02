@@ -357,7 +357,7 @@ dependencies = [
 
 [[package]]
 name = "facet"
-version = "0.18.3"
+version = "0.18.4"
 dependencies = [
  "cargo-husky",
  "eyre",
@@ -369,7 +369,7 @@ dependencies = [
 
 [[package]]
 name = "facet-args"
-version = "0.18.2"
+version = "0.18.3"
 dependencies = [
  "eyre",
  "facet",
@@ -382,7 +382,7 @@ dependencies = [
 
 [[package]]
 name = "facet-core"
-version = "0.19.0"
+version = "0.20.0"
 dependencies = [
  "bitflags",
  "camino",
@@ -396,7 +396,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive"
-version = "0.18.3"
+version = "0.18.4"
 dependencies = [
  "facet-core",
  "facet-derive-emit",
@@ -404,7 +404,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-emit"
-version = "0.19.0"
+version = "0.20.0"
 dependencies = [
  "facet-derive-parse",
  "insta",
@@ -416,7 +416,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-parse"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "unsynn",
 ]
@@ -439,7 +439,7 @@ dependencies = [
 
 [[package]]
 name = "facet-json"
-version = "0.19.0"
+version = "0.20.0"
 dependencies = [
  "ariadne",
  "camino",
@@ -462,7 +462,7 @@ dependencies = [
 
 [[package]]
 name = "facet-jsonschema"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "facet",
  "facet-core",
@@ -473,7 +473,7 @@ dependencies = [
 
 [[package]]
 name = "facet-kdl"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "ariadne",
  "facet",
@@ -489,7 +489,7 @@ dependencies = [
 
 [[package]]
 name = "facet-msgpack"
-version = "0.18.1"
+version = "0.18.2"
 dependencies = [
  "eyre",
  "facet",
@@ -505,7 +505,7 @@ dependencies = [
 
 [[package]]
 name = "facet-pretty"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "camino",
  "codspeed-divan-compat",
@@ -517,7 +517,7 @@ dependencies = [
 
 [[package]]
 name = "facet-reflect"
-version = "0.18.1"
+version = "0.18.2"
 dependencies = [
  "bitflags",
  "eyre",
@@ -531,7 +531,7 @@ dependencies = [
 
 [[package]]
 name = "facet-serialize"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "eyre",
  "facet",
@@ -554,7 +554,7 @@ dependencies = [
 
 [[package]]
 name = "facet-toml"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "ariadne",
  "eyre",
@@ -572,7 +572,7 @@ dependencies = [
 
 [[package]]
 name = "facet-urlencoded"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "eyre",
  "facet",
@@ -585,7 +585,7 @@ dependencies = [
 
 [[package]]
 name = "facet-yaml"
-version = "0.18.1"
+version = "0.18.2"
 dependencies = [
  "eyre",
  "facet",

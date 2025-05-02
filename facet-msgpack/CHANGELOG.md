@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.2](https://github.com/facet-rs/facet/compare/facet-msgpack-v0.18.1...facet-msgpack-v0.18.2) - 2025-05-02
+
+### Other
+
+- *(facet-msgpack)* drafted test cases (that don't pass) from JSON crate, snapshot setup
+- Use facet-serialize in facet-msgpack
+
 ## [0.18.1](https://github.com/facet-rs/facet/compare/facet-msgpack-v0.18.0...facet-msgpack-v0.18.1) - 2025-04-29
 
 ### Other

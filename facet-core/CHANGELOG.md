@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.0](https://github.com/facet-rs/facet/compare/facet-core-v0.19.0...facet-core-v0.20.0) - 2025-05-02
+
+### Other
+
+- Fix clone_into for collections
+- JSON facet-serialize?
+- explain more macro stuff
+- support camino's &Utf8Path and Utf8PathBuf
+- Fix clone_into functions
+
 ## [0.19.0](https://github.com/facet-rs/facet/compare/facet-core-v0.18.0...facet-core-v0.19.0) - 2025-04-29
 
 ### Other

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.4](https://github.com/facet-rs/facet/compare/facet-v0.18.3...facet-v0.18.4) - 2025-05-02
+
+### Other
+
+- Do compile-time check of default impl
+
 ## [0.18.3](https://github.com/facet-rs/facet/compare/facet-v0.18.2...facet-v0.18.3) - 2025-04-29
 
 ### Other

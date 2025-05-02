@@ -25,9 +25,9 @@ toml_edit = { version = "0.22.24", default-features = false, features = [
     "parse",
 ], optional = true }
 toml_write = { version = "0.1.0", default-features = false, optional = true }
-facet-core = { version = "0.19.0", path = "../facet-core", default-features = false }
-facet-reflect = { version = "0.18.1", path = "../facet-reflect", default-features = false }
-facet-serialize = { version = "0.20.0", path = "../facet-serialize", default-features = false, optional = true }
+facet-core = { version = "0.20.0", path = "../facet-core", default-features = false }
+facet-reflect = { version = "0.18.2", path = "../facet-reflect", default-features = false }
+facet-serialize = { version = "0.21.0", path = "../facet-serialize", default-features = false, optional = true }
 yansi = "1.0.1"
 
 [dev-dependencies]

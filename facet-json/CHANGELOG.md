@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.20.0](https://github.com/facet-rs/facet/compare/facet-json-v0.19.0...facet-json-v0.20.0) - 2025-05-02
+
+### Added
+
+- parse empty tuples, test cases
+
+### Other
+
+- Get rid of path stuff for now, formatting eagerly is super expensive.
+- Migrate benches to divan, set up codspeed
+- JSON facet-serialize?
+- Don't depend on git version of insta anymore
+
 ## [0.19.0](https://github.com/facet-rs/facet/compare/facet-json-v0.18.2...facet-json-v0.19.0) - 2025-04-29
 
 ### Fixed
