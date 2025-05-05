@@ -10,9 +10,9 @@ pub type Pos = usize;
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Span {
     /// Starting position of the span in bytes
-    start: Pos,
+    pub start: Pos,
     /// Length of the span in bytes
-    len: usize,
+    pub len: usize,
 }
 
 impl Span {
@@ -98,7 +98,8 @@ pub enum Token {
     Colon,
     /// Comma character: ','
     Comma,
-    /// A JSON string value — todo: should be a Cow
+    /// A JSON string value
+    /// TODO: should be a &[u8], lazily de-escaped if/when needed
     String(String),
     /// A 64-bit floating point number value — used if the value contains a decimal point
     F64(f64),
