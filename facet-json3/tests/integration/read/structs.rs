@@ -1,6 +1,6 @@
 use eyre::Result;
 use facet::Facet;
-use facet_json::from_str;
+use facet_json3::from_str;
 
 #[test]
 fn json_read_struct_twofields() -> Result<()> {
@@ -99,10 +99,8 @@ fn test_reading_flat_structs() {
         Variant3(String, String),
     }
 
-    let actual1: Outer = facet_json::from_str(
-        r#"{"name":"test1","val":1,"Variant1":{"field1":"aaa","field2":"bbb"}}"#,
-    )
-    .unwrap();
+    let actual1: Outer =
+        from_str(r#"{"name":"test1","val":1,"Variant1":{"field1":"aaa","field2":"bbb"}}"#).unwrap();
     let expected1 = Outer {
         name: "test1".to_string(),
         struct_: InnerStruct { val: 1 },
@@ -113,8 +111,7 @@ fn test_reading_flat_structs() {
     };
     assert_eq!(expected1, actual1);
 
-    let actual2: Outer =
-        facet_json::from_str(r#"{"name":"test2","val":2,"Variant2":"ccc"}"#).unwrap();
+    let actual2: Outer = from_str(r#"{"name":"test2","val":2,"Variant2":"ccc"}"#).unwrap();
     let expected2 = Outer {
         name: "test2".to_string(),
         struct_: InnerStruct { val: 2 },
@@ -122,8 +119,7 @@ fn test_reading_flat_structs() {
     };
     assert_eq!(expected2, actual2);
 
-    let actual3: Outer =
-        facet_json::from_str(r#"{"name":"test3","val":3,"Variant3":["ddd","eee"]}"#).unwrap();
+    let actual3: Outer = from_str(r#"{"name":"test3","val":3,"Variant3":["ddd","eee"]}"#).unwrap();
     let expected3 = Outer {
         name: "test3".to_string(),
         struct_: InnerStruct { val: 3 },

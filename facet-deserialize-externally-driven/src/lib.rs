@@ -213,7 +213,7 @@ impl<'f, D: Deserializer> Runner<'_, 'f, D> {
         trace!("Starting deserialization");
 
         while let Some(op) = self.stack.pop() {
-            let frame_count = (&self.wip).frames_count();
+            let frame_count = self.wip.frames_count();
             debug_assert!(
                 frame_count
                     >= self

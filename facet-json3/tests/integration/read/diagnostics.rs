@@ -1,4 +1,4 @@
-use facet_json::from_str;
+use facet_json3::from_str;
 
 #[test]
 fn test_debug_format_for_errors() {

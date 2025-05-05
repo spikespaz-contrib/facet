@@ -1,5 +1,5 @@
 ---
-source: facet-json/tests/integration/read/deny_unknown_and_default.rs
+source: facet-json3/tests/integration/read/deny_unknown_and_default.rs
 assertion_line: 45
 expression: err
 ---

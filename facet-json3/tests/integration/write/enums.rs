@@ -1,3 +1,5 @@
+use facet_json3::to_string;
+
 #[test]
 fn enum_() {
     facet_testhelpers::setup();
@@ -16,16 +18,13 @@ fn enum_() {
         field2: "bbb".to_string(),
     };
     assert_eq!(
-        facet_json::to_string(&good_point),
+        to_string(&good_point),
         r#"{"Variant1":{"field1":"aaa","field2":"bbb"}}"#
     );
 
     let bad_point = Point::Variant2("aaa".to_string());
-    assert_eq!(facet_json::to_string(&bad_point), r#"{"Variant2":"aaa"}"#);
+    assert_eq!(to_string(&bad_point), r#"{"Variant2":"aaa"}"#);
 
     let medium_point = Point::Variant3("aaa".to_string(), "bbb".to_string());
-    assert_eq!(
-        facet_json::to_string(&medium_point),
-        r#"{"Variant3":["aaa","bbb"]}"#
-    );
+    assert_eq!(to_string(&medium_point), r#"{"Variant3":["aaa","bbb"]}"#);
 }

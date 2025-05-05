@@ -1,7 +1,7 @@
 #![cfg(feature = "std")]
 
 use facet::Facet;
-use facet_json::to_string;
+use facet_json3::to_string;
 use std::f64::consts::PI;
 use std::num::NonZero;
 

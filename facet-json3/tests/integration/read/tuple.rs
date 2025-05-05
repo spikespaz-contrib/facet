@@ -1,5 +1,5 @@
 use eyre::Result;
-use facet_json::from_str;
+use facet_json3::from_str;
 
 #[test]
 fn test_deserialize_tuple_string() -> Result<()> {

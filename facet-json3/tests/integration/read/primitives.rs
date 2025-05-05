@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use eyre::Result;
 use facet::Facet;
-use facet_json::from_str;
+use facet_json3::from_str;
 
 #[test]
 fn json_read_empty_object_for_struct() -> Result<()> {

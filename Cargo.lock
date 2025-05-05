@@ -354,6 +354,7 @@ dependencies = [
  "facet",
  "facet-json",
  "facet-json2",
+ "facet-json3",
  "facet-testhelpers 0.17.0",
  "serde",
  "serde_json",

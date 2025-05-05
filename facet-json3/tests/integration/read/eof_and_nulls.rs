@@ -1,6 +1,6 @@
 use eyre::Result;
 use facet::Facet;
-use facet_json::{JsonErrorKind, TokenErrorKind, from_slice, from_str};
+use facet_json3::{JsonErrorKind, TokenErrorKind, from_slice, from_str};
 use std::fmt::Debug;
 
 #[test]
