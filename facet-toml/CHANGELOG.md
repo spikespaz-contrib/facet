@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.22.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.21.0...facet-toml-v0.22.0) - 2025-05-06
+
+### Added
+
+- *(toml)* implement most of serialization
+- *(toml)* add `facet_toml::to_string` serialize short form
+- *(serialize)* add more optional start- and end-serialize calls
+
+### Fixed
+
+- *(toml)* support char in deserialize
+- *(toml)* support u128 and i128 in deserialize
+- *(toml)* support unit type
+- *(toml)* [**breaking**] error handling for serialize
+- *(toml)* implement none handling
+
+### Other
+
+- *(toml)* cleanup serialize implementation
+- *(toml)* add wide benchmark
+- *(deps)* cleanup unused dependecies with cargo-machete
+- *(serialize)* make end_* trait methods optional
+- *(serialize)* optionally widen-cast number types to u64 in trait
+- Upgrade dependencies
+
 ## [0.21.0](https://github.com/facet-rs/facet/compare/facet-toml-v0.20.0...facet-toml-v0.21.0) - 2025-05-02
 
 ### Other

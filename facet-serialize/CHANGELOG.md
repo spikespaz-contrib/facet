@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.22.0](https://github.com/facet-rs/facet/compare/facet-serialize-v0.21.0...facet-serialize-v0.22.0) - 2025-05-06
+
+### Added
+
+- *(serialize)* add more optional start- and end-serialize calls
+
+### Fixed
+
+- *(reflect)* add missing scalar types
+
+### Other
+
+- *(serialize)* make end_* trait methods optional
+- *(serialize)* optionally widen-cast number types to u64 in trait
+
 ## [0.21.0](https://github.com/facet-rs/facet/compare/facet-serialize-v0.20.0...facet-serialize-v0.21.0) - 2025-05-02
 
 ### Other

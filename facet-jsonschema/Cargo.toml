@@ -16,8 +16,8 @@ keywords = [
 categories = ["development-tools", "encoding"]
 
 [dependencies]
-facet-core = { version = "0.20.0", path = "../facet-core" }
-facet-derive = { version = "0.18.4", path = "../facet-derive" }
+facet-core = { version = "0.21.0", path = "../facet-core" }
+facet-derive = { version = "0.18.5", path = "../facet-derive" }
 
 [dev-dependencies]
 insta = "1.43.1"

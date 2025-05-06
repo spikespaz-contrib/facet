@@ -14,8 +14,8 @@ rich-diagnostics = ["dep:ariadne", "std"]
 
 [dependencies]
 ariadne = { version = "0.5.1", optional = true }
-facet-core = { version = "0.20.0", path = "../facet-core" }
-facet-reflect = { version = "0.18.2", path = "../facet-reflect" }
+facet-core = { version = "0.21.0", path = "../facet-core" }
+facet-reflect = { version = "0.19.0", path = "../facet-reflect" }
 log = "0.4.27"
 owo-colors = "4.2.0"
 

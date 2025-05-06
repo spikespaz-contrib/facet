@@ -323,7 +323,7 @@ dependencies = [
 
 [[package]]
 name = "facet"
-version = "0.18.4"
+version = "0.18.5"
 dependencies = [
  "cargo-husky",
  "eyre",
@@ -335,37 +335,37 @@ dependencies = [
 
 [[package]]
 name = "facet-args"
-version = "0.18.3"
+version = "0.18.4"
 dependencies = [
  "eyre",
  "facet",
  "facet-core",
  "facet-pretty",
  "facet-reflect",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "log",
 ]
 
 [[package]]
 name = "facet-bench"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "codspeed-divan-compat",
  "facet",
  "facet-json",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "serde",
  "serde_json",
 ]
 
 [[package]]
 name = "facet-core"
-version = "0.20.0"
+version = "0.21.0"
 dependencies = [
  "bitflags",
  "camino",
  "eyre",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "impls",
  "ordered-float",
  "ulid",
@@ -374,7 +374,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive"
-version = "0.18.4"
+version = "0.18.5"
 dependencies = [
  "facet-core",
  "facet-derive-emit",
@@ -382,7 +382,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-emit"
-version = "0.20.0"
+version = "0.20.1"
 dependencies = [
  "facet-derive-parse",
  "insta",
@@ -394,34 +394,34 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-parse"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "unsynn",
 ]
 
 [[package]]
 name = "facet-deserialize-eventbased"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "ariadne",
  "eyre",
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "facet-testhelpers 0.17.0",
  "log",
  "owo-colors",
 ]
 
 [[package]]
 name = "facet-deserialize-externally-driven"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "eyre",
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "insta",
  "log",
 ]
@@ -431,7 +431,7 @@ name = "facet-dev"
 version = "0.1.1"
 dependencies = [
  "ctrlc",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "fs-err",
  "indicatif",
  "log",
@@ -442,7 +442,7 @@ dependencies = [
 
 [[package]]
 name = "facet-json"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "eyre",
  "facet",
@@ -450,14 +450,14 @@ dependencies = [
  "facet-deserialize-eventbased",
  "facet-reflect",
  "facet-serialize",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "insta",
  "log",
 ]
 
 [[package]]
 name = "facet-jsonschema"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "facet",
  "facet-core",
@@ -467,12 +467,12 @@ dependencies = [
 
 [[package]]
 name = "facet-kdl"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "indoc",
  "kdl",
  "log",
@@ -480,14 +480,14 @@ dependencies = [
 
 [[package]]
 name = "facet-msgpack"
-version = "0.18.2"
+version = "0.18.3"
 dependencies = [
  "eyre",
  "facet",
  "facet-core",
  "facet-reflect",
  "facet-serialize",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "insta",
  "log",
  "rmp-serde",
@@ -496,7 +496,7 @@ dependencies = [
 
 [[package]]
 name = "facet-pretty"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "camino",
  "codspeed-divan-compat",
@@ -508,14 +508,14 @@ dependencies = [
 
 [[package]]
 name = "facet-reflect"
-version = "0.18.2"
+version = "0.19.0"
 dependencies = [
  "bitflags",
  "camino",
  "eyre",
  "facet",
  "facet-core",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "log",
  "owo-colors",
  "tempfile",
@@ -525,25 +525,15 @@ dependencies = [
 
 [[package]]
 name = "facet-serialize"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "eyre",
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "insta",
  "log",
-]
-
-[[package]]
-name = "facet-testhelpers"
-version = "0.17.0"
-dependencies = [
- "color-backtrace",
- "color-eyre",
- "log",
- "yansi",
 ]
 
 [[package]]
@@ -559,8 +549,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "facet-testhelpers"
+version = "0.17.1"
+dependencies = [
+ "color-backtrace",
+ "color-eyre",
+ "log",
+ "yansi",
+]
+
+[[package]]
 name = "facet-toml"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "ariadne",
  "codspeed-divan-compat",
@@ -569,7 +569,7 @@ dependencies = [
  "facet-core",
  "facet-reflect",
  "facet-serialize",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "log",
  "num-traits",
  "serde",
@@ -580,20 +580,20 @@ dependencies = [
 
 [[package]]
 name = "facet-urlencoded"
-version = "0.21.0"
+version = "0.22.0"
 dependencies = [
  "eyre",
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.0",
+ "facet-testhelpers 0.17.1",
  "form_urlencoded",
  "log",
 ]
 
 [[package]]
 name = "facet-yaml"
-version = "0.18.2"
+version = "0.18.3"
 dependencies = [
  "eyre",
  "facet",

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.22.0](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.21.0...facet-jsonschema-v0.22.0) - 2025-05-06
+
+### Other
+
+- *(deps)* cleanup unused dependecies with cargo-machete
+
 ## [0.21.0](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.20.0...facet-jsonschema-v0.21.0) - 2025-05-02
 
 ### Other

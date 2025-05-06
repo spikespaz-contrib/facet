@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.17.1](https://github.com/facet-rs/facet/compare/facet-testhelpers-v0.17.0...facet-testhelpers-v0.17.1) - 2025-05-06
+
+### Other
+
+- Upgrade dependencies
+
 ## [0.8.3](https://github.com/facet-rs/facet/compare/facet-testhelpers-v0.8.2...facet-testhelpers-v0.8.3) - 2025-04-23
 
 ### Other

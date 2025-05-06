@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.21.0](https://github.com/facet-rs/facet/compare/facet-core-v0.20.0...facet-core-v0.21.0) - 2025-05-06
+
+### Other
+
+- Make Opaque<T>(T)'s field public, closes #521
+- Get started on an event-based approach to facet-deserialize ([#500](https://github.com/facet-rs/facet/pull/500))
+
 ## [0.20.0](https://github.com/facet-rs/facet/compare/facet-core-v0.19.0...facet-core-v0.20.0) - 2025-05-02
 
 ### Other

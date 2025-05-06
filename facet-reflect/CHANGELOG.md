@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.18.2...facet-reflect-v0.19.0) - 2025-05-06
+
+### Fixed
+
+- *(reflect)* add scalar types for camino, uuid & ulid
+- *(reflect)* add missing scalar types
+
+### Other
+
+- Pick facet-json2
+- Externally-driven facet-deserialize approach
+- Get started on an event-based approach to facet-deserialize ([#500](https://github.com/facet-rs/facet/pull/500))
+
 ## [0.18.2](https://github.com/facet-rs/facet/compare/facet-reflect-v0.18.1...facet-reflect-v0.18.2) - 2025-05-02
 
 ### Added
