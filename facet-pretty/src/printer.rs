@@ -29,7 +29,7 @@ impl Default for PrettyPrinter {
             indent_size: 2,
             max_depth: None,
             color_generator: ColorGenerator::default(),
-            use_colors: true,
+            use_colors: std::env::var_os("NO_COLOR").is_none(),
             list_u8_as_bytes: true,
         }
     }
