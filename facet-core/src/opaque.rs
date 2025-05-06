@@ -3,7 +3,7 @@ use crate::{Facet, Shape};
 
 /// Helper type for opaque members
 #[repr(transparent)]
-pub struct Opaque<T>(T);
+pub struct Opaque<T>(pub T);
 
 unsafe impl<'a, T: 'a> Facet<'a> for Opaque<T> {
     const SHAPE: &'static Shape = &const {
