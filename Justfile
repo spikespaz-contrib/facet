@@ -125,7 +125,7 @@ ship:
     fi
     release-plz update
     git add .
-    git commit -m "Upgrades"
+    git commit -m "Upgrades" || true
     git push
     just publish
 

@@ -400,7 +400,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "facet-deserialize-eventbased"
+name = "facet-deserialize"
 version = "0.22.0"
 dependencies = [
  "ariadne",
@@ -411,19 +411,6 @@ dependencies = [
  "facet-testhelpers 0.17.0",
  "log",
  "owo-colors",
-]
-
-[[package]]
-name = "facet-deserialize-externally-driven"
-version = "0.22.0"
-dependencies = [
- "eyre",
- "facet",
- "facet-core",
- "facet-reflect",
- "facet-testhelpers 0.17.1",
- "insta",
- "log",
 ]
 
 [[package]]
@@ -447,7 +434,7 @@ dependencies = [
  "eyre",
  "facet",
  "facet-core",
- "facet-deserialize-eventbased",
+ "facet-deserialize",
  "facet-reflect",
  "facet-serialize",
  "facet-testhelpers 0.17.1",

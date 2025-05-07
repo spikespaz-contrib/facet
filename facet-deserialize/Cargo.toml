@@ -1,10 +1,19 @@
 [package]
-name = "facet-deserialize-eventbased"
+name = "facet-deserialize"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
+description = "Event-based approach to deserialization for the facet ecosystem"
+keywords = ["serialization", "deserialization", "reflection", "types"]
+categories = [
+    "encoding",
+    "data-structures",
+    "development-tools",
+    "parsing",
+    "no-std",
+]
 
 [features]
 std = []

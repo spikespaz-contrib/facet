@@ -46,7 +46,7 @@ Thanks to all individual and corporate sponsors, without whom this work could no
 
 # facet-json
 
-A JSON deserialize based on facet-deserialize-eventbased
+A JSON deserializer based on facet-deserialize
 
 ## License
 

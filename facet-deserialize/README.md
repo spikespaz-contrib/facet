@@ -9,9 +9,9 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/facet-rs/facet/badge.svg?branch=main)](https://coveralls.io/github/facet-rs/facet?branch=main)
 [![free of syn](https://img.shields.io/badge/free%20of-syn-hotpink)](https://github.com/fasterthanlime/free-of-syn)
-[![crates.io](https://img.shields.io/crates/v/facet-deserialize-externally-driven.svg)](https://crates.io/crates/facet-deserialize-externally-driven)
-[![documentation](https://docs.rs/facet-deserialize-externally-driven/badge.svg)](https://docs.rs/facet-deserialize-externally-driven)
-[![MIT/Apache-2.0 licensed](https://img.shields.io/crates/l/facet-deserialize-externally-driven.svg)](./LICENSE)
+[![crates.io](https://img.shields.io/crates/v/facet-deserialize.svg)](https://crates.io/crates/facet-deserialize)
+[![documentation](https://docs.rs/facet-deserialize/badge.svg)](https://docs.rs/facet-deserialize)
+[![MIT/Apache-2.0 licensed](https://img.shields.io/crates/l/facet-deserialize.svg)](./LICENSE)
 
 _Logo by [Misiasart](https://misiasart.com/)_
 
@@ -44,12 +44,9 @@ Thanks to all individual and corporate sponsors, without whom this work could no
 </picture>
 </a> </p>
 
+# facet-deserialize
 
-`facet-deserialize` provides a common foundation for deserializers, especially for self-descriptive
-formats like JSON, MessagePack, etc.
-
-It provides an iterative approach to deserialization that should never blow up the
-stack, at the cost of runtime performance (see `cargo criterion` results).
+An event-based approach to facet-deserialize
 
 ## License
 

@@ -27,7 +27,7 @@ pub enum TokenErrorKind {
 
 use core::fmt::{self, Display, Formatter};
 
-use facet_deserialize_eventbased::{Pos, Span, Spanned};
+use facet_deserialize::{Pos, Span, Spanned};
 
 impl Display for TokenErrorKind {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {

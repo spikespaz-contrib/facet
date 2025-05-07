@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.22.0](https://github.com/facet-rs/facet/compare/facet-deserialize-eventbased-v0.21.0...facet-deserialize-eventbased-v0.22.0) - 2025-05-06
+## [0.22.0](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.21.0...facet-deserialize-v0.22.0) - 2025-05-06
 
 ### Other
 

@@ -1,7 +1,7 @@
 use alloc::{borrow::Cow, format};
 
 use facet_core::Facet;
-use facet_deserialize_eventbased::{
+use facet_deserialize::{
     DeserError, DeserErrorKind, Expectation, Format, NextData, NextResult, Outcome, Scalar, Span,
     Spannable, Spanned,
 };
@@ -14,7 +14,7 @@ use tokenizer::{Token, TokenError, TokenErrorKind, Tokenizer};
 pub fn from_slice<'input: 'facet, 'facet, T: Facet<'facet>>(
     input: &'input [u8],
 ) -> Result<T, DeserError<'input>> {
-    facet_deserialize_eventbased::deserialize::<T, Json>(input)
+    facet_deserialize::deserialize::<T, Json>(input)
 }
 
 /// Deserialize JSON from a given string
@@ -22,7 +22,7 @@ pub fn from_str<'input: 'facet, 'facet, T: Facet<'facet>>(
     input: &'input str,
 ) -> Result<T, DeserError<'input>> {
     let input = input.as_bytes();
-    facet_deserialize_eventbased::deserialize::<T, Json>(input)
+    facet_deserialize::deserialize::<T, Json>(input)
 }
 
 /// Deserialize JSON from a given string, converting any dynamic error into a static one.
@@ -33,7 +33,7 @@ pub fn from_str_static_error<'input: 'facet, 'facet, T: Facet<'facet>>(
     input: &'input str,
 ) -> Result<T, DeserError<'input>> {
     let input = input.as_bytes();
-    facet_deserialize_eventbased::deserialize::<T, Json>(input).map_err(|e| e.into_owned())
+    facet_deserialize::deserialize::<T, Json>(input).map_err(|e| e.into_owned())
 }
 
 /// The JSON format

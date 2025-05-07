@@ -1,6 +1,6 @@
 use eyre::Result;
 use facet::Facet;
-use facet_deserialize_eventbased::DeserErrorKind;
+use facet_deserialize::DeserErrorKind;
 use facet_json::{from_str, to_string};
 use insta::assert_snapshot;
 
