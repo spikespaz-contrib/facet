@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.0](https://github.com/facet-rs/facet/compare/facet-yaml-v0.18.3...facet-yaml-v0.19.0) - 2025-05-08
+
+### Other
+
+- *(yaml)* prepare for serialization implementation
+
 ## [0.18.3](https://github.com/facet-rs/facet/compare/facet-yaml-v0.18.2...facet-yaml-v0.18.3) - 2025-05-06
 
 ### Other

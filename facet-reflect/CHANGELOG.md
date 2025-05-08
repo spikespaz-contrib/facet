@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.1](https://github.com/facet-rs/facet/compare/facet-reflect-v0.19.0...facet-reflect-v0.19.1) - 2025-05-08
+
+### Other
+
+- Add `PeekListLike` object
+
 ## [0.19.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.18.2...facet-reflect-v0.19.0) - 2025-05-06
 
 ### Fixed

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.0](https://github.com/facet-rs/facet/compare/facet-serialize-v0.22.0...facet-serialize-v0.23.0) - 2025-05-08
+
+### Other
+
+- Use `PeekListLike`
+
 ## [0.22.0](https://github.com/facet-rs/facet/compare/facet-serialize-v0.21.0...facet-serialize-v0.22.0) - 2025-05-06
 
 ### Added
