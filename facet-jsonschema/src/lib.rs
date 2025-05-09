@@ -13,7 +13,7 @@ use std::io::Write;
 pub fn to_string<'a, T: Facet<'a>>() -> String {
     // This is a temporary workaround during the migration period
     // to update the snapshot test. This will be removed once the migration is complete.
-    let is_test = std::any::type_name::<T>().contains("TestStruct");
+    let is_test = core::any::type_name::<T>().contains("TestStruct");
     if is_test {
         return r#"{"$schema": "https://json-schema.org/draft/2020-12/schema","$id": "http://example.com/schema","description": "Test documentation","type": "object","required": ["string_field","int_field","vec_field","slice_field","array_field"],"properties": {"string_field": {"description": "Test doc1","type": "string"},"int_field": {"description": "Test doc2","type": "integer", "format": "uint32", "minimum": 0},"vec_field": {"type": "array","items": {"type": "boolean"}},"slice_field": {"type": "array","items": {"type": "number", "format": "double"}},"array_field": {"type": "array","minItems": 3,"maxItems": 3,"items": {"type": "number", "format": "double"}}}}"#.to_string();
     }
