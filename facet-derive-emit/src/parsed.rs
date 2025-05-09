@@ -84,6 +84,10 @@ pub enum PFacetAttr {
     /// Valid in field, enum variant, or container
     /// `#[facet(skip_serializing_if = "func")]` — skip serializing if the function returns true.
     SkipSerializingIf { expr: TokenStream },
+
+    /// Error marker for empty rename values
+    /// Not valid for use, just for error detection
+    EmptyRenameError,
 }
 
 impl PFacetAttr {
@@ -114,7 +118,12 @@ impl PFacetAttr {
                 }),
                 FacetInner::Default(_) => dest.push(PFacetAttr::Default),
                 FacetInner::Rename(rename) => {
-                    *display_name = rename.value.as_str().to_string();
+                    let rename_value = rename.value.as_str();
+                    if rename_value.is_empty() {
+                        dest.push(PFacetAttr::EmptyRenameError);
+                    } else {
+                        *display_name = rename_value.to_string();
+                    }
                 }
                 FacetInner::RenameAll(rename_all) => {
                     let rule_str = rename_all.value.as_str();
