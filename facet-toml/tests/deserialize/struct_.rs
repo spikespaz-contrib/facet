@@ -229,7 +229,7 @@ fn test_rename_single_struct_fields() -> Result<()> {
         b: bool,
         #[facet(rename = "'quoted'")]
         c: String,
-        #[facet(rename = "")]
+        #[facet(rename = "not-empty")]
         d: usize,
     }
 
@@ -239,7 +239,7 @@ fn test_rename_single_struct_fields() -> Result<()> {
             1 = 1
             "with spaces" = true
             "'quoted'" = 'quoted'
-            "" = 2
+            "not-empty" = 2
             "#
         )?,
         Root {

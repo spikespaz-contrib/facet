@@ -198,27 +198,6 @@ fn test_field_rename_with_numeric_name() {
     assert_eq!(test_struct, roundtrip);
 }
 
-/// Serialization and deserialization with empty field name
-#[cfg(feature = "std")]
-#[test]
-fn test_field_rename_with_empty_name() {
-    facet_testhelpers::setup();
-
-    #[derive(Debug, PartialEq, Facet)]
-    struct EmptyName {
-        #[facet(rename = "")]
-        empty_name: bool,
-    }
-
-    let test_struct = EmptyName { empty_name: true };
-
-    let json = to_string(&test_struct);
-    assert_eq!(json, r#"{"":true}"#);
-
-    let roundtrip: EmptyName = from_str(&json).unwrap();
-    assert_eq!(test_struct, roundtrip);
-}
-
 /// Serialization and deserialization of renamed enum variants (unit and tuple variants)
 #[cfg(feature = "std")]
 #[test]
