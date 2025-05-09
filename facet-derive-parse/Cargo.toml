@@ -16,4 +16,4 @@ keywords = [
 categories = ["development-tools", "encoding"]
 
 [dependencies]
-unsynn = "0.0.26"
+unsynn = "0.1.0"
