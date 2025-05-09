@@ -28,7 +28,7 @@ members = [
     # "facet-kdl",
     "facet-urlencoded",
     # "facet-yaml",
-    # "facet-jsonschema",
+    "facet-jsonschema",
     "facet-deserialize",
     "facet-bench",
 ]
