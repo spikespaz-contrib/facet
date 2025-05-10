@@ -360,7 +360,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive"
-version = "0.18.6"
+version = "0.18.7"
 dependencies = [
  "facet-core",
  "facet-derive-emit",
