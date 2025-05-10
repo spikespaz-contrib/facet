@@ -23,4 +23,4 @@ facet-derive-emit = { version = "0.20.2", path = "../facet-derive-emit" }
 
 # cf. https://hachyderm.io/@epage/114141126315983016
 [target.'cfg(any())'.dependencies]
-facet-core = { path = "../facet-core", version = "0.21.1" }
+facet-core = { path = "../facet-core", version = "0.22.0" }

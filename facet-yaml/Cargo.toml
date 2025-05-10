@@ -19,7 +19,7 @@ ulid = ["facet-core/ulid"]
 
 [dependencies]
 yaml-rust2 = "0.10.1"
-facet-core = { version = "0.21.1", path = "../facet-core", default-features = false }
+facet-core = { version = "0.22.0", path = "../facet-core", default-features = false }
 facet-reflect = { version = "0.19.1", path = "../facet-reflect", default-features = false }
 
 [dev-dependencies]

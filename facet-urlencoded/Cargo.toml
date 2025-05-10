@@ -10,7 +10,7 @@ categories = ["encoding", "parsing", "data-structures"]
 rust-version.workspace = true
 
 [dependencies]
-facet-core = { version = "0.21.1", path = "../facet-core" }
+facet-core = { version = "0.22.0", path = "../facet-core" }
 facet-reflect = { version = "0.19.1", path = "../facet-reflect" }
 form_urlencoded = "1.2.1"
 log = "0.4.27"

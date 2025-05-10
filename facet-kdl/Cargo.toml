@@ -18,7 +18,7 @@ default = ["std"]
 
 [dependencies]
 log = "0.4.27"
-facet-core = { version = "0.21.1", path = "../facet-core", default-features = false }
+facet-core = { version = "0.22.0", path = "../facet-core", default-features = false }
 facet-reflect = { version = "0.19.1", path = "../facet-reflect", default-features = false }
 kdl = { git = "https://github.com/TheLostLambda/kdl-rs.git", branch = "free-of-syn" }
 

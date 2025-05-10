@@ -12,7 +12,7 @@ categories = ["command-line-interface"]
 
 [dependencies]
 facet-reflect = { path = "../facet-reflect", version = "0.19.1" }
-facet-core = { path = "../facet-core", version = "0.21.1" }
+facet-core = { path = "../facet-core", version = "0.22.0" }
 log = "0.4.27"
 
 [dev-dependencies]
