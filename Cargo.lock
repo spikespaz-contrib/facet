@@ -453,7 +453,7 @@ dependencies = [
 
 [[package]]
 name = "facet-msgpack"
-version = "0.18.4"
+version = "0.24.0"
 dependencies = [
  "eyre",
  "facet",
@@ -533,7 +533,7 @@ dependencies = [
 
 [[package]]
 name = "facet-toml"
-version = "0.23.0"
+version = "0.24.0"
 dependencies = [
  "ariadne",
  "codspeed-divan-compat",
@@ -566,7 +566,7 @@ dependencies = [
 
 [[package]]
 name = "facet-yaml"
-version = "0.19.0"
+version = "0.24.0"
 dependencies = [
  "eyre",
  "facet",
