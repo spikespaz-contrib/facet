@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.2](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.1...facet-deserialize-v0.24.2) - 2025-05-10
+
+### Other
+
+- Add support for partially initializing arrays, closes #504
+
 ## [0.24.1](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.0...facet-deserialize-v0.24.1) - 2025-05-10
 
 ### Other

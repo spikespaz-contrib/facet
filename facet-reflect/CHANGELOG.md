@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.24.0...facet-reflect-v0.25.0) - 2025-05-10
+
+### Other
+
+- Introduce as_mut_ptr, fix array tests under miri
+- Add support for partially initializing arrays, closes #504
+
 ## [0.20.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.19.1...facet-reflect-v0.20.0) - 2025-05-10
 
 ### Other

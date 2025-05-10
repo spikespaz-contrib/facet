@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.0](https://github.com/facet-rs/facet/compare/facet-core-v0.24.0...facet-core-v0.25.0) - 2025-05-10
+
+### Other
+
+- Introduce as_mut_ptr, fix array tests under miri
+
 ## [0.22.0](https://github.com/facet-rs/facet/compare/facet-core-v0.21.1...facet-core-v0.22.0) - 2025-05-10
 
 ### Added
