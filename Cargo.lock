@@ -328,7 +328,7 @@ dependencies = [
  "facet-core",
  "facet-pretty",
  "facet-reflect",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "log",
 ]
 
@@ -339,7 +339,7 @@ dependencies = [
  "codspeed-divan-compat",
  "facet",
  "facet-json",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "serde",
  "serde_json",
 ]
@@ -351,7 +351,7 @@ dependencies = [
  "bitflags",
  "camino",
  "eyre",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "impls",
  "ordered-float",
  "ulid",
@@ -394,7 +394,7 @@ dependencies = [
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "facet-testhelpers 0.17.1",
  "log",
  "owo-colors",
 ]
@@ -404,7 +404,7 @@ name = "facet-dev"
 version = "0.1.1"
 dependencies = [
  "ctrlc",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "fs-err",
  "indicatif",
  "log",
@@ -423,7 +423,7 @@ dependencies = [
  "facet-deserialize",
  "facet-reflect",
  "facet-serialize",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "insta",
  "log",
 ]
@@ -445,7 +445,7 @@ dependencies = [
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "indoc",
  "kdl",
  "log",
@@ -460,7 +460,7 @@ dependencies = [
  "facet-core",
  "facet-reflect",
  "facet-serialize",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "insta",
  "log",
  "rmp-serde",
@@ -488,7 +488,7 @@ dependencies = [
  "eyre",
  "facet",
  "facet-core",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "log",
  "owo-colors",
  "tempfile",
@@ -504,19 +504,9 @@ dependencies = [
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "insta",
  "log",
-]
-
-[[package]]
-name = "facet-testhelpers"
-version = "0.17.1"
-dependencies = [
- "color-backtrace",
- "color-eyre",
- "log",
- "owo-colors",
 ]
 
 [[package]]
@@ -532,6 +522,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "facet-testhelpers"
+version = "0.17.2"
+dependencies = [
+ "color-backtrace",
+ "color-eyre",
+ "log",
+ "owo-colors",
+]
+
+[[package]]
 name = "facet-toml"
 version = "0.23.0"
 dependencies = [
@@ -542,7 +542,7 @@ dependencies = [
  "facet-core",
  "facet-reflect",
  "facet-serialize",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "log",
  "num-traits",
  "serde",
@@ -559,7 +559,7 @@ dependencies = [
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.1",
+ "facet-testhelpers 0.17.2",
  "form_urlencoded",
  "log",
 ]
