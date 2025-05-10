@@ -12,7 +12,13 @@ categories = ["encoding", "parsing", "data-structures"]
 [features]
 deserialize = ["alloc", "toml_edit/parse"]
 serialize = ["alloc", "dep:facet-serialize", "toml_edit/display"]
-std = ["alloc", "facet-core/std", "facet-reflect/std", "num-traits/std", "facet-serialize?/std"]
+std = [
+    "alloc",
+    "facet-core/std",
+    "facet-reflect/std",
+    "num-traits/std",
+    "facet-serialize?/std",
+]
 alloc = ["facet-core/alloc", "facet-reflect/alloc", "facet-serialize?/alloc"]
 rich-diagnostics = ["dep:ariadne", "std"]
 default = ["serialize", "deserialize", "std", "rich-diagnostics"]
