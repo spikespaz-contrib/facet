@@ -321,7 +321,7 @@ dependencies = [
 
 [[package]]
 name = "facet-args"
-version = "0.18.5"
+version = "0.18.6"
 dependencies = [
  "eyre",
  "facet",
@@ -387,7 +387,7 @@ dependencies = [
 
 [[package]]
 name = "facet-deserialize"
-version = "0.23.0"
+version = "0.24.0"
 dependencies = [
  "ariadne",
  "eyre",
@@ -415,7 +415,7 @@ dependencies = [
 
 [[package]]
 name = "facet-json"
-version = "0.23.0"
+version = "0.23.1"
 dependencies = [
  "eyre",
  "facet",
@@ -430,7 +430,7 @@ dependencies = [
 
 [[package]]
 name = "facet-jsonschema"
-version = "0.23.0"
+version = "0.23.1"
 dependencies = [
  "facet",
  "facet-core",
@@ -469,7 +469,7 @@ dependencies = [
 
 [[package]]
 name = "facet-pretty"
-version = "0.23.0"
+version = "0.23.1"
 dependencies = [
  "camino",
  "codspeed-divan-compat",
@@ -498,7 +498,7 @@ dependencies = [
 
 [[package]]
 name = "facet-serialize"
-version = "0.23.0"
+version = "0.23.1"
 dependencies = [
  "eyre",
  "facet",
@@ -553,7 +553,7 @@ dependencies = [
 
 [[package]]
 name = "facet-urlencoded"
-version = "0.23.0"
+version = "0.23.1"
 dependencies = [
  "eyre",
  "facet",

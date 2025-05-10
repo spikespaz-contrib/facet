@@ -19,7 +19,7 @@ categories = ["encoding", "parsing", "data-structures"]
 facet-core = { version = "0.22.0", path = "../facet-core" }
 facet-reflect = { version = "0.20.0", path = "../facet-reflect" }
 log = "0.4.27"
-facet-serialize = { version = "0.23.0", path = "../facet-serialize" }
+facet-serialize = { version = "0.23.1", path = "../facet-serialize" }
 
 [dev-dependencies]
 eyre = "0.6.12"
