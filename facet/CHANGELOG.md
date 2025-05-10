@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.1](https://github.com/facet-rs/facet/compare/facet-v0.25.0...facet-v0.25.1) - 2025-05-10
+
+### Added
+
+- expose ordered-float feature through facet crate
+
 ## [0.18.7](https://github.com/facet-rs/facet/compare/facet-v0.18.6...facet-v0.18.7) - 2025-05-10
 
 ### Fixed
