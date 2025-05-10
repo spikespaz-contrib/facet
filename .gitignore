@@ -7,7 +7,6 @@ tarpaulin-report.html
 .env
 *long-type-*.txt
 .ignore.rs
-
 **/.claude/settings.local.json
-
 **/CLAUDE.local.md
+*.sw[op]
