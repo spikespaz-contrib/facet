@@ -47,6 +47,9 @@ mod impls_ulid;
 #[cfg(feature = "time")]
 mod impls_time;
 
+#[cfg(feature = "url")]
+mod impls_url;
+
 // Const type Id
 mod typeid;
 pub use typeid::*;
