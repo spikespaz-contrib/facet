@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.1](https://github.com/facet-rs/facet/compare/facet-v0.26.0...facet-v0.26.1) - 2025-05-12
+
+### Other
+
+- Expose jiff02 and time features through main facet crate
+
 ## [0.26.0](https://github.com/facet-rs/facet/compare/facet-v0.25.1...facet-v0.26.0) - 2025-05-12
 
 ### Fixed

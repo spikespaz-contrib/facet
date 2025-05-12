@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.5](https://github.com/facet-rs/facet/compare/facet-yaml-v0.24.4...facet-yaml-v0.24.5) - 2025-05-12
+
+### Other
+
+- updated the following local packages: facet-core, facet-reflect
+
 ## [0.24.4](https://github.com/facet-rs/facet/compare/facet-yaml-v0.24.3...facet-yaml-v0.24.4) - 2025-05-12
 
 ### Other
