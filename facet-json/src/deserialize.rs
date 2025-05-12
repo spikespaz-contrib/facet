@@ -1,9 +1,9 @@
 use alloc::{borrow::Cow, format};
 
 use facet_core::Facet;
+pub use facet_deserialize::{DeserError, DeserErrorKind};
 use facet_deserialize::{
-    DeserError, DeserErrorKind, Expectation, Format, NextData, NextResult, Outcome, Scalar, Span,
-    Spannable, Spanned,
+    Expectation, Format, NextData, NextResult, Outcome, Scalar, Span, Spannable, Spanned,
 };
 use log::trace;
 
