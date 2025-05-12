@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.25.1...facet-reflect-v0.26.0) - 2025-05-12
+
+### Added
+
+- *(core)* add core implementation for `jiff::Zoned`
+
+### Other
+
+- Rename jiff feature to jiff02 (thanks @BurntSushi)
+- Remove `camino` / `ulid` / `uuid` features from `facet-reflect`
+- Remove camino/UUID/ULID variants from `ScalarType` enum
+- Add support for time crate's OffsetDateTime and UtcDateTime
+
 ## [0.25.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.24.0...facet-reflect-v0.25.0) - 2025-05-10
 
 ### Other

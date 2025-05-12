@@ -7,6 +7,40 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.26.0](https://github.com/facet-rs/facet/compare/facet-core-v0.25.1...facet-core-v0.26.0) - 2025-05-12
+
+### Added
+
+- *(core)* add core implementation for `jiff::civil::DateTime`
+- *(core)* add core implementation for `jiff::Timestamp`
+- *(core)* add core implementation for `jiff::Zoned`
+
+### Fixed
+
+- wrong offset for end field of core::ops::Range
+
+### Other
+
+- Fix wrong doc comments on StructBuilder, closes #574
+- Disable zoned test under miri
+- Rename jiff feature to jiff02 (thanks @BurntSushi)
+- Add support for `url` crate
+- Fix memory leaks, add more tests
+- Fix value VTables for `ulid` and `uuid`
+- Remove invalid `.try_borrow_inner()` impls from `camino` and `uuid`
+- Fix lint error in `SetVTable` doc comment
+- Fix errors when `std` feature is disabled
+- Clean up doc comments
+- Impl `Facet` for `BTreeSet`
+- Impl `Facet` for `HashSet`
+- Add new `def::set` module for sets
+- msrv fixes
+- miri fixes
+- Add support for time crate's OffsetDateTime and UtcDateTime
+- Add parsing and display for datetime types
+- Add time parsing
+- Implement `Facet` for `Box`
+
 ## [0.25.1](https://github.com/facet-rs/facet/compare/facet-core-v0.25.0...facet-core-v0.25.1) - 2025-05-10
 
 ### Added

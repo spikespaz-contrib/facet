@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.5](https://github.com/facet-rs/facet/compare/facet-json-v0.23.4...facet-json-v0.23.5) - 2025-05-12
+
+### Added
+
+- *(core)* add core implementation for `jiff::civil::DateTime`
+- *(core)* add core implementation for `jiff::Timestamp`
+- *(core)* add core implementation for `jiff::Zoned`
+
+### Other
+
+- Re-export DeserError
+- Disable zoned test under miri
+- Rename jiff feature to jiff02 (thanks @BurntSushi)
+- Fix memory leaks, add more tests
+- Add JSON test cases for Camino/ULID/UUID
+- Add support for time crate's OffsetDateTime and UtcDateTime
+
 ## [0.23.4](https://github.com/facet-rs/facet/compare/facet-json-v0.23.3...facet-json-v0.23.4) - 2025-05-10
 
 ### Other
