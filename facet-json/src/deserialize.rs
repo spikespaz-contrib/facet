@@ -45,7 +45,6 @@ impl Format for Json {
         nd: NextData<'input, 'facet>,
         mut expectation: Expectation,
     ) -> NextResult<'input, 'facet, Spanned<Outcome<'input>>, Spanned<DeserErrorKind>> {
-        trace!("Starting next at offset {}", nd.start());
         let input = &nd.input()[nd.start()..];
         let mut tokenizer = Tokenizer::new(input);
 
@@ -189,21 +188,11 @@ impl Format for Json {
 
             let res = match token.node {
                 Token::LBrace | Token::LBracket => {
-                    trace!(
-                        "Skip: found container start ({:?}), entering depth parse",
-                        token.node
-                    );
                     let mut depth = 1;
                     let mut last_span = token.span;
                     while depth > 0 {
                         let token = match tokenizer.next_token() {
-                            Ok(token) => {
-                                trace!(
-                                    "Skip: depth {}, next token in container: {:?}",
-                                    depth, token.node
-                                );
-                                token
-                            }
+                            Ok(token) => token,
                             Err(err) => {
                                 trace!("Tokenizer error while skipping container: {:?}", err.kind);
                                 return (nd, Err(convert_token_error(err)));
@@ -214,20 +203,16 @@ impl Format for Json {
                             Token::LBrace | Token::LBracket => {
                                 depth += 1;
                                 last_span = token.span;
-                                trace!("Container nested incremented, depth now {}", depth);
                             }
                             Token::RBrace | Token::RBracket => {
                                 depth -= 1;
                                 last_span = token.span;
-                                trace!("Container closed, depth now {}", depth);
                             }
                             _ => {
                                 last_span = token.span;
-                                trace!("Skipping non-container token: {:?}", token.node);
                             }
                         }
                     }
-                    trace!("Skip complete, span {:?}", last_span);
                     (nd, Ok(last_span))
                 }
                 Token::String(_)
@@ -236,37 +221,26 @@ impl Format for Json {
                 | Token::U64(_)
                 | Token::True
                 | Token::False
-                | Token::Null => {
-                    trace!("Skip found primitive: {:?}", token.node);
-                    (nd, Ok(token.span))
-                }
+                | Token::Null => (nd, Ok(token.span)),
                 Token::Colon => {
                     // Skip colon token
                     continue;
                 }
-                other => {
-                    trace!(
-                        "Skip encountered unexpected token kind: {:?} at span {:?}",
-                        other, token.span
-                    );
-                    (
-                        nd,
-                        Err(DeserErrorKind::UnexpectedChar {
-                            got: format!("{:?}", other).chars().next().unwrap_or('?'),
-                            wanted: "value",
-                        }
-                        .with_span(Span::new(token.span.start(), token.span.len()))),
-                    )
-                }
+                other => (
+                    nd,
+                    Err(DeserErrorKind::UnexpectedChar {
+                        got: format!("{:?}", other).chars().next().unwrap_or('?'),
+                        wanted: "value",
+                    }
+                    .with_span(Span::new(token.span.start(), token.span.len()))),
+                ),
             };
             let (nd, mut span) = res;
             if let Ok(valid_span) = &mut span {
                 let offset = nd.start();
                 valid_span.start += offset;
             }
-            let res = (nd, span);
-            trace!("Returning {:?}", res.1);
-            return res;
+            return (nd, span);
         }
     }
 }

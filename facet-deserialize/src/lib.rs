@@ -17,7 +17,8 @@ pub use error::*;
 
 mod span;
 use facet_core::{
-    Characteristic, Def, Facet, FieldFlags, ScalarAffinity, SequenceType, Type, UserType,
+    Characteristic, Def, Facet, FieldFlags, ScalarAffinity, SequenceType, StructKind, Type,
+    UserType,
 };
 use owo_colors::OwoColorize;
 pub use span::*;
@@ -272,7 +273,6 @@ where
                 $runner.err(span_kind.node)
             })?;
             $runner.last_span = outcome.span;
-            trace!("Got outcome {}", outcome.blue());
             $wip = $runner.$method($wip, outcome)?;
         }};
     }
@@ -650,7 +650,7 @@ impl<'input> StackRunner<'input> {
         outcome: Spanned<Outcome<'input>>,
     ) -> Result<Wip<'facet>, DeserError<'input>> {
         trace!(
-            "Handling value at wip shape {} (wip innermost shape {})",
+            "Handling value at {} (innermost {})",
             wip.shape().blue(),
             wip.innermost_shape().yellow()
         );
@@ -805,7 +805,7 @@ impl<'input> StackRunner<'input> {
     {
         match outcome.node {
             Outcome::Scalar(Scalar::String(key)) => {
-                trace!("Parsed object key: {}", key);
+                trace!("Parsed object key: {}", key.cyan());
 
                 let mut ignore = false;
                 let mut needs_pop = true;
@@ -872,14 +872,35 @@ impl<'input> StackRunner<'input> {
                     }
                     Type::User(UserType::Enum(_ed)) => match wip.find_variant(&key) {
                         Some((index, variant)) => {
-                            trace!("Variant {} selected", variant.name.blue());
+                            trace!(
+                                "Selecting variant {}::{}",
+                                wip.shape().blue(),
+                                variant.name.yellow(),
+                            );
                             wip = wip.variant(index).map_err(|e| self.reflect_err(e))?;
+
+                            // Let's see what's in the variant — if it's tuple-like with only one field, we want to push field 0
+                            if matches!(variant.data.kind, StructKind::Tuple)
+                                && variant.data.fields.len() == 1
+                            {
+                                trace!(
+                                    "Tuple variant {}::{} encountered, pushing field 0",
+                                    wip.shape().blue(),
+                                    variant.name.yellow()
+                                );
+                                wip = wip.field(0).map_err(|e| self.reflect_err(e))?;
+                                self.stack.push(Instruction::Pop(PopReason::ObjectVal));
+                            }
+
                             needs_pop = false;
                         }
                         None => {
                             if let Some(_variant_index) = wip.selected_variant() {
                                 trace!(
-                                    "Already have a variant selected, treating key as struct field of variant"
+                                    "Already have a variant selected, treating {} as struct field of {}::{}",
+                                    key,
+                                    wip.shape().blue(),
+                                    wip.selected_variant().unwrap().name.yellow(),
                                 );
                                 // Try to find the field index of the key within the selected variant
                                 if let Some(index) = wip.field_index(&key) {
@@ -892,7 +913,12 @@ impl<'input> StackRunner<'input> {
                                         shape: wip.shape(),
                                     }));
                                 } else {
-                                    trace!("Ignoring unknown field in variant");
+                                    trace!(
+                                        "Ignoring unknown field '{}' in variant '{}::{}'",
+                                        key,
+                                        wip.shape(),
+                                        wip.selected_variant().unwrap().name
+                                    );
                                     ignore = true;
                                 }
                             } else {
