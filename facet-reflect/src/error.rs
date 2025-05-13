@@ -1,16 +1,10 @@
-use facet_core::{Characteristic, EnumType, Field, FieldError, Shape, TryFromError};
+use facet_core::{Characteristic, EnumType, FieldError, Shape, TryFromError};
 use owo_colors::OwoColorize;
 
 /// Errors that can occur when reflecting on types.
 #[derive(Debug, PartialEq, Clone)]
 #[non_exhaustive]
 pub enum ReflectError {
-    /// Tried to `build` or `build_in_place` a struct/enum without initializing all fields.
-    PartiallyInitialized {
-        /// The field that was not initialized.
-        field: Field,
-    },
-
     /// Tried to set an enum to a variant that does not exist
     NoSuchVariant {
         /// The enum definition containing all known variants.
@@ -146,13 +140,6 @@ pub enum ReflectError {
 impl core::fmt::Display for ReflectError {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         match self {
-            ReflectError::PartiallyInitialized { field } => {
-                write!(
-                    f,
-                    "Value partially initialized: field {} was not set",
-                    field.name.yellow()
-                )
-            }
             ReflectError::NoSuchVariant { enum_type } => {
                 write!(f, "No such variant in enum. Known variants: ")?;
                 for v in enum_type.variants {
