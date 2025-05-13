@@ -7,4 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2](https://github.com/facet-rs/facet/compare/facet-xdr-v0.1.1...facet-xdr-v0.1.2) - 2025-05-13
+
+### Other
+
+- updated the following local packages: facet-core, facet-reflect, facet-serialize
+
 - added facet-xdr

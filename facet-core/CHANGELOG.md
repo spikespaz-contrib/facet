@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.0](https://github.com/facet-rs/facet/compare/facet-core-v0.26.1...facet-core-v0.27.0) - 2025-05-13
+
+### Other
+
+- Allow iterating maps in reverse order
+- More tests, which also pass
+- Arc tests pass?
+- Tests are passing?
+- Use new_uninit_slice, maybe??
+- Support Arc<T> where T: ?Sized
+
 ## [0.26.0](https://github.com/facet-rs/facet/compare/facet-core-v0.25.1...facet-core-v0.26.0) - 2025-05-12
 
 ### Added
