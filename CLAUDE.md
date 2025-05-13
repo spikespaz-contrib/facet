@@ -24,6 +24,11 @@ For example:
 - Run tests in a specific module: `cargo nextest run module_name`
 - Run tests with debug output: `cargo nextest run --no-capture test_name`
 
+When debugging serialization/deserialization issues, you can enable more verbose logging with the `facet-reflect/log` feature flag:
+```bash
+cargo nextest run -F facet-reflect/log my_test
+```
+
 ### Pre-commit Hooks
 
 When committing changes, facet-dev will run to check for code generation and formatting changes.

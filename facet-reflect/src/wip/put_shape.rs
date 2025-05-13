@@ -150,7 +150,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                             if field.shape() == src_shape {
                                 debug!(
                                     "Found uninitialized field {} with matching type {}",
-                                    i.to_string().blue(),
+                                    i.blue(),
                                     src_shape.green()
                                 );
 
@@ -177,7 +177,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                                     "[{}] Put a {} value into field {} of {}",
                                     self.frames.len(),
                                     src_shape.green(),
-                                    i.to_string().blue(),
+                                    i.blue(),
                                     shape.green()
                                 );
 
@@ -188,7 +188,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                             if let Some(try_from) = field.shape().vtable.try_from {
                                 debug!(
                                     "Found uninitialized field {} with try_from for type {}",
-                                    i.to_string().blue(),
+                                    i.blue(),
                                     src_shape.green()
                                 );
 
@@ -211,7 +211,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                                             "[{}] Put a {} value (converted) into field {} of {}",
                                             self.frames.len(),
                                             src_shape.green(),
-                                            i.to_string().blue(),
+                                            i.blue(),
                                             shape.green()
                                         );
 
@@ -240,7 +240,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                             if field.shape() == src_shape {
                                 debug!(
                                     "Found uninitialized field {} in enum variant '{}' with matching type {}",
-                                    i.to_string().blue(),
+                                    i.blue(),
                                     variant.name.bright_yellow(),
                                     src_shape.green()
                                 );
@@ -271,7 +271,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                                     "[{}] Put a {} value into field {} of variant '{}' in enum {}",
                                     self.frames.len(),
                                     src_shape.green(),
-                                    i.to_string().blue(),
+                                    i.blue(),
                                     variant_name.bright_yellow(),
                                     shape.green()
                                 );
@@ -283,7 +283,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                             if let Some(try_from) = field.shape().vtable.try_from {
                                 debug!(
                                     "Found uninitialized field {} in enum variant '{}' with try_from for type {}",
-                                    i.to_string().blue(),
+                                    i.blue(),
                                     variant.name.bright_yellow(),
                                     src_shape.green()
                                 );
@@ -310,7 +310,7 @@ impl<'facet_lifetime> Wip<'facet_lifetime> {
                                             "[{}] Put a {} value (converted) into field {} of variant '{}' in enum {}",
                                             self.frames.len(),
                                             src_shape.green(),
-                                            i.to_string().blue(),
+                                            i.blue(),
                                             variant_name.bright_yellow(),
                                             shape.green()
                                         );

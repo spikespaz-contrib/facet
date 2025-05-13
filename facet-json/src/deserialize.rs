@@ -51,10 +51,7 @@ impl Format for Json {
 
         loop {
             let token = match tokenizer.next_token() {
-                Ok(token) => {
-                    trace!("Token for next: {:?}", token.node);
-                    token
-                }
+                Ok(token) => token,
                 Err(err) => {
                     trace!("Tokenizer error in next: {:?}", err.kind);
                     return (nd, Err(convert_token_error(err)));
@@ -183,10 +180,7 @@ impl Format for Json {
 
         loop {
             let token = match tokenizer.next_token() {
-                Ok(token) => {
-                    trace!("Initial token for skip: {:?}", token.node);
-                    token
-                }
+                Ok(token) => token,
                 Err(err) => {
                     trace!("Tokenizer error on initial token: {:?}", err.kind);
                     return (nd, Err(convert_token_error(err)));

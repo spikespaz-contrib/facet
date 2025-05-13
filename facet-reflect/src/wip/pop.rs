@@ -61,7 +61,7 @@ impl Wip<'_> {
                     trace!(
                         "[{}] Marking field #{} in parent {} as initialized",
                         num_frames,
-                        index.to_string().yellow(),
+                        index.yellow(),
                         parent.shape.blue()
                     );
                     parent.istate.fields.set(index);
@@ -77,8 +77,8 @@ impl Wip<'_> {
                         "[{}] Array {} has {}/{} elements populated",
                         self.frames.len(),
                         frame_shape.blue(),
-                        current_index.to_string().yellow(),
-                        array_def.n.to_string().green()
+                        current_index.yellow(),
+                        array_def.n.green()
                     );
 
                     if current_index == array_def.n {
@@ -86,7 +86,7 @@ impl Wip<'_> {
                             "[{}] Array {} fully populated with {} elements, marking as initialized",
                             self.frames.len(),
                             frame_shape.blue(),
-                            array_def.n.to_string().green()
+                            array_def.n.green()
                         );
                         // Mark the array itself as initialized (field 0)
                         frame.istate.fields.set(0);
@@ -177,7 +177,7 @@ impl Wip<'_> {
                                 trace!(
                                     "[{}] Setting tuple field {} ({}) of {}",
                                     frame_len,
-                                    field_index.to_string().yellow(),
+                                    field_index.yellow(),
                                     field.name.bright_blue(),
                                     parent_shape.blue()
                                 );
@@ -223,7 +223,7 @@ impl Wip<'_> {
                                 trace!(
                                     "[{}] Setting tuple struct field {} ({}) of {}",
                                     frame_len,
-                                    field_index.to_string().yellow(),
+                                    field_index.yellow(),
                                     field.name.bright_blue(),
                                     parent_shape.blue()
                                 );
@@ -284,7 +284,7 @@ impl Wip<'_> {
                                 trace!(
                                     "[{}] Setting tuple enum variant field {} ({}) of variant '{}' in {}",
                                     frame_len,
-                                    field_index.to_string().yellow(),
+                                    field_index.yellow(),
                                     field.name.bright_blue(),
                                     variant.name.yellow(),
                                     parent_shape.blue()
@@ -331,7 +331,7 @@ impl Wip<'_> {
                                 trace!(
                                     "[{}] Setting array element {} of {}",
                                     frame_len,
-                                    element_index.to_string().yellow(),
+                                    element_index.yellow(),
                                     parent_shape.blue()
                                 );
 
@@ -371,7 +371,7 @@ impl Wip<'_> {
                                             "[{}] Array {} fully populated with {} elements, marking as fully initialized",
                                             frame_len,
                                             parent_shape.blue(),
-                                            array_def.n.to_string().green()
+                                            array_def.n.green()
                                         );
                                         // Mark the array itself as fully initialized
                                         parent_frame.mark_fully_initialized();
@@ -389,7 +389,7 @@ impl Wip<'_> {
                                                     trace!(
                                                         "[{}] Marking field {} in grandparent {} as initialized",
                                                         frame_len,
-                                                        parent_field_index.to_string().yellow(),
+                                                        parent_field_index.yellow(),
                                                         grandparent_frame.shape.blue()
                                                     );
                                                     grandparent_frame

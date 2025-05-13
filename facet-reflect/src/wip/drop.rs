@@ -65,7 +65,7 @@ impl Drop for Wip<'_> {
                             "De-initializing struct {} at {:p} field-by-field ({} fields)",
                             frame.shape.yellow(),
                             frame.data.as_byte_ptr(),
-                            num_fields.to_string().bright_cyan()
+                            num_fields.bright_cyan()
                         );
                         for i in 0..num_fields {
                             if frame.istate.fields.has(i) {
@@ -75,7 +75,7 @@ impl Drop for Wip<'_> {
                                 let field_id = ValueId::new(field_shape, field_ptr.as_byte_ptr());
                                 trace!(
                                     "Recursively cleaning field #{} '{}' of {}: field_shape={}, field_ptr={:p}",
-                                    i.to_string().bright_cyan(),
+                                    i.bright_cyan(),
                                     field.name.bright_blue(),
                                     frame.shape.blue(),
                                     field_shape.green(),
@@ -87,7 +87,7 @@ impl Drop for Wip<'_> {
                             } else {
                                 trace!(
                                     "Field #{} '{}' of {} was NOT initialized, skipping",
-                                    i.to_string().bright_cyan(),
+                                    i.bright_cyan(),
                                     sd.fields[i].name.bright_red(),
                                     frame.shape.red()
                                 );
@@ -129,7 +129,7 @@ impl Drop for Wip<'_> {
                                 let field_id = ValueId::new(field_shape, field_ptr.as_byte_ptr());
                                 trace!(
                                     "Recursively cleaning field #{} '{}' of variant {}: field_shape={}, field_ptr={:p}",
-                                    i.to_string().bright_cyan(),
+                                    i.bright_cyan(),
                                     field.name.bright_blue(),
                                     variant.name.yellow(),
                                     field_shape.green(),
@@ -141,7 +141,7 @@ impl Drop for Wip<'_> {
                                 } else {
                                     trace!(
                                         "Field not found in istates: #{} '{}' of variant {}",
-                                        i.to_string().bright_cyan(),
+                                        i.bright_cyan(),
                                         field.name.bright_blue(),
                                         variant.name.yellow()
                                     );
@@ -157,7 +157,7 @@ impl Drop for Wip<'_> {
                             } else {
                                 trace!(
                                     "Field #{} '{}' of variant {} was NOT initialized, skipping",
-                                    i.to_string().bright_cyan(),
+                                    i.bright_cyan(),
                                     field.name.bright_red(),
                                     variant.name.yellow()
                                 );

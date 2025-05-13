@@ -490,9 +490,9 @@ impl<'input> StackRunner<'input> {
                                             .put_from_fn(default_in_place_fn)
                                             .map_err(|e| self.reflect_err(e))?;
                                         trace!(
-                                            "Field #{} {:?} in variant {} was set to default value (via custom fn)",
+                                            "Field #{} @ {} in variant {} was set to default value (via custom fn)",
                                             index.yellow(),
-                                            field.blue(),
+                                            field.offset.blue(),
                                             variant.name
                                         );
                                     } else {
@@ -505,18 +505,18 @@ impl<'input> StackRunner<'input> {
                                         }
                                         wip = wip.put_default().map_err(|e| self.reflect_err(e))?;
                                         trace!(
-                                            "Field #{} {:?} in variant {} was set to default value (via default impl)",
+                                            "Field #{} @ {} in variant {} was set to default value (via default impl)",
                                             index.yellow(),
-                                            field.blue(),
+                                            field.offset.blue(),
                                             variant.name
                                         );
                                     }
                                     wip = wip.pop().map_err(|e| self.reflect_err(e))?;
                                 } else {
                                     trace!(
-                                        "Field #{} {:?} in variant {} is not initialized",
+                                        "Field #{} @ {} in variant {} is not initialized",
                                         index.yellow(),
-                                        field.blue(),
+                                        field.offset.blue(),
                                         variant.name
                                     );
                                     has_unset = true;
