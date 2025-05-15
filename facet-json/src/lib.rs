@@ -9,7 +9,7 @@
 use std::io::{self, Write};
 
 use facet_core::Facet;
-use facet_deserialize::DeserError;
+pub use facet_deserialize::{DeserError, DeserErrorKind, DeserErrorMessage};
 use facet_reflect::Peek;
 
 extern crate alloc;
