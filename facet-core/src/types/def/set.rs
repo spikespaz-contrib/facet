@@ -114,7 +114,7 @@ pub struct SetVTable {
     pub contains_fn: SetContainsFn,
 
     /// Virtual table for set iterator operations
-    pub iter_vtable: IterVTable,
+    pub iter_vtable: IterVTable<PtrConst<'static>>,
 }
 
 impl SetVTable {
@@ -130,7 +130,7 @@ pub struct SetVTableBuilder {
     insert_fn: Option<SetInsertFn>,
     len_fn: Option<SetLenFn>,
     contains_fn: Option<SetContainsFn>,
-    iter_vtable: Option<IterVTable>,
+    iter_vtable: Option<IterVTable<PtrConst<'static>>>,
 }
 
 impl SetVTableBuilder {
@@ -171,7 +171,7 @@ impl SetVTableBuilder {
     }
 
     /// Sets the iter_vtable field
-    pub const fn iter_vtable(mut self, vtable: IterVTable) -> Self {
+    pub const fn iter_vtable(mut self, vtable: IterVTable<PtrConst<'static>>) -> Self {
         self.iter_vtable = Some(vtable);
         self
     }

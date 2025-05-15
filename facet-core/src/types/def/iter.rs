@@ -12,16 +12,8 @@ pub type IterInitWithValueFn = for<'value> unsafe fn(value: PtrConst<'value>) ->
 /// # Safety
 ///
 /// The `iter` parameter must point to aligned, initialized memory of the correct type.
-pub type IterNextFn = for<'iter> unsafe fn(iter: PtrMut<'iter>) -> Option<PtrConst<'iter>>;
-
-/// Advance the iterator, returning the next value pair from the iterator.
-/// For example, this would return the next key/value pair from a map.
-///
-/// # Safety
-///
-/// The `iter` parameter must point to aligned, initialized memory of the correct type.
-pub type IterNextPairFn =
-    for<'iter> unsafe fn(iter: PtrMut<'iter>) -> Option<(PtrConst<'iter>, PtrConst<'iter>)>;
+pub type IterNextFn<T> =
+    for<'iter> unsafe fn(iter: PtrMut<'iter>) -> Option<<T as IterItem>::Item<'iter>>;
 
 /// Advance the iterator in reverse, returning the next value from the end
 /// of the iterator.
@@ -29,17 +21,8 @@ pub type IterNextPairFn =
 /// # Safety
 ///
 /// The `iter` parameter must point to aligned, initialized memory of the correct type.
-pub type IterNextBackFn = for<'iter> unsafe fn(iter: PtrMut<'iter>) -> Option<PtrConst<'iter>>;
-
-/// Advance the iterator in reverse, returning the next value pair from the
-/// end of the iterator. For example, this would return the end key/value
-/// pair from a map.
-///
-/// # Safety
-///
-/// The `iter` parameter must point to aligned, initialized memory of the correct type.
-pub type IterNextPairBackFn =
-    for<'iter> unsafe fn(iter: PtrMut<'iter>) -> Option<(PtrConst<'iter>, PtrConst<'iter>)>;
+pub type IterNextBackFn<T> =
+    for<'iter> unsafe fn(iter: PtrMut<'iter>) -> Option<<T as IterItem>::Item<'iter>>;
 
 /// Return the lower and upper bounds of the iterator, if known.
 ///
@@ -60,21 +43,15 @@ pub type IterDeallocFn = for<'iter> unsafe fn(iter: PtrMut<'iter>);
 #[derive(Clone, Copy, Debug, Hash, PartialEq, Eq)]
 #[repr(C)]
 #[non_exhaustive]
-pub struct IterVTable {
+pub struct IterVTable<T: IterItem> {
     /// cf. [`IterInitWithValueFn`]
     pub init_with_value: Option<IterInitWithValueFn>,
 
     /// cf. [`IterNextFn`]
-    pub next: IterNextFn,
-
-    /// cf. [`IterNextPairFn`]
-    pub next_pair: Option<IterNextPairFn>,
+    pub next: IterNextFn<T>,
 
     /// cf. [`IterNextBackFn`]
-    pub next_back: Option<IterNextBackFn>,
-
-    /// cf. [`IterNextPairBackFn`]
-    pub next_pair_back: Option<IterNextPairBackFn>,
+    pub next_back: Option<IterNextBackFn<T>>,
 
     /// cf. [`IterSizeHintFn`]
     pub size_hint: Option<IterSizeHintFn>,
@@ -83,34 +60,30 @@ pub struct IterVTable {
     pub dealloc: IterDeallocFn,
 }
 
-impl IterVTable {
+impl<T: IterItem> IterVTable<T> {
     /// Returns a builder for [`IterVTable`]
-    pub const fn builder() -> IterVTableBuilder {
+    pub const fn builder() -> IterVTableBuilder<T> {
         IterVTableBuilder::new()
     }
 }
 
 /// Builds an [`IterVTable`]
-pub struct IterVTableBuilder {
+pub struct IterVTableBuilder<T: IterItem> {
     init_with_value: Option<IterInitWithValueFn>,
-    next: Option<IterNextFn>,
-    next_pair: Option<IterNextPairFn>,
-    next_back: Option<IterNextBackFn>,
-    next_pair_back: Option<IterNextPairBackFn>,
+    next: Option<IterNextFn<T>>,
+    next_back: Option<IterNextBackFn<T>>,
     size_hint: Option<IterSizeHintFn>,
     dealloc: Option<IterDeallocFn>,
 }
 
-impl IterVTableBuilder {
+impl<T: IterItem> IterVTableBuilder<T> {
     /// Creates a new [`IterVTableBuilder`] with all fields set to `None`.
     #[allow(clippy::new_without_default)]
     pub const fn new() -> Self {
         Self {
             init_with_value: None,
             next: None,
-            next_pair: None,
             next_back: None,
-            next_pair_back: None,
             size_hint: None,
             dealloc: None,
         }
@@ -123,26 +96,14 @@ impl IterVTableBuilder {
     }
 
     /// Sets the `next` function
-    pub const fn next(mut self, f: IterNextFn) -> Self {
+    pub const fn next(mut self, f: IterNextFn<T>) -> Self {
         self.next = Some(f);
         self
     }
 
-    /// Sets the `next_pair` function
-    pub const fn next_pair(mut self, f: IterNextPairFn) -> Self {
-        self.next_pair = Some(f);
-        self
-    }
-
     /// Sets the `next_back` function
-    pub const fn next_back(mut self, f: IterNextBackFn) -> Self {
+    pub const fn next_back(mut self, f: IterNextBackFn<T>) -> Self {
         self.next_back = Some(f);
-        self
-    }
-
-    /// Sets the `next_pair_back` function
-    pub const fn next_pair_back(mut self, f: IterNextPairBackFn) -> Self {
-        self.next_pair_back = Some(f);
         self
     }
 
@@ -157,15 +118,35 @@ impl IterVTableBuilder {
     /// # Panics
     ///
     /// This method will panic if any of the required fields are `None`.
-    pub const fn build(self) -> IterVTable {
+    pub const fn build(self) -> IterVTable<T> {
         IterVTable {
             init_with_value: self.init_with_value,
             next: self.next.unwrap(),
-            next_pair: self.next_pair,
             next_back: self.next_back,
-            next_pair_back: self.next_pair_back,
             size_hint: self.size_hint,
             dealloc: self.dealloc.unwrap(),
         }
     }
+}
+
+/// A kind of item that an [`IterVTable`] returns
+///
+/// This trait is needed as a utility, so the functions within [`IterVTable`]
+/// can apply the appropriate lifetime to their result types. In other words,
+/// this trait acts like a higher-kinded type that takes a lifetime.
+pub trait IterItem {
+    /// The output type of the iterator, bound by the lifetime `'a`
+    type Item<'a>;
+}
+
+impl IterItem for PtrConst<'_> {
+    type Item<'a> = PtrConst<'a>;
+}
+
+impl<T, U> IterItem for (T, U)
+where
+    T: IterItem,
+    U: IterItem,
+{
+    type Item<'a> = (T::Item<'a>, U::Item<'a>);
 }

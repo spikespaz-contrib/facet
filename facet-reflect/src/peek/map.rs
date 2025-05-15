@@ -12,9 +12,8 @@ impl<'mem, 'facet_lifetime> Iterator for PeekMapIter<'mem, 'facet_lifetime> {
     type Item = (Peek<'mem, 'facet_lifetime>, Peek<'mem, 'facet_lifetime>);
 
     fn next(&mut self) -> Option<Self::Item> {
-        let next_pair_fn = self.map.def.vtable.iter_vtable.next_pair.unwrap();
         unsafe {
-            let next = next_pair_fn(self.iter);
+            let next = (self.map.def.vtable.iter_vtable.next)(self.iter);
             next.map(|(key_ptr, value_ptr)| {
                 (
                     Peek::unchecked_new(key_ptr, self.map.def.k()),
@@ -27,9 +26,9 @@ impl<'mem, 'facet_lifetime> Iterator for PeekMapIter<'mem, 'facet_lifetime> {
 
 impl DoubleEndedIterator for PeekMapIter<'_, '_> {
     fn next_back(&mut self) -> Option<Self::Item> {
-        let next_pair_back_fn = self.map.def.vtable.iter_vtable.next_pair_back.unwrap();
+        let next_back_fn = self.map.def.vtable.iter_vtable.next_back.unwrap();
         unsafe {
-            let next_back = next_pair_back_fn(self.iter);
+            let next_back = next_back_fn(self.iter);
             next_back.map(|(key_ptr, value_ptr)| {
                 (
                     Peek::unchecked_new(key_ptr, self.map.def.k()),

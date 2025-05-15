@@ -140,7 +140,7 @@ pub struct MapVTable {
     pub get_value_ptr_fn: MapGetValuePtrFn,
 
     /// Virtual table for map iterator operations
-    pub iter_vtable: IterVTable,
+    pub iter_vtable: IterVTable<(PtrConst<'static>, PtrConst<'static>)>,
 }
 
 impl MapVTable {
@@ -157,7 +157,7 @@ pub struct MapVTableBuilder {
     len_fn: Option<MapLenFn>,
     contains_key_fn: Option<MapContainsKeyFn>,
     get_value_ptr_fn: Option<MapGetValuePtrFn>,
-    iter_vtable: Option<IterVTable>,
+    iter_vtable: Option<IterVTable<(PtrConst<'static>, PtrConst<'static>)>>,
 }
 
 impl MapVTableBuilder {
@@ -205,7 +205,10 @@ impl MapVTableBuilder {
     }
 
     /// Sets the iter_vtable field
-    pub const fn iter_vtable(mut self, vtable: IterVTable) -> Self {
+    pub const fn iter_vtable(
+        mut self,
+        vtable: IterVTable<(PtrConst<'static>, PtrConst<'static>)>,
+    ) -> Self {
         self.iter_vtable = Some(vtable);
         self
     }

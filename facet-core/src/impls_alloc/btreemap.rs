@@ -169,43 +169,16 @@ where
                                                 Box::new(BTreeMapIterator { map: ptr, keys });
                                             PtrMut::new(Box::into_raw(iter_state) as *mut u8)
                                         })
-                                        .next_pair(|iter_ptr| unsafe {
-                                            let state =
-                                                iter_ptr.as_mut::<BTreeMapIterator<'_, K>>();
-                                            let map = state.map.get::<Self>();
-                                            while let Some(key) = state.keys.pop_front() {
-                                                if let Some(value) = map.get(key) {
-                                                    return Some((
-                                                        PtrConst::new(key as *const K),
-                                                        PtrConst::new(value as *const V),
-                                                    ));
-                                                }
-                                            }
-
-                                            None
-                                        })
-                                        .next_pair_back(|iter_ptr| unsafe {
-                                            let state =
-                                                iter_ptr.as_mut::<BTreeMapIterator<'_, K>>();
-                                            let map = state.map.get::<Self>();
-                                            while let Some(key) = state.keys.pop_back() {
-                                                if let Some(value) = map.get(key) {
-                                                    return Some((
-                                                        PtrConst::new(key as *const K),
-                                                        PtrConst::new(value as *const V),
-                                                    ));
-                                                }
-                                            }
-
-                                            None
-                                        })
                                         .next(|iter_ptr| unsafe {
                                             let state =
                                                 iter_ptr.as_mut::<BTreeMapIterator<'_, K>>();
                                             let map = state.map.get::<Self>();
                                             while let Some(key) = state.keys.pop_front() {
                                                 if let Some(value) = map.get(key) {
-                                                    return Some(PtrConst::new(value as *const V));
+                                                    return Some((
+                                                        PtrConst::new(key as *const K),
+                                                        PtrConst::new(value as *const V),
+                                                    ));
                                                 }
                                             }
 
@@ -217,7 +190,10 @@ where
                                             let map = state.map.get::<Self>();
                                             while let Some(key) = state.keys.pop_back() {
                                                 if let Some(value) = map.get(key) {
-                                                    return Some(PtrConst::new(value as *const V));
+                                                    return Some((
+                                                        PtrConst::new(key as *const K),
+                                                        PtrConst::new(value as *const V),
+                                                    ));
                                                 }
                                             }
 
