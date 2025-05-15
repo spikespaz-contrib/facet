@@ -14,8 +14,8 @@ use facet_reflect::{Peek, ScalarType};
 use log::debug;
 
 /// Serializes a value to JSON
-pub(crate) fn to_string<'facet: 'input, 'input: 'facet, T: Facet<'facet>>(
-    value: &'input T,
+pub(crate) fn to_string<'mem, 'facet, T: Facet<'facet>>(
+    value: &'mem T,
     recursion_depth: usize,
 ) -> String {
     let peek = Peek::new(value);
@@ -44,8 +44,8 @@ pub(crate) fn to_writer<'mem: 'facet, 'facet, T: Facet<'facet>, W: Write>(
 }
 
 /// Serializes a Peek instance to a writer in JSON format
-pub(crate) fn peek_to_writer<'mem: 'facet, 'facet, W: Write>(
-    peek: Peek<'mem, 'facet>,
+pub(crate) fn peek_to_writer<W: Write>(
+    peek: Peek<'_, '_>,
     maybe_field: Option<&Field>,
     recursion_depth: usize,
     output: &mut W,

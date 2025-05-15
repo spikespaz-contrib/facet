@@ -51,13 +51,13 @@ pub fn from_str_static_error<'input: 'facet, 'facet, T: Facet<'facet>>(
 
 /// Serializes a value to JSON
 #[cfg(feature = "std")]
-pub fn to_string<'a, T: Facet<'a>>(value: &'a T) -> String {
+pub fn to_string<'facet, T: Facet<'facet>>(value: &T) -> String {
     recursive::to_string(value, 0)
 }
 
 /// Serializes a Peek instance to JSON
 #[cfg(feature = "std")]
-pub fn peek_to_string<'a>(peek: Peek<'a, 'a>) -> String {
+pub fn peek_to_string<'facet: 'input, 'input: 'facet>(peek: Peek<'input, 'facet>) -> String {
     recursive::peek_to_string(peek, 0)
 }
 
