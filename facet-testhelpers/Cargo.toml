@@ -7,7 +7,7 @@ license.workspace = true
 repository.workspace = true
 keywords = ["testing", "helpers", "utilities"]
 categories = ["development-tools::testing", "development-tools"]
-description = "A collection of testing helpers and utilities for Facet projects"
+description = "A collection of testing helpers and utilities for facet"
 
 [dependencies]
 color-backtrace = { version = "0.7.0", default-features = false, features = [

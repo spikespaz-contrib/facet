@@ -5,6 +5,9 @@ edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
+keywords = ["testing", "helpers", "utilities"]
+categories = ["development-tools::testing", "development-tools"]
+description = "Proc macro for facet-testhelpers"
 
 [lib]
 proc-macro = true
