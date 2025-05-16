@@ -162,6 +162,7 @@ docker-build-push:
     # Build tests image using stable Rust
     echo -e "\033[1;36m🔨 Building tests image with stable Rust...\033[0m"
     docker build \
+        --push \
         --build-arg BASE_IMAGE=rust:1.87-slim-bookworm \
         --build-arg RUSTUP_TOOLCHAIN=1.87 \
         -t "${IMAGE_NAME}:${TAG}" \
@@ -172,6 +173,7 @@ docker-build-push:
     # Build miri image using nightly Rust
     echo -e "\033[1;36m🔨 Building miri image with nightly Rust...\033[0m"
     docker build \
+        --push \
         --build-arg BASE_IMAGE=rustlang/rust:nightly-slim \
         --build-arg RUSTUP_TOOLCHAIN=nightly \
         --build-arg ADDITIONAL_RUST_COMPONENTS="miri" \
@@ -199,6 +201,7 @@ docker-build-push-linux-amd64:
     # Build tests image using stable Rust
     echo -e "\033[1;36m🔨 Building tests image with stable Rust...\033[0m"
     docker build \
+        --push \
         --platform linux/amd64 \
         --build-arg BASE_IMAGE=rust:1.87-slim-bookworm \
         --build-arg RUSTUP_TOOLCHAIN=1.87 \
@@ -210,6 +213,7 @@ docker-build-push-linux-amd64:
     # Build miri image using nightly Rust
     echo -e "\033[1;36m🔨 Building miri image with nightly Rust...\033[0m"
     docker build \
+    --push \
         --platform linux/amd64 \
         --build-arg BASE_IMAGE=rustlang/rust:nightly-slim \
         --build-arg RUSTUP_TOOLCHAIN=nightly \
@@ -219,9 +223,9 @@ docker-build-push-linux-amd64:
         -f Dockerfile \
         .
 
-    # Push all tags
-    echo -e "\033[1;35m🚀 Pushing all image tags...\033[0m"
-    docker push "${IMAGE_NAME}:${TAG}-amd64"
-    docker push "${IMAGE_NAME}:latest-amd64"
-    docker push "${IMAGE_NAME}:${TAG}-miri-amd64"
-    docker push "${IMAGE_NAME}:latest-miri-amd64"
+    # # Push all tags
+    # echo -e "\033[1;35m🚀 Pushing all image tags...\033[0m"
+    # docker push "${IMAGE_NAME}:${TAG}-amd64"
+    # docker push "${IMAGE_NAME}:latest-amd64"
+    # docker push "${IMAGE_NAME}:${TAG}-miri-amd64"
+    # docker push "${IMAGE_NAME}:latest-miri-amd64"
