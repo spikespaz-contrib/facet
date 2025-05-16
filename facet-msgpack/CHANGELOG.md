@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.2](https://github.com/facet-rs/facet/compare/facet-msgpack-v0.25.1...facet-msgpack-v0.25.2) - 2025-05-16
+
+### Other
+
+- Rust 1.87 clippy fixes
+- Ignore failing msgpack tests for now
+- Some more msgpack progress
+- Modernize msgpack tests, take some out of draft
+
 ## [0.25.1](https://github.com/facet-rs/facet/compare/facet-msgpack-v0.25.0...facet-msgpack-v0.25.1) - 2025-05-13
 
 ### Other

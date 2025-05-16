@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.1](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.0...facet-reflect-v0.27.1) - 2025-05-16
+
+### Other
+
+- Support more slices for facet-pretty
+- Rust 1.87 clippy fixes
+- Use a trait to make `IterVTable` generic over the item type
+- Refactor `Map` to use `IterVTable`
+- implement recursive serialize
+- Use test attribute in facet-reflect
+- Fix json tests
+- Remove unused error variant
+
 ## [0.27.0](https://github.com/facet-rs/facet/compare/facet-reflect-v0.26.1...facet-reflect-v0.27.0) - 2025-05-13
 
 ### Other

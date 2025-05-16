@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.0](https://github.com/facet-rs/facet/compare/facet-yaml-v0.24.6...facet-yaml-v0.25.0) - 2025-05-16
+
+### Added
+
+- *(yaml)* [**breaking**] implement serialize
+
+### Other
+
+- Make some dependencies dev & optional
+- Use the test attribute for facet-urlencoded,xdr,yaml
+- Add support for default values in YAML deserializer
+- Add support for transparent newtypes in YAML deserializer
+- Add support for YAML maps and lists
+- Support OffsetDateTime in YAML
+
 ## [0.24.6](https://github.com/facet-rs/facet/compare/facet-yaml-v0.24.5...facet-yaml-v0.24.6) - 2025-05-13
 
 ### Other

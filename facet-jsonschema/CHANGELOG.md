@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.8](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.23.7...facet-jsonschema-v0.23.8) - 2025-05-16
+
+### Other
+
+- Rust 1.87 clippy fixes
+- Support OffsetDateTime in YAML
+
 ## [0.23.7](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.23.6...facet-jsonschema-v0.23.7) - 2025-05-13
 
 ### Other

@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.2](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.1...facet-serialize-v0.24.2) - 2025-05-16
+
+### Other
+
+- Rust 1.87 clippy fixes
+- almost fix everything
+- Fix json tests
+- Support OffsetDateTime in YAML
+
 ## [0.24.1](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.0...facet-serialize-v0.24.1) - 2025-05-13
 
 ### Other

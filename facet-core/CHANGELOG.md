@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.1](https://github.com/facet-rs/facet/compare/facet-core-v0.27.0...facet-core-v0.27.1) - 2025-05-16
+
+### Other
+
+- Support more slices for facet-pretty
+- Rust 1.87 clippy fixes
+- Use a trait to make `IterVTable` generic over the item type
+- Refactor `Set` to use `IterVTable`
+- Refactor `Map` to use `IterVTable`
+- Add common `IterVTable` struct
+- Modernize facet-csv/facet-kdl/facet-core/facet-args tests
+- allow deserializing from number in JSON
+
 ## [0.27.0](https://github.com/facet-rs/facet/compare/facet-core-v0.26.1...facet-core-v0.27.0) - 2025-05-13
 
 ### Other

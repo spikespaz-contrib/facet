@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.8](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.7...facet-pretty-v0.23.8) - 2025-05-16
+
+### Other
+
+- Support more slices for facet-pretty
+- wip pretty printing
+- Fix facet-pretty for lists
+- Add &str test
+- Fix clippy problems
+- Support &str slices in facet-pretty
+- Make some dependencies dev & optional
+- Use test attribute in facet-pretty tests
+
 ## [0.23.7](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.6...facet-pretty-v0.23.7) - 2025-05-13
 
 ### Other

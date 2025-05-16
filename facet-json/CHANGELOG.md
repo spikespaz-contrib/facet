@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.2](https://github.com/facet-rs/facet/compare/facet-json-v0.24.1...facet-json-v0.24.2) - 2025-05-16
+
+### Added
+
+- facet-args `Cli` trait impl; deserialize `&str` field
+- *(deserialize)* support multiple input types via generic `Format`
+
+### Other
+
+- Rust 1.87 clippy fixes
+- Relax facet-json lifetime requirements
+- Re-export DeserError, DeserErrorKind, etc.
+- Fix msrv
+- almost fix everything
+- implement recursive serialize
+- Use test attribute for facet-json tests
+- Introduce facet_testhelpers::test attribute
+- Fix json tests
+- Clean tests up, re-enable json tests
+- allow deserializing from number in JSON
+
 ## [0.24.1](https://github.com/facet-rs/facet/compare/facet-json-v0.24.0...facet-json-v0.24.1) - 2025-05-13
 
 ### Other

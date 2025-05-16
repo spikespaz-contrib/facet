@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.3](https://github.com/facet-rs/facet/compare/facet-args-v0.19.2...facet-args-v0.19.3) - 2025-05-16
+
+### Added
+
+- facet-args `Cli` trait impl; deserialize `&str` field
+- *(deserialize)* support multiple input types via generic `Format`
+
+### Other
+
+- Modernize facet-csv/facet-kdl/facet-core/facet-args tests
+
 ## [0.19.2](https://github.com/facet-rs/facet/compare/facet-args-v0.19.1...facet-args-v0.19.2) - 2025-05-13
 
 ### Other
