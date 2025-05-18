@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.2](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.27.1...facet-derive-emit-v0.27.2) - 2025-05-18
+
+### Other
+
+- Introduce `'shape` lifetime, allowing non-'static shapes.
+
 ## [0.27.1](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.27.0...facet-derive-emit-v0.27.1) - 2025-05-16
 
 ### Other

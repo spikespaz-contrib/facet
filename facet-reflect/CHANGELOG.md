@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.2](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.1...facet-reflect-v0.27.2) - 2025-05-18
+
+### Other
+
+- Harmonize lifetime names, closes #636
+- Introduce `'shape` lifetime, allowing non-'static shapes.
+- Deallocate iters properly for `PeekList` and `PeekListLike`
+- Update `PeekListLike` to support lists without `as_ptr` impl
+- Update `PeekList` to support lists without `as_ptr` impl
+- Make `as_ptr` and `as_mut_ptr` optional on `ListVTable`
+
 ## [0.27.1](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.0...facet-reflect-v0.27.1) - 2025-05-16
 
 ### Other

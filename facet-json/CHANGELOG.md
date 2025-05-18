@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.3](https://github.com/facet-rs/facet/compare/facet-json-v0.24.2...facet-json-v0.24.3) - 2025-05-18
+
+### Other
+
+- Introduce `'shape` lifetime, allowing non-'static shapes.
+
 ## [0.24.2](https://github.com/facet-rs/facet/compare/facet-json-v0.24.1...facet-json-v0.24.2) - 2025-05-16
 
 ### Added

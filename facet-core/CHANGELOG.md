@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.2](https://github.com/facet-rs/facet/compare/facet-core-v0.27.1...facet-core-v0.27.2) - 2025-05-18
+
+### Other
+
+- Introduce `'shape` lifetime, allowing non-'static shapes.
+- Fix build errors without `std` feature
+- Add `get` and `get_mut` to `ListVTable`
+- Make `as_ptr` and `as_mut_ptr` optional on `ListVTable`
+- Add `iter_vtable` field to `ListVTable`
+
 ## [0.27.1](https://github.com/facet-rs/facet/compare/facet-core-v0.27.0...facet-core-v0.27.1) - 2025-05-16
 
 ### Other
