@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.10](https://github.com/facet-rs/facet/compare/facet-urlencoded-v0.23.9...facet-urlencoded-v0.23.10) - 2025-05-20
+
+### Other
+
+- updated the following local packages: facet-core, facet-reflect
+
 ## [0.23.9](https://github.com/facet-rs/facet/compare/facet-urlencoded-v0.23.8...facet-urlencoded-v0.23.9) - 2025-05-18
 
 ### Other

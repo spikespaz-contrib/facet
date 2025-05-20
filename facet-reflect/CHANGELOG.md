@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.3](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.2...facet-reflect-v0.27.3) - 2025-05-20
+
+### Other
+
+- Use iters from std for various `iter_vtable` impls
+- Update `PeekTuple` to use `FieldIter`
+- Add custom iterator impl for `HasFields.fields_for_serialize()`
+- Add `FieldIter` as a concrete iter type for `HasFields`
+- Move `HasFields` trait to separate module
+
 ## [0.27.2](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.1...facet-reflect-v0.27.2) - 2025-05-18
 
 ### Other

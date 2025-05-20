@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.3](https://github.com/facet-rs/facet/compare/facet-v0.27.2...facet-v0.27.3) - 2025-05-20
+
+### Other
+
+- Add missing `ulid` and `url` features to `facet` crate
+
 ## [0.27.2](https://github.com/facet-rs/facet/compare/facet-v0.27.1...facet-v0.27.2) - 2025-05-18
 
 ### Other

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.4](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.3...facet-serialize-v0.24.4) - 2025-05-20
+
+### Other
+
+- Remove leftover comment
+- Refactor serialization to not need `DoubleEndedIterator`
+- Add custom iterator impl for `HasFields.fields_for_serialize()`
+
 ## [0.24.3](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.2...facet-serialize-v0.24.3) - 2025-05-18
 
 ### Other

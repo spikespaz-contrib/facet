@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.9](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.8...facet-deserialize-v0.24.9) - 2025-05-20
+
+### Added
+
+- *(args)* arg-wise spans for reflection errors; ToCooked trait
+
+### Other
+
+- Show warning on truncation
+- Truncate when showing errors in one long JSON line
+
 ## [0.24.8](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.7...facet-deserialize-v0.24.8) - 2025-05-18
 
 ### Other

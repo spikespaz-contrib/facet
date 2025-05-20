@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.4](https://github.com/facet-rs/facet/compare/facet-json-v0.24.3...facet-json-v0.24.4) - 2025-05-20
+
+### Added
+
+- *(args)* arg-wise spans for reflection errors; ToCooked trait
+
+### Other
+
+- cfg(not(miri))
+- Show warning on truncation
+- Truncate when showing errors in one long JSON line
+
 ## [0.24.3](https://github.com/facet-rs/facet/compare/facet-json-v0.24.2...facet-json-v0.24.3) - 2025-05-18
 
 ### Other

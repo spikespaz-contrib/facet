@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.5](https://github.com/facet-rs/facet/compare/facet-args-v0.19.4...facet-args-v0.19.5) - 2025-05-20
+
+### Added
+
+- *(args)* arg-wise spans for reflection errors; ToCooked trait
+
+### Other
+
+- *(args)* TDD for Vec support
+
 ## [0.19.4](https://github.com/facet-rs/facet/compare/facet-args-v0.19.3...facet-args-v0.19.4) - 2025-05-18
 
 ### Other
