@@ -1,6 +1,6 @@
 [package]
 name = "facet-json"
-version = "0.24.4"
+version = "0.24.5"
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
@@ -20,17 +20,17 @@ rich-diagnostics = ["facet-deserialize/rich-diagnostics"]
 default = ["std", "rich-diagnostics"]
 
 [dependencies]
-facet-core = { version = "0.27.3", path = "../facet-core", default-features = false }
-facet-deserialize = { version = "0.24.9", path = "../facet-deserialize", default-features = false }
-facet-reflect = { version = "0.27.3", path = "../facet-reflect", default-features = false }
-facet-serialize = { version = "0.24.4", path = "../facet-serialize", default-features = false }
+facet-core = { version = "0.27.4", path = "../facet-core", default-features = false }
+facet-deserialize = { version = "0.24.10", path = "../facet-deserialize", default-features = false }
+facet-reflect = { version = "0.27.4", path = "../facet-reflect", default-features = false }
+facet-serialize = { version = "0.24.5", path = "../facet-serialize", default-features = false }
 log = "0.4.27"
 
 [dev-dependencies]
 camino = { version = "1" }
 eyre = "0.6.12"
 facet = { path = "../facet" }
-facet-core = { version = "0.27.3", path = "../facet-core", features = [
+facet-core = { version = "0.27.4", path = "../facet-core", features = [
     "camino",
     "time",
     "ulid",

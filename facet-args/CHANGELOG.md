@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.6](https://github.com/facet-rs/facet/compare/facet-args-v0.19.5...facet-args-v0.19.6) - 2025-05-21
+
+### Other
+
+- *(args)* standardise spans in runner and errors
+- *(args)* ArgType; helpers; result wrappers
+
 ## [0.19.5](https://github.com/facet-rs/facet/compare/facet-args-v0.19.4...facet-args-v0.19.5) - 2025-05-20
 
 ### Added

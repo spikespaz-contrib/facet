@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.4](https://github.com/facet-rs/facet/compare/facet-core-v0.27.3...facet-core-v0.27.4) - 2025-05-21
+
+### Other
+
+- Support deserializing to `Arc<T>`
+- Fix marker traits for references and also test marker traits in facts
+
 ## [0.27.3](https://github.com/facet-rs/facet/compare/facet-core-v0.27.2...facet-core-v0.27.3) - 2025-05-20
 
 ### Other

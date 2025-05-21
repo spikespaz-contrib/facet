@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.17.4](https://github.com/facet-rs/facet/compare/facet-testhelpers-v0.17.3...facet-testhelpers-v0.17.4) - 2025-05-21
+
+### Other
+
+- Support deserializing to `Arc<T>`
+
 ## [0.17.3](https://github.com/facet-rs/facet/compare/facet-testhelpers-v0.17.2...facet-testhelpers-v0.17.3) - 2025-05-16
 
 ### Other

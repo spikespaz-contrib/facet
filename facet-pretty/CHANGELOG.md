@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.11](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.10...facet-pretty-v0.23.11) - 2025-05-21
+
+### Other
+
+- updated the following local packages: facet-core, facet-testhelpers, facet-reflect
+
 ## [0.23.10](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.9...facet-pretty-v0.23.10) - 2025-05-20
 
 ### Other

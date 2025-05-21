@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.10](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.9...facet-deserialize-v0.24.10) - 2025-05-21
+
+### Added
+
+- *(deserialize)* give `Span<Raw>` byte-level precision via a `Substack` of `Span<Subspan>`
+
+### Other
+
+- Support deserializing to `Arc<T>`
+
 ## [0.24.9](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.8...facet-deserialize-v0.24.9) - 2025-05-20
 
 ### Added
