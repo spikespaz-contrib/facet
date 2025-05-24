@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.5](https://github.com/facet-rs/facet/compare/facet-core-v0.27.4...facet-core-v0.27.5) - 2025-05-24
+
+### Other
+
+- Add `Shape.type_identifier` to access type name in const contexts
+- Simplify syntax for uses of `ValueVTableBuilder`
+- Fix cyclic types with indirection for optional fns in `ValueVTable`
+- Update `Bytes` shape to use `BytesMut` as inner type
+- Add `bytes` feature with impls for `Bytes`/`BytesMut`
+- Make some methods in `ListVTable` optional
+- Add !Sized fact tests and fix marker traits for slices
+- Fix definition of Utf8Path, Path and PathBuf
+- Remove broken PtrConst::new and Arc impl for unsized types
+- Fix implementation for unsized types
+- Fix ref vtable implementations
+
 ## [0.27.4](https://github.com/facet-rs/facet/compare/facet-core-v0.27.3...facet-core-v0.27.4) - 2025-05-21
 
 ### Other

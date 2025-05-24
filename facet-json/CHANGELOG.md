@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.6](https://github.com/facet-rs/facet/compare/facet-json-v0.24.5...facet-json-v0.24.6) - 2025-05-24
+
+### Other
+
+- Fix cyclic types with indirection for optional fns in `ValueVTable`
+- Add test case for deserializing `bytes::Bytes`
+- Add test case for JSON deserializing nested options
+- Add `bytes` feature with impls for `Bytes`/`BytesMut`
+
 ## [0.24.5](https://github.com/facet-rs/facet/compare/facet-json-v0.24.4...facet-json-v0.24.5) - 2025-05-21
 
 ### Other

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.5](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.27.4...facet-derive-emit-v0.27.5) - 2025-05-24
+
+### Other
+
+- Add `Shape.type_identifier` to access type name in const contexts
+- Fix cyclic types with indirection for optional fns in `ValueVTable`
+
 ## [0.27.2](https://github.com/facet-rs/facet/compare/facet-derive-emit-v0.27.1...facet-derive-emit-v0.27.2) - 2025-05-18
 
 ### Other

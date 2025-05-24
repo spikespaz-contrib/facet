@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.12](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.23.11...facet-jsonschema-v0.23.12) - 2025-05-24
+
+### Other
+
+- updated the following local packages: facet-core, facet-derive
+
 ## [0.23.11](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.23.10...facet-jsonschema-v0.23.11) - 2025-05-21
 
 ### Other

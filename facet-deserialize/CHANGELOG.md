@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.11](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.10...facet-deserialize-v0.24.11) - 2025-05-24
+
+### Added
+
+- *(args)* fill Substack via `Outcome::Resegment`
+
+### Other
+
+- Update deserialization to deserialize wrapper types as their inner shape
+
 ## [0.24.10](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.9...facet-deserialize-v0.24.10) - 2025-05-21
 
 ### Added

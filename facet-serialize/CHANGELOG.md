@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.6](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.5...facet-serialize-v0.24.6) - 2025-05-24
+
+### Other
+
+- Fix cyclic types with indirection for optional fns in `ValueVTable`
+
 ## [0.24.5](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.4...facet-serialize-v0.24.5) - 2025-05-21
 
 ### Other
