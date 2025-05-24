@@ -498,7 +498,7 @@ pub struct ValueVTable {
     pub clone_into: fn() -> Option<CloneIntoFn>,
 
     /// cf. [`PartialEqFn`] for equality comparison
-    pub eq: fn() -> Option<PartialEqFn>,
+    pub partial_eq: fn() -> Option<PartialEqFn>,
 
     /// cf. [`PartialOrdFn`] for partial ordering comparison
     pub partial_ord: fn() -> Option<PartialOrdFn>,
@@ -642,8 +642,10 @@ impl<'a, T: crate::Facet<'a> + ?Sized> VTableView<T> {
 
     /// cf. [`PartialEqFn`] for equality comparison
     #[inline(always)]
-    pub fn eq(&self) -> Option<PartialEqFnTyped<T>> {
-        (self.0.eq)().map(|eq| unsafe { mem::transmute::<PartialEqFn, PartialEqFnTyped<T>>(eq) })
+    pub fn partial_eq(&self) -> Option<PartialEqFnTyped<T>> {
+        (self.0.partial_eq)().map(|partial_eq| unsafe {
+            mem::transmute::<PartialEqFn, PartialEqFnTyped<T>>(partial_eq)
+        })
     }
 
     /// cf. [`PartialOrdFn`] for partial ordering comparison
@@ -737,7 +739,7 @@ pub struct ValueVTableBuilder<T> {
     default_in_place: fn() -> Option<DefaultInPlaceFn>,
     clone_into: fn() -> Option<CloneIntoFn>,
     marker_traits: fn() -> MarkerTraits,
-    eq: fn() -> Option<PartialEqFn>,
+    partial_eq: fn() -> Option<PartialEqFn>,
     partial_ord: fn() -> Option<PartialOrdFn>,
     ord: fn() -> Option<CmpFn>,
     hash: fn() -> Option<HashFn>,
@@ -761,7 +763,7 @@ impl<T> ValueVTableBuilder<T> {
             default_in_place: || None,
             clone_into: || None,
             marker_traits: || MarkerTraits::empty(),
-            eq: || None,
+            partial_eq: || None,
             partial_ord: || None,
             ord: || None,
             hash: || None,
@@ -833,9 +835,9 @@ impl<T> ValueVTableBuilder<T> {
         self
     }
 
-    /// Sets the eq function for this builder.
-    pub const fn eq(mut self, partial_eq: fn() -> Option<PartialEqFnTyped<T>>) -> Self {
-        self.eq = unsafe {
+    /// Sets the partial_eq function for this builder.
+    pub const fn partial_eq(mut self, partial_eq: fn() -> Option<PartialEqFnTyped<T>>) -> Self {
+        self.partial_eq = unsafe {
             mem::transmute::<fn() -> Option<PartialEqFnTyped<T>>, fn() -> Option<PartialEqFn>>(
                 partial_eq,
             )
@@ -939,7 +941,7 @@ impl<T> ValueVTableBuilder<T> {
             debug: self.debug,
             default_in_place: self.default_in_place,
             clone_into: self.clone_into,
-            eq: self.eq,
+            partial_eq: self.partial_eq,
             partial_ord: self.partial_ord,
             ord: self.ord,
             hash: self.hash,
@@ -958,7 +960,7 @@ pub struct ValueVTableBuilderUnsized<T: ?Sized> {
     display: fn() -> Option<DisplayFn>,
     debug: fn() -> Option<DebugFn>,
     marker_traits: fn() -> MarkerTraits,
-    eq: fn() -> Option<PartialEqFn>,
+    partial_eq: fn() -> Option<PartialEqFn>,
     partial_ord: fn() -> Option<PartialOrdFn>,
     ord: fn() -> Option<CmpFn>,
     hash: fn() -> Option<HashFn>,
@@ -976,7 +978,7 @@ impl<T: ?Sized> ValueVTableBuilderUnsized<T> {
             display: || None,
             debug: || None,
             marker_traits: || MarkerTraits::empty(),
-            eq: || None,
+            partial_eq: || None,
             partial_ord: || None,
             ord: || None,
             hash: || None,
@@ -1015,8 +1017,8 @@ impl<T: ?Sized> ValueVTableBuilderUnsized<T> {
     }
 
     /// Sets the eq function for this builder.
-    pub const fn eq(mut self, partial_eq: fn() -> Option<PartialEqFnTyped<T>>) -> Self {
-        self.eq = unsafe {
+    pub const fn partial_eq(mut self, partial_eq: fn() -> Option<PartialEqFnTyped<T>>) -> Self {
+        self.partial_eq = unsafe {
             mem::transmute::<fn() -> Option<PartialEqFnTyped<T>>, fn() -> Option<PartialEqFn>>(
                 partial_eq,
             )
@@ -1083,7 +1085,7 @@ impl<T: ?Sized> ValueVTableBuilderUnsized<T> {
             debug: self.debug,
             default_in_place: || None,
             clone_into: || None,
-            eq: self.eq,
+            partial_eq: self.partial_eq,
             partial_ord: self.partial_ord,
             ord: self.ord,
             hash: self.hash,
