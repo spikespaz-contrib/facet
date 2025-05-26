@@ -1671,7 +1671,12 @@ fn test_ptr() {
             .partial_eq_and(true)
             .correct_ord_and(Ordering::Equal)
             .build(),
-        TypedMarkerTraits::new().eq().copy().unpin(),
+        TypedMarkerTraits::new()
+            .eq()
+            .copy()
+            .unpin()
+            .unwind_safe()
+            .ref_unwind_safe(),
     );
 
     check_facts(
@@ -1683,7 +1688,12 @@ fn test_ptr() {
             .partial_eq_and(true)
             .correct_ord_and(Ordering::Equal)
             .build(),
-        TypedMarkerTraits::new().eq().copy().unpin(),
+        TypedMarkerTraits::new()
+            .eq()
+            .copy()
+            .unpin()
+            .unwind_safe()
+            .ref_unwind_safe(),
     );
 
     check_facts(
@@ -1695,7 +1705,12 @@ fn test_ptr() {
             .partial_eq_and(false)
             .correct_ord_and(Ordering::Greater)
             .build(),
-        TypedMarkerTraits::new().eq().copy().unpin(),
+        TypedMarkerTraits::new()
+            .eq()
+            .copy()
+            .unpin()
+            .unwind_safe()
+            .ref_unwind_safe(),
     );
 
     check_facts(
@@ -1707,7 +1722,12 @@ fn test_ptr() {
             .partial_eq_and(false)
             .correct_ord_and(Ordering::Greater)
             .build(),
-        TypedMarkerTraits::new().eq().copy().unpin(),
+        TypedMarkerTraits::new()
+            .eq()
+            .copy()
+            .unpin()
+            .unwind_safe()
+            .ref_unwind_safe(),
     );
 }
 
