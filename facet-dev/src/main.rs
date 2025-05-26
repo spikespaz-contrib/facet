@@ -812,6 +812,15 @@ pub struct FormatCandidate {
 }
 
 pub fn collect_staged_files() -> io::Result<StagedFiles> {
+    // If running in GitHub Actions, return empty staged files.
+    if std::env::var("GITHUB_ACTIONS").is_ok() {
+        return Ok(StagedFiles {
+            clean: Vec::new(),
+            dirty: Vec::new(),
+            unstaged: Vec::new(),
+        });
+    }
+
     // Run `git status --porcelain`
     let output = Command::new("git")
         .arg("status")
