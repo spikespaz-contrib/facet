@@ -113,9 +113,9 @@ checksum = "7b02b629252fe8ef6460461409564e2c21d0c8e77e0944f3d189ff06c4e932ad"
 
 [[package]]
 name = "cc"
-version = "1.2.22"
+version = "1.2.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32db95edf998450acc7881c932f94cd9b05c87b4b2599e8bab064753da4acfd1"
+checksum = "16595d3be041c03b09d08d0858631facccee9221e579704070e6e9e4915d3bc7"
 dependencies = [
  "shlex",
 ]
@@ -333,9 +333,9 @@ checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
 name = "errno"
-version = "0.3.11"
+version = "0.3.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "976dd42dc7e85965fe702eb8164f21f450704bdde31faefd6471dba214cb594e"
+checksum = "cea14ef9355e3beab063703aa9dab15afd25f0667c341310c1e5274bb1d0da18"
 dependencies = [
  "libc",
  "windows-sys",
@@ -353,7 +353,7 @@ dependencies = [
 
 [[package]]
 name = "facet"
-version = "0.27.5"
+version = "0.27.6"
 dependencies = [
  "cargo-husky",
  "eyre",
@@ -368,7 +368,7 @@ dependencies = [
 
 [[package]]
 name = "facet-args"
-version = "0.19.7"
+version = "0.19.8"
 dependencies = [
  "eyre",
  "facet",
@@ -397,7 +397,7 @@ dependencies = [
 
 [[package]]
 name = "facet-core"
-version = "0.27.5"
+version = "0.27.6"
 dependencies = [
  "bitflags",
  "bytes",
@@ -415,7 +415,7 @@ dependencies = [
 
 [[package]]
 name = "facet-csv"
-version = "0.24.6"
+version = "0.24.7"
 dependencies = [
  "eyre",
  "facet",
@@ -430,7 +430,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive"
-version = "0.27.5"
+version = "0.27.6"
 dependencies = [
  "facet-core",
  "facet-derive-emit",
@@ -438,7 +438,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-emit"
-version = "0.27.5"
+version = "0.27.6"
 dependencies = [
  "facet-derive-parse",
  "insta",
@@ -450,21 +450,21 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-parse"
-version = "0.27.5"
+version = "0.27.6"
 dependencies = [
  "unsynn",
 ]
 
 [[package]]
 name = "facet-deserialize"
-version = "0.24.11"
+version = "0.24.12"
 dependencies = [
  "ariadne",
  "eyre",
  "facet",
  "facet-core",
  "facet-reflect",
- "facet-testhelpers 0.17.2",
+ "facet-testhelpers 0.17.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "log",
  "owo-colors",
 ]
@@ -485,7 +485,7 @@ dependencies = [
 
 [[package]]
 name = "facet-json"
-version = "0.24.6"
+version = "0.24.7"
 dependencies = [
  "bytes",
  "camino",
@@ -507,7 +507,7 @@ dependencies = [
 
 [[package]]
 name = "facet-jsonschema"
-version = "0.23.12"
+version = "0.23.13"
 dependencies = [
  "facet",
  "facet-core",
@@ -530,7 +530,7 @@ dependencies = [
 
 [[package]]
 name = "facet-msgpack"
-version = "0.25.6"
+version = "0.25.7"
 dependencies = [
  "eyre",
  "facet",
@@ -546,7 +546,7 @@ dependencies = [
 
 [[package]]
 name = "facet-pretty"
-version = "0.23.12"
+version = "0.23.13"
 dependencies = [
  "camino",
  "codspeed-divan-compat",
@@ -560,7 +560,7 @@ dependencies = [
 
 [[package]]
 name = "facet-reflect"
-version = "0.27.5"
+version = "0.27.6"
 dependencies = [
  "bitflags",
  "camino",
@@ -577,7 +577,7 @@ dependencies = [
 
 [[package]]
 name = "facet-serialize"
-version = "0.24.6"
+version = "0.24.7"
 dependencies = [
  "eyre",
  "facet",
@@ -590,24 +590,27 @@ dependencies = [
 
 [[package]]
 name = "facet-testhelpers"
-version = "0.17.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "07d19f75bc9e790c74aa8e8bda932f0d1741d1765c80ab5dbfb4b7375563fbec"
-dependencies = [
- "color-backtrace",
- "color-eyre",
- "log",
- "owo-colors",
-]
-
-[[package]]
-name = "facet-testhelpers"
 version = "0.17.4"
 dependencies = [
  "backtrace",
  "color-backtrace",
  "color-eyre",
- "facet-testhelpers-macros",
+ "facet-testhelpers-macros 0.1.0",
+ "log",
+ "owo-colors",
+ "regex",
+]
+
+[[package]]
+name = "facet-testhelpers"
+version = "0.17.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1519cf865753f89afd979bb13f6d8b3218886f8cf157418d5dd69634c98a14d9"
+dependencies = [
+ "backtrace",
+ "color-backtrace",
+ "color-eyre",
+ "facet-testhelpers-macros 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log",
  "owo-colors",
  "regex",
@@ -622,8 +625,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "facet-testhelpers-macros"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c8924e3c974cb916e4e83505e9ef5bf0263509702531345862ceac5453a40bec"
+dependencies = [
+ "quote",
+ "unsynn",
+]
+
+[[package]]
 name = "facet-toml"
-version = "0.25.6"
+version = "0.25.7"
 dependencies = [
  "ariadne",
  "codspeed-divan-compat",
@@ -643,7 +656,7 @@ dependencies = [
 
 [[package]]
 name = "facet-urlencoded"
-version = "0.23.12"
+version = "0.23.13"
 dependencies = [
  "eyre",
  "facet",
@@ -656,7 +669,7 @@ dependencies = [
 
 [[package]]
 name = "facet-xdr"
-version = "0.1.7"
+version = "0.1.8"
 dependencies = [
  "facet",
  "facet-core",
@@ -667,7 +680,7 @@ dependencies = [
 
 [[package]]
 name = "facet-yaml"
-version = "0.25.4"
+version = "0.25.5"
 dependencies = [
  "eyre",
  "facet",
@@ -806,9 +819,9 @@ checksum = "00210d6893afc98edb752b664b8890f0ef174c8adbb8d0be9710fa66fbbf72d3"
 
 [[package]]
 name = "icu_properties"
-version = "2.0.0"
+version = "2.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2549ca8c7241c82f59c80ba2a6f415d931c5b58d24fb8412caa1a1f02c49139a"
+checksum = "016c619c1eeb94efb86809b015c58f479963de65bdb6253345c1a1276f22e32b"
 dependencies = [
  "displaydoc",
  "icu_collections",
@@ -822,9 +835,9 @@ dependencies = [
 
 [[package]]
 name = "icu_properties_data"
-version = "2.0.0"
+version = "2.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8197e866e47b68f8f7d95249e172903bec06004b18b2937f1095d40a0c57de04"
+checksum = "298459143998310acd25ffe6810ed544932242d3f07083eee1084d83a71bd632"
 
 [[package]]
 name = "icu_provider"

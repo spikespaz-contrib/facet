@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.8](https://github.com/facet-rs/facet/compare/facet-args-v0.19.7...facet-args-v0.19.8) - 2025-05-26
+
+### Other
+
+- Don't crash when errors straddle EOF
+
 ## [0.19.7](https://github.com/facet-rs/facet/compare/facet-args-v0.19.6...facet-args-v0.19.7) - 2025-05-24
 
 ### Added

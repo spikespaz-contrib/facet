@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.6](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.5...facet-reflect-v0.27.6) - 2025-05-26
+
+### Other
+
+- Rename ValueVTable::eq to ValueVTable::partial_eq
+- Add UnwindSafe and RefUnwindSafe to marker traits
+
 ## [0.27.5](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.4...facet-reflect-v0.27.5) - 2025-05-24
 
 ### Other

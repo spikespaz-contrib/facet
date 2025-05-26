@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.12](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.11...facet-deserialize-v0.24.12) - 2025-05-26
+
+### Other
+
+- Don't crash when errors straddle EOF
+
 ## [0.24.11](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.10...facet-deserialize-v0.24.11) - 2025-05-24
 
 ### Added
