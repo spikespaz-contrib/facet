@@ -29,7 +29,7 @@ pub struct ArrayType<'shape> {
     /// Shape of the underlying object stored on array
     pub t: &'shape Shape<'shape>,
 
-    /// Constatnt length of the array
+    /// Constant length of the array
     pub n: usize,
 }
 
