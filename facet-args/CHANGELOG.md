@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.9](https://github.com/facet-rs/facet/compare/facet-args-v0.19.8...facet-args-v0.19.9) - 2025-05-27
+
+### Other
+
+- updated the following local packages: facet-core, facet-reflect, facet-deserialize
+
 ## [0.19.8](https://github.com/facet-rs/facet/compare/facet-args-v0.19.7...facet-args-v0.19.8) - 2025-05-26
 
 ### Other

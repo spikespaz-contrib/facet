@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.8](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.7...facet-toml-v0.25.8) - 2025-05-27
+
+### Other
+
+- updated the following local packages: facet-core, facet-reflect, facet-serialize
+
 ## [0.25.7](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.6...facet-toml-v0.25.7) - 2025-05-26
 
 ### Other
