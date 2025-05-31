@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.14](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.13...facet-deserialize-v0.24.14) - 2025-05-31
+
+### Fixed
+
+- fix benchmark
+
+### Other
+
+- Simplify code for set_numeric_value
+- facet-json is not _currently_ nostd, actually, because of std::io::Write
+- Fix facet-args tests
+- More facet-yaml test fixes
+- facet-json tests pass
+- Fix tests
+- Tuple handling
+- Fix Bytes deserialization through implicit conversion
+- More facet-json tests
+- Some json fixes
+- wow everything typechecks
+- facet-deserialize fixes
+- Start porting old reflect tests
+- begin/end is more intuitive than push/pop
+- Rename some methods
+- Remove SequenceType::Tuple - tuples are now structs
+- Deinitialization is wrong (again)
+
 ## [0.24.13](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.12...facet-deserialize-v0.24.13) - 2025-05-27
 
 ### Other

@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.9](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.8...facet-toml-v0.25.9) - 2025-05-31
+
+### Other
+
+- Fix facet-toml and facet-urlencoded tests
+- YAML transparent types fixes
+- More facet-yaml test fixes
+- Fix facet-toml benchmark
+- wow everything typechecks
+- wip toml
+- Remove yansi
+- Start porting old reflect tests
+- begin/end is more intuitive than push/pop
+- Rename some methods
+- Partially uninit struct
+
 ## [0.25.8](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.7...facet-toml-v0.25.8) - 2025-05-27
 
 ### Other

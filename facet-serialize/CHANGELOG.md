@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.9](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.8...facet-serialize-v0.24.9) - 2025-05-31
+
+### Other
+
+- Add serialization for box
+- YAML transparent types fixes
+- Fix Bytes deserialization through implicit conversion
+- Remove SequenceType::Tuple - tuples are now structs
+
 ## [0.24.8](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.7...facet-serialize-v0.24.8) - 2025-05-27
 
 ### Other

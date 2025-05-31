@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.8](https://github.com/facet-rs/facet/compare/facet-v0.27.7...facet-v0.27.8) - 2025-05-31
+
+### Other
+
+- Simplify code for set_numeric_value
+- Expose chrono through main facet crate
+- More facet-yaml test fixes
+- Remove SequenceType::Tuple - tuples are now structs
+
 ## [0.27.6](https://github.com/facet-rs/facet/compare/facet-v0.27.5...facet-v0.27.6) - 2025-05-26
 
 ### Other

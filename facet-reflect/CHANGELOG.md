@@ -6,6 +6,63 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.8](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.7...facet-reflect-v0.27.8) - 2025-05-31
+
+### Other
+
+- Simplify code for set_numeric_value
+- Fix doc tests
+- Add serialization for box
+- Resolve warnings etc.
+- facet-json is not _currently_ nostd, actually, because of std::io::Write
+- Fix facet-args tests
+- YAML transparent types fixes
+- More facet-yaml test fixes
+- facet-json tests pass
+- Fix tests
+- Tuple handling
+- Fix Bytes deserialization through implicit conversion
+- Fix NonZero validation using conversion frames
+- More facet-json tests
+- wow everything typechecks
+- facet-msgpack almost passing
+- select_nth_variant
+- wip toml
+- facet-deserialize fixes
+- Fix facet-serialize
+- All facet-reflect tests pass
+- Migrat arc tests
+- Fix double-free in Partial Drop for map insertions
+- Migrate more
+- Port array_building tests to new Partial API
+- Fix uninitialized type error reporting and improve error readability
+- Port variance tests
+- Remove yansi
+- Start porting old reflect tests
+- begin/end is more intuitive than push/pop
+- We're about to use begin/end instead of push/pop
+- Rename some methods
+- Minor cleanups
+- Convert Wip tests to use chaining style for alloc().push().set().pop()
+- Fix memory leak in Wip::build when initialization check fails
+- Fix union and opaque type handling, add comprehensive tuple tests
+- Remove SequenceType::Tuple - tuples are now structs
+- Add push_variant_named() method and tests
+- Implement array element re-initialization in Wip
+- Implement Map/HashMap support for Wip incremental building
+- Implement List/Vec support for Wip incremental building
+- Implement enum support for Wip incremental building
+- Fix memory leak when setting struct fields multiple times
+- Add Arc<T> support to Wip
+- Add Box<T> support to Wip
+- Add array building support to Wip
+- Fix deallocation of field pointers by tracking frame ownership
+- Fix premature drop bug in Wip::put and implement proper cleanup
+- struct fully init
+- Partially uninit struct
+- Save
+- facet-reflect reboot
+
 ## [0.27.6](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.5...facet-reflect-v0.27.6) - 2025-05-26
 
 ### Other

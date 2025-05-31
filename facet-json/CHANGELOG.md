@@ -7,6 +7,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.9](https://github.com/facet-rs/facet/compare/facet-json-v0.24.8...facet-json-v0.24.9) - 2025-05-31
+
+### Fixed
+
+- fix more oopsie
+- fix stupid error
+
+### Other
+
+- Simplify code for set_numeric_value
+- properly check whether the top three bits are set, indicating that a character is not a control character
+- Fix some clippy errors
+- Add serialization for box
+- Resolve warnings etc.
+- Tests pass again
+- add chrono support
+- opt for more complicated bit fiddling that actually works
+- facet-json is not _currently_ nostd, actually, because of std::io::Write
+- rename some stuff
+- bit mask type can be inferred
+- add directors commentary to the freshly-mangled write_json_string function
+- more bitwise escaping
+- try u128
+- respect utf8 char boundaries
+- let's actually close parens
+- maybe even faster???
+- facet-json tests pass
+- Fix tests
+- Tuple handling
+- reorder match arms for speeeed
+- inline write_json_string and write_json_escaped_char
+- testeroni was bad
+- another testeroni
+- maybe make write_json_escaped_char faster
+- More facet-json tests
+- Some json fixes
+- wow everything typechecks
+- facet-deserialize fixes
+- Deinitialization is wrong (again)
+
 ## [0.24.8](https://github.com/facet-rs/facet/compare/facet-json-v0.24.7...facet-json-v0.24.8) - 2025-05-27
 
 ### Other

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.15](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.23.14...facet-jsonschema-v0.23.15) - 2025-05-31
+
+### Other
+
+- YAML transparent types fixes
+- More facet-yaml test fixes
+- wow everything typechecks
+
 ## [0.23.14](https://github.com/facet-rs/facet/compare/facet-jsonschema-v0.23.13...facet-jsonschema-v0.23.14) - 2025-05-27
 
 ### Other

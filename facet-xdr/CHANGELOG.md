@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.10](https://github.com/facet-rs/facet/compare/facet-xdr-v0.1.9...facet-xdr-v0.1.10) - 2025-05-31
+
+### Other
+
+- Resolve warnings etc.
+- More facet-yaml test fixes
+- wow everything typechecks
+- begin/end is more intuitive than push/pop
+- Rename some methods
+- Remove SequenceType::Tuple - tuples are now structs
+
 ## [0.1.9](https://github.com/facet-rs/facet/compare/facet-xdr-v0.1.8...facet-xdr-v0.1.9) - 2025-05-27
 
 ### Other

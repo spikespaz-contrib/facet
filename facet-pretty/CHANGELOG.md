@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.15](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.14...facet-pretty-v0.23.15) - 2025-05-31
+
+### Other
+
+- Fix facet-pretty
+- Remove yansi
+- Remove SequenceType::Tuple - tuples are now structs
+
 ## [0.23.14](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.13...facet-pretty-v0.23.14) - 2025-05-27
 
 ### Other

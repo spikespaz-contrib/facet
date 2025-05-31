@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.8](https://github.com/facet-rs/facet/compare/facet-core-v0.27.7...facet-core-v0.27.8) - 2025-05-31
+
+### Other
+
+- Add support for `Shape::type_tag`
+- Simplify code for set_numeric_value
+- Fix more
+- add chrono support
+- More facet-yaml test fixes
+- Tuple handling
+- More facet-json tests
+- wow everything typechecks
+- Minor cleanups
+- Convert Wip tests to use chaining style for alloc().push().set().pop()
+- Remove SequenceType::Tuple - tuples are now structs
+- Simplify Arc implementation now that we don't support unsized types
+- Save
+- Constatnt => Constant
+
 - Add support for `Shape::type_tag`
 
 ## [0.27.6](https://github.com/facet-rs/facet/compare/facet-core-v0.27.5...facet-core-v0.27.6) - 2025-05-26

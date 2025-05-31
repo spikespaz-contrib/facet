@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.7](https://github.com/facet-rs/facet/compare/facet-yaml-v0.25.6...facet-yaml-v0.25.7) - 2025-05-31
+
+### Other
+
+- YAML transparent types fixes
+- More facet-yaml test fixes
+- facet-json tests pass
+- wow everything typechecks
+- Remove yansi
+- Start porting old reflect tests
+- begin/end is more intuitive than push/pop
+- Rename some methods
+
 ## [0.25.6](https://github.com/facet-rs/facet/compare/facet-yaml-v0.25.5...facet-yaml-v0.25.6) - 2025-05-27
 
 ### Other

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.8](https://github.com/facet-rs/facet/compare/facet-derive-parse-v0.27.7...facet-derive-parse-v0.27.8) - 2025-05-31
+
+### Other
+
+- Add support for `Shape::type_tag`
+
 - Add support for `Shape::type_tag`
 
 ## [0.27.0](https://github.com/facet-rs/facet/compare/facet-derive-parse-v0.26.1...facet-derive-parse-v0.27.0) - 2025-05-13

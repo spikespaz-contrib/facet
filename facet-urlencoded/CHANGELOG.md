@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.15](https://github.com/facet-rs/facet/compare/facet-urlencoded-v0.23.14...facet-urlencoded-v0.23.15) - 2025-05-31
+
+### Other
+
+- Fix facet-toml and facet-urlencoded tests
+- wow everything typechecks
+- begin/end is more intuitive than push/pop
+- Rename some methods
+
 ## [0.23.14](https://github.com/facet-rs/facet/compare/facet-urlencoded-v0.23.13...facet-urlencoded-v0.23.14) - 2025-05-27
 
 ### Other
