@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.9](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.8...facet-reflect-v0.27.9) - 2025-06-02
+
+### Other
+
+- Add tests for issue #691: tuple unsoundness with too few fields
+- Migrate push_ methods to begin_ convention in facet-reflect
+- Fix
+
 ## [0.27.8](https://github.com/facet-rs/facet/compare/facet-reflect-v0.27.7...facet-reflect-v0.27.8) - 2025-05-31
 
 ### Other

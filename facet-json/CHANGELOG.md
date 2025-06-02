@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.10](https://github.com/facet-rs/facet/compare/facet-json-v0.24.9...facet-json-v0.24.10) - 2025-06-02
+
+### Other
+
+- add itoa
+- no_std facet-json
+- move to self-owned write trait
+- Use a Vec instead of a Writer for the json serialializer
+- Allow transparent key types
+- switch to ryu for float formatting
+- add tokenizer test, fix tokenizer using said test
+- cow tokens
+- expand flamegraph using inline never
+- apply a windowed approach to the tokenizer
+- split out parse_char
+- remove copying of whole buffer from tokenizer
+- Reduce indexing in `write_json_string`
+
 ## [0.24.9](https://github.com/facet-rs/facet/compare/facet-json-v0.24.8...facet-json-v0.24.9) - 2025-05-31
 
 ### Fixed

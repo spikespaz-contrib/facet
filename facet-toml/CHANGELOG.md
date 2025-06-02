@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.10](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.9...facet-toml-v0.25.10) - 2025-06-02
+
+### Other
+
+- Support (de)serializing arrays of tables
+- Migrate push_ methods to begin_ convention in facet-reflect
+
 ## [0.25.9](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.8...facet-toml-v0.25.9) - 2025-05-31
 
 ### Other

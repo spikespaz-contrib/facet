@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.8](https://github.com/facet-rs/facet/compare/facet-yaml-v0.25.7...facet-yaml-v0.25.8) - 2025-06-02
+
+### Other
+
+- Migrate push_ methods to begin_ convention in facet-reflect
+
 ## [0.25.7](https://github.com/facet-rs/facet/compare/facet-yaml-v0.25.6...facet-yaml-v0.25.7) - 2025-05-31
 
 ### Other

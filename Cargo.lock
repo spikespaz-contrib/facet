@@ -116,9 +116,9 @@ checksum = "d71b6127be86fdcfddb610f7182ac57211d4b18a3e9c82eb2d17662f2227ad6a"
 
 [[package]]
 name = "camino"
-version = "1.1.9"
+version = "1.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8b96ec4966b5813e2c0507c1f86115c8c5abaadc3980879c3424042a02fd1ad3"
+checksum = "0da45bc31171d8d6960122e222a67740df867c1dd53b4d51caa297084c185cab"
 
 [[package]]
 name = "cargo-husky"
@@ -128,9 +128,9 @@ checksum = "7b02b629252fe8ef6460461409564e2c21d0c8e77e0944f3d189ff06c4e932ad"
 
 [[package]]
 name = "cc"
-version = "1.2.24"
+version = "1.2.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "16595d3be041c03b09d08d0858631facccee9221e579704070e6e9e4915d3bc7"
+checksum = "d0fc897dc1e865cc67c0e05a836d9d3f1df3cbe442aa4a9473b18e12624a4951"
 dependencies = [
  "shlex",
 ]
@@ -161,18 +161,18 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.5.38"
+version = "4.5.39"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ed93b9805f8ba930df42c2590f05453d5ec36cbb85d018868a5b24d31f6ac000"
+checksum = "fd60e63e9be68e5fb56422e397cf9baddded06dae1d2e523401542383bc72a9f"
 dependencies = [
  "clap_builder",
 ]
 
 [[package]]
 name = "clap_builder"
-version = "4.5.38"
+version = "4.5.39"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "379026ff283facf611b0ea629334361c4211d1b12ee01024eec1591133b04120"
+checksum = "89cc6392a1f72bbeb820d71f32108f61fdaf18bc526e1d23954168a67759ef51"
 dependencies = [
  "anstyle",
  "clap_lex",
@@ -386,7 +386,7 @@ dependencies = [
 
 [[package]]
 name = "facet"
-version = "0.27.8"
+version = "0.27.9"
 dependencies = [
  "cargo-husky",
  "eyre",
@@ -401,7 +401,7 @@ dependencies = [
 
 [[package]]
 name = "facet-args"
-version = "0.19.10"
+version = "0.19.11"
 dependencies = [
  "eyre",
  "facet",
@@ -430,7 +430,7 @@ dependencies = [
 
 [[package]]
 name = "facet-core"
-version = "0.27.8"
+version = "0.27.9"
 dependencies = [
  "bitflags",
  "bytes",
@@ -449,7 +449,7 @@ dependencies = [
 
 [[package]]
 name = "facet-csv"
-version = "0.24.9"
+version = "0.24.10"
 dependencies = [
  "eyre",
  "facet",
@@ -464,7 +464,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive"
-version = "0.27.8"
+version = "0.27.9"
 dependencies = [
  "facet-core",
  "facet-derive-emit",
@@ -472,7 +472,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-emit"
-version = "0.27.8"
+version = "0.27.9"
 dependencies = [
  "facet-derive-parse",
  "insta",
@@ -484,14 +484,14 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-parse"
-version = "0.27.8"
+version = "0.27.9"
 dependencies = [
  "unsynn",
 ]
 
 [[package]]
 name = "facet-deserialize"
-version = "0.24.14"
+version = "0.24.15"
 dependencies = [
  "ariadne",
  "eyre",
@@ -519,7 +519,7 @@ dependencies = [
 
 [[package]]
 name = "facet-json"
-version = "0.24.9"
+version = "0.24.10"
 dependencies = [
  "bytes",
  "camino",
@@ -544,7 +544,7 @@ dependencies = [
 
 [[package]]
 name = "facet-jsonschema"
-version = "0.23.15"
+version = "0.23.16"
 dependencies = [
  "facet",
  "facet-core",
@@ -567,7 +567,7 @@ dependencies = [
 
 [[package]]
 name = "facet-msgpack"
-version = "0.25.9"
+version = "0.25.10"
 dependencies = [
  "eyre",
  "facet",
@@ -583,7 +583,7 @@ dependencies = [
 
 [[package]]
 name = "facet-pretty"
-version = "0.23.15"
+version = "0.23.16"
 dependencies = [
  "camino",
  "codspeed-divan-compat",
@@ -596,7 +596,7 @@ dependencies = [
 
 [[package]]
 name = "facet-reflect"
-version = "0.27.8"
+version = "0.27.9"
 dependencies = [
  "bitflags",
  "camino",
@@ -614,7 +614,7 @@ dependencies = [
 
 [[package]]
 name = "facet-serialize"
-version = "0.24.9"
+version = "0.24.10"
 dependencies = [
  "eyre",
  "facet",
@@ -673,7 +673,7 @@ dependencies = [
 
 [[package]]
 name = "facet-toml"
-version = "0.25.9"
+version = "0.25.10"
 dependencies = [
  "ariadne",
  "codspeed-divan-compat",
@@ -693,7 +693,7 @@ dependencies = [
 
 [[package]]
 name = "facet-urlencoded"
-version = "0.23.15"
+version = "0.23.16"
 dependencies = [
  "eyre",
  "facet",
@@ -706,7 +706,7 @@ dependencies = [
 
 [[package]]
 name = "facet-xdr"
-version = "0.1.10"
+version = "0.1.11"
 dependencies = [
  "facet",
  "facet-core",
@@ -717,7 +717,7 @@ dependencies = [
 
 [[package]]
 name = "facet-yaml"
-version = "0.25.7"
+version = "0.25.8"
 dependencies = [
  "eyre",
  "facet",

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.15](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.14...facet-deserialize-v0.24.15) - 2025-06-02
+
+### Other
+
+- Migrate push_ methods to begin_ convention in facet-reflect
+- Allow transparent key types
+- remove unnecessary clone
+
 ## [0.24.14](https://github.com/facet-rs/facet/compare/facet-deserialize-v0.24.13...facet-deserialize-v0.24.14) - 2025-05-31
 
 ### Fixed
