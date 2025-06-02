@@ -29,8 +29,8 @@ jobs:
       - name: ✨ Build and analyze PR branch
         shell: bash
         run: |
-          cargo build --release -p bigapi-cli-facet
-          cargo bloat --release -p bigapi-cli-facet -n 30 > pr-bloat.txt
+          cargo build --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml
+          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 > pr-bloat.txt
 
       - name: ✨ Checkout main branch
         shell: bash
@@ -40,8 +40,8 @@ jobs:
       - name: ✨ Build and analyze main branch
         shell: bash
         run: |
-          cargo build --release -p bigapi-cli-facet
-          cargo bloat --release -p bigapi-cli-facet -n 30 > main-bloat.txt
+          cargo build --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml
+          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 > main-bloat.txt
 
       - name: ✨ Generate comparison
         shell: bash
@@ -61,8 +61,15 @@ jobs:
           echo "| PR     | $PR_SIZE   |" >> bloat-report.md
           echo "" >> bloat-report.md
           
+          # Generate diff
+          echo "### Diff" >> bloat-report.md
+          echo '```diff' >> bloat-report.md
+          diff -u main-bloat.txt pr-bloat.txt >> bloat-report.md || true
+          echo '```' >> bloat-report.md
+          echo "" >> bloat-report.md
+          
           echo "<details>" >> bloat-report.md
-          echo "<summary>Detailed comparison</summary>" >> bloat-report.md
+          echo "<summary>Full outputs</summary>" >> bloat-report.md
           echo "" >> bloat-report.md
           echo "### Main branch" >> bloat-report.md
           echo '```' >> bloat-report.md
