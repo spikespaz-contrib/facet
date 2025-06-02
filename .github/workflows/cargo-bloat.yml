@@ -19,6 +19,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: ✨ Configure git safe directory
+        shell: bash
+        run: |
+          git config --global --add safe.directory $GITHUB_WORKSPACE
+
       - uses: Swatinem/rust-cache@v2
 
       - name: ✨ Install cargo-bloat
