@@ -1,0 +1,83 @@
+name: Binary Size Analysis
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  bloat-check:
+    runs-on: depot-ubuntu-24.04-16
+
+    container:
+      image: ghcr.io/facet-rs/facet-ci:latest-amd64
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: ✨ Install cargo-bloat
+        shell: bash
+        run: |
+          cargo install cargo-bloat --locked
+
+      - name: ✨ Build and analyze PR branch
+        shell: bash
+        run: |
+          cargo build --release -p bigapi-cli-facet
+          cargo bloat --release -p bigapi-cli-facet -n 30 > pr-bloat.txt
+
+      - name: ✨ Checkout main branch
+        shell: bash
+        run: |
+          git checkout main
+
+      - name: ✨ Build and analyze main branch
+        shell: bash
+        run: |
+          cargo build --release -p bigapi-cli-facet
+          cargo bloat --release -p bigapi-cli-facet -n 30 > main-bloat.txt
+
+      - name: ✨ Generate comparison
+        shell: bash
+        run: |
+          echo "## 📊 Binary Size Analysis" > bloat-report.md
+          echo "" >> bloat-report.md
+          echo "Comparison of binary sizes between \`main\` and this PR:" >> bloat-report.md
+          echo "" >> bloat-report.md
+          
+          # Extract total size from both files
+          MAIN_SIZE=$(grep "File  .text" main-bloat.txt | awk '{print $NF}')
+          PR_SIZE=$(grep "File  .text" pr-bloat.txt | awk '{print $NF}')
+          
+          echo "| Branch | Total Size |" >> bloat-report.md
+          echo "|--------|------------|" >> bloat-report.md
+          echo "| main   | $MAIN_SIZE |" >> bloat-report.md
+          echo "| PR     | $PR_SIZE   |" >> bloat-report.md
+          echo "" >> bloat-report.md
+          
+          echo "<details>" >> bloat-report.md
+          echo "<summary>Detailed comparison</summary>" >> bloat-report.md
+          echo "" >> bloat-report.md
+          echo "### Main branch" >> bloat-report.md
+          echo '```' >> bloat-report.md
+          cat main-bloat.txt >> bloat-report.md
+          echo '```' >> bloat-report.md
+          echo "" >> bloat-report.md
+          echo "### PR branch" >> bloat-report.md
+          echo '```' >> bloat-report.md
+          cat pr-bloat.txt >> bloat-report.md
+          echo '```' >> bloat-report.md
+          echo "</details>" >> bloat-report.md
+
+      - name: ✨ Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message-file: bloat-report.md
+          comment-tag: cargo-bloat-analysis
+          mode: upsert
