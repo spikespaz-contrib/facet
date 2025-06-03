@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.17.5](https://github.com/facet-rs/facet/compare/facet-testhelpers-v0.17.4...facet-testhelpers-v0.17.5) - 2025-06-03
+
+### Other
+
+- Add discord logo + link
+
 ## [0.17.4](https://github.com/facet-rs/facet/compare/facet-testhelpers-v0.17.3...facet-testhelpers-v0.17.4) - 2025-05-21
 
 ### Other

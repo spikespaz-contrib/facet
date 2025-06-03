@@ -1,6 +1,6 @@
 [package]
 name = "facet-serialize"
-version = "0.24.10"
+version = "0.24.11"
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
@@ -15,8 +15,8 @@ std = ["alloc"]
 alloc = ["facet-core/alloc", "facet-reflect/alloc"]
 
 [dependencies]
-facet-core = { version = "0.27.9", path = "../facet-core", default-features = false }
-facet-reflect = { version = "0.27.9", path = "../facet-reflect", default-features = false }
+facet-core = { version = "0.27.10", path = "../facet-core", default-features = false }
+facet-reflect = { version = "0.27.10", path = "../facet-reflect", default-features = false }
 log = "0.4.27"
 
 [dev-dependencies]

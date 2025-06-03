@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.11](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.10...facet-toml-v0.25.11) - 2025-06-03
+
+### Other
+
+- Add discord logo + link
+- ser: TomlSerializer: push_key: replace unwrap with expect
+- ser: remove needless import of Borrow trait
+- ser: TomlSerializer: push_key can coerce an argument
+- ser: TomlSerializer: move traces to avoid debug-only args
+
 ## [0.25.10](https://github.com/facet-rs/facet/compare/facet-toml-v0.25.9...facet-toml-v0.25.10) - 2025-06-02
 
 ### Other

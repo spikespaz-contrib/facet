@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.17](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.16...facet-pretty-v0.23.17) - 2025-06-03
+
+### Other
+
+- Add discord logo + link
+
 ## [0.23.16](https://github.com/facet-rs/facet/compare/facet-pretty-v0.23.15...facet-pretty-v0.23.16) - 2025-06-02
 
 ### Other

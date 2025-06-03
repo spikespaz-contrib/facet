@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.12](https://github.com/facet-rs/facet/compare/facet-xdr-v0.1.11...facet-xdr-v0.1.12) - 2025-06-03
+
+### Other
+
+- Add discord logo + link
+
 ## [0.1.11](https://github.com/facet-rs/facet/compare/facet-xdr-v0.1.10...facet-xdr-v0.1.11) - 2025-06-02
 
 ### Other

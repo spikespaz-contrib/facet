@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.25.11](https://github.com/facet-rs/facet/compare/facet-msgpack-v0.25.10...facet-msgpack-v0.25.11) - 2025-06-03
+
+### Other
+
+- Add discord logo + link
+
 ## [0.25.10](https://github.com/facet-rs/facet/compare/facet-msgpack-v0.25.9...facet-msgpack-v0.25.10) - 2025-06-02
 
 ### Other
