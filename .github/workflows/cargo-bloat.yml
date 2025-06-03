@@ -30,12 +30,12 @@ jobs:
       - name: ✨ Build and analyze PR branch
         shell: bash
         run: |
-          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 > pr-bloat.txt
-          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml --crates -n 30 > pr-bloat-crates.txt
+          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 | .github/scripts/process-bloat-output.sh > pr-bloat.txt
+          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml --crates -n 30 | .github/scripts/process-bloat-output.sh > pr-bloat-crates.txt
 
           # LLVM lines analysis
-          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-types-facet/Cargo.toml | head -30 > pr-llvm-lines-types.txt
-          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-indirection-facet/Cargo.toml | head -30 > pr-llvm-lines-indirection.txt
+          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-types-facet/Cargo.toml | head -30 | .github/scripts/process-llvm-lines.sh > pr-llvm-lines-types.txt
+          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-indirection-facet/Cargo.toml | head -30 | .github/scripts/process-llvm-lines.sh > pr-llvm-lines-indirection.txt
 
       - name: ✨ Checkout main branch
         shell: bash
@@ -49,12 +49,12 @@ jobs:
       - name: ✨ Build and analyze main branch
         shell: bash
         run: |
-          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 > main-bloat.txt
-          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml --crates -n 30 > main-bloat-crates.txt
+          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 | .github/scripts/process-bloat-output.sh > main-bloat.txt
+          cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml --crates -n 30 | .github/scripts/process-bloat-output.sh > main-bloat-crates.txt
 
           # LLVM lines analysis
-          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-types-facet/Cargo.toml | head -30 > main-llvm-lines-types.txt
-          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-indirection-facet/Cargo.toml | head -30 > main-llvm-lines-indirection.txt
+          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-types-facet/Cargo.toml | head -30 | .github/scripts/process-llvm-lines.sh > main-llvm-lines-types.txt
+          cargo llvm-lines --release --manifest-path outside-workspace/bigapi-indirection-facet/Cargo.toml | head -30 | .github/scripts/process-llvm-lines.sh > main-llvm-lines-indirection.txt
 
       - name: ✨ Generate comparison
         shell: bash
@@ -122,6 +122,47 @@ jobs:
           echo "|--------|------------|------------|" >> bloat-report.md
           echo "| main   | $MAIN_SIZE | - |" >> bloat-report.md
           echo "| **PR** | **$PR_SIZE** | **${DIFF_EMOJI} ${DIFF_FMT}** |" >> bloat-report.md
+          echo "" >> bloat-report.md
+          
+          # Extract LLVM line counts (from the TOTAL line)
+          MAIN_LINES_TYPES=$(grep "(TOTAL)" main-llvm-lines-types.txt | awk '{print $1}')
+          PR_LINES_TYPES=$(grep "(TOTAL)" pr-llvm-lines-types.txt | awk '{print $1}')
+          MAIN_LINES_INDIRECTION=$(grep "(TOTAL)" main-llvm-lines-indirection.txt | awk '{print $1}')
+          PR_LINES_INDIRECTION=$(grep "(TOTAL)" pr-llvm-lines-indirection.txt | awk '{print $1}')
+          
+          # Calculate differences
+          DIFF_LINES_TYPES=$((PR_LINES_TYPES - MAIN_LINES_TYPES))
+          DIFF_LINES_INDIRECTION=$((PR_LINES_INDIRECTION - MAIN_LINES_INDIRECTION))
+          
+          # Format line count differences
+          if [ $DIFF_LINES_TYPES -gt 0 ]; then
+            DIFF_LINES_TYPES_FMT="+$DIFF_LINES_TYPES"
+            DIFF_LINES_TYPES_EMOJI="📈"
+          elif [ $DIFF_LINES_TYPES -lt 0 ]; then
+            DIFF_LINES_TYPES_FMT="$DIFF_LINES_TYPES"
+            DIFF_LINES_TYPES_EMOJI="📉"
+          else
+            DIFF_LINES_TYPES_FMT="No change"
+            DIFF_LINES_TYPES_EMOJI="✅"
+          fi
+          
+          if [ $DIFF_LINES_INDIRECTION -gt 0 ]; then
+            DIFF_LINES_INDIRECTION_FMT="+$DIFF_LINES_INDIRECTION"
+            DIFF_LINES_INDIRECTION_EMOJI="📈"
+          elif [ $DIFF_LINES_INDIRECTION -lt 0 ]; then
+            DIFF_LINES_INDIRECTION_FMT="$DIFF_LINES_INDIRECTION"
+            DIFF_LINES_INDIRECTION_EMOJI="📉"
+          else
+            DIFF_LINES_INDIRECTION_FMT="No change"
+            DIFF_LINES_INDIRECTION_EMOJI="✅"
+          fi
+          
+          echo "### LLVM Line Counts" >> bloat-report.md
+          echo "" >> bloat-report.md
+          echo "| Crate | Main | PR | Difference |" >> bloat-report.md
+          echo "|-------|------|----|-----------:|" >> bloat-report.md
+          echo "| bigapi-types-facet | $MAIN_LINES_TYPES | $PR_LINES_TYPES | ${DIFF_LINES_TYPES_EMOJI} ${DIFF_LINES_TYPES_FMT} |" >> bloat-report.md
+          echo "| bigapi-indirection-facet | $MAIN_LINES_INDIRECTION | $PR_LINES_INDIRECTION | ${DIFF_LINES_INDIRECTION_EMOJI} ${DIFF_LINES_INDIRECTION_FMT} |" >> bloat-report.md
           echo "" >> bloat-report.md
 
           # Generate diff
