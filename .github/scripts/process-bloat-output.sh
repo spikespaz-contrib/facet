@@ -23,12 +23,12 @@ NR == 1 { print "  File     Size Crate"; next }  # Simplified header
     next
 }
 /\.text section size/ {  # Special handling for the summary line
-    # Extract just the size part
-    match($0, /([0-9.]+[KMGT]iB) \.text section size/, arr)
-    if (arr[1]) {
-        print arr[1] " .text section size"
-    } else {
-        print  # Fallback if pattern doesn't match
+    # Find the size value (e.g., 885.8KiB)
+    for (i = 1; i <= NF; i++) {
+        if ($i ~ /^[0-9.]+[KMGT]iB$/) {
+            print $i " .text section size"
+            break
+        }
     }
     next
 }
