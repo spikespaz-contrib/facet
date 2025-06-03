@@ -4,10 +4,6 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-permissions:
-  pull-requests: write
-  contents: read
-
 jobs:
   bloat-check:
     runs-on: depot-ubuntu-24.04-16
@@ -34,10 +30,9 @@ jobs:
       - name: ✨ Build and analyze PR branch
         shell: bash
         run: |
-          cargo build --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml
           cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 > pr-bloat.txt
           cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml --crates -n 30 > pr-bloat-crates.txt
-          
+
           # LLVM lines analysis
           cargo llvm-lines --release --manifest-path outside-workspace/bigapi-types-facet/Cargo.toml | head -30 > pr-llvm-lines-types.txt
           cargo llvm-lines --release --manifest-path outside-workspace/bigapi-indirection-facet/Cargo.toml | head -30 > pr-llvm-lines-indirection.txt
@@ -54,10 +49,9 @@ jobs:
       - name: ✨ Build and analyze main branch
         shell: bash
         run: |
-          cargo build --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml
           cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml -n 30 > main-bloat.txt
           cargo bloat --release --manifest-path outside-workspace/bigapi-cli-facet/Cargo.toml --crates -n 30 > main-bloat-crates.txt
-          
+
           # LLVM lines analysis
           cargo llvm-lines --release --manifest-path outside-workspace/bigapi-types-facet/Cargo.toml | head -30 > main-llvm-lines-types.txt
           cargo llvm-lines --release --manifest-path outside-workspace/bigapi-indirection-facet/Cargo.toml | head -30 > main-llvm-lines-indirection.txt
@@ -69,18 +63,18 @@ jobs:
           echo "" >> bloat-report.md
           echo "Comparison of binary sizes between \`main\` and this PR:" >> bloat-report.md
           echo "" >> bloat-report.md
-          
+
           # Extract total size from both files (from the last line)
           MAIN_SIZE=$(grep "\.text section size" main-bloat.txt | awk '{print $3}')
           PR_SIZE=$(grep "\.text section size" pr-bloat.txt | awk '{print $3}')
-          
+
           # Calculate the difference
           # Extract numeric value and unit separately
           MAIN_VALUE=$(echo $MAIN_SIZE | sed 's/[^0-9.]//g')
           MAIN_UNIT=$(echo $MAIN_SIZE | sed 's/[0-9.]//g')
           PR_VALUE=$(echo $PR_SIZE | sed 's/[^0-9.]//g')
           PR_UNIT=$(echo $PR_SIZE | sed 's/[0-9.]//g')
-          
+
           # Convert to bytes using awk for floating point math
           if [[ $MAIN_UNIT == "MiB" ]]; then
             MAIN_BYTES=$(awk "BEGIN {printf \"%.0f\", $MAIN_VALUE * 1048576}")
@@ -89,7 +83,7 @@ jobs:
           else
             MAIN_BYTES=$MAIN_VALUE
           fi
-          
+
           if [[ $PR_UNIT == "MiB" ]]; then
             PR_BYTES=$(awk "BEGIN {printf \"%.0f\", $PR_VALUE * 1048576}")
           elif [[ $PR_UNIT == "KiB" ]]; then
@@ -97,7 +91,7 @@ jobs:
           else
             PR_BYTES=$PR_VALUE
           fi
-          
+
           DIFF_BYTES=$((PR_BYTES - MAIN_BYTES))
           if [ $DIFF_BYTES -gt 0 ]; then
             DIFF_SIGN="+"
@@ -109,7 +103,7 @@ jobs:
             DIFF_SIGN=""
             DIFF_EMOJI="✅"
           fi
-          
+
           # Format the difference
           if [ $DIFF_BYTES -ne 0 ]; then
             ABS_DIFF=${DIFF_BYTES#-}
@@ -123,38 +117,38 @@ jobs:
           else
             DIFF_FMT="No change"
           fi
-          
+
           echo "| Branch | Total Size | Difference |" >> bloat-report.md
           echo "|--------|------------|------------|" >> bloat-report.md
           echo "| main   | $MAIN_SIZE | - |" >> bloat-report.md
           echo "| **PR** | **$PR_SIZE** | **${DIFF_EMOJI} ${DIFF_FMT}** |" >> bloat-report.md
           echo "" >> bloat-report.md
-          
+
           # Generate diff
           echo "### Diff (by function)" >> bloat-report.md
           echo '```diff' >> bloat-report.md
           diff -u main-bloat.txt pr-bloat.txt >> bloat-report.md || true
           echo '```' >> bloat-report.md
           echo "" >> bloat-report.md
-          
+
           echo "### Diff (by crate)" >> bloat-report.md
           echo '```diff' >> bloat-report.md
           diff -u main-bloat-crates.txt pr-bloat-crates.txt >> bloat-report.md || true
           echo '```' >> bloat-report.md
           echo "" >> bloat-report.md
-          
+
           echo "### LLVM Lines (bigapi-types-facet)" >> bloat-report.md
           echo '```diff' >> bloat-report.md
           diff -u main-llvm-lines-types.txt pr-llvm-lines-types.txt >> bloat-report.md || true
           echo '```' >> bloat-report.md
           echo "" >> bloat-report.md
-          
+
           echo "### LLVM Lines (bigapi-indirection-facet)" >> bloat-report.md
           echo '```diff' >> bloat-report.md
           diff -u main-llvm-lines-indirection.txt pr-llvm-lines-indirection.txt >> bloat-report.md || true
           echo '```' >> bloat-report.md
           echo "" >> bloat-report.md
-          
+
           echo "<details>" >> bloat-report.md
           echo "<summary>Full outputs</summary>" >> bloat-report.md
           echo "" >> bloat-report.md
@@ -199,9 +193,15 @@ jobs:
           echo '```' >> bloat-report.md
           echo "</details>" >> bloat-report.md
 
-      - name: ✨ Comment PR
-        uses: thollander/actions-comment-pull-request@v3
+      - name: ✨ Save PR info
+        run: |
+          echo "${{ github.event.pull_request.number }}" > pr-number.txt
+
+      - name: ✨ Upload analysis report
+        uses: actions/upload-artifact@v4
         with:
-          file-path: bloat-report.md
-          comment-tag: cargo-bloat-analysis
-          mode: upsert
+          name: bloat-analysis-report
+          path: |
+            bloat-report.md
+            pr-number.txt
+          retention-days: 7
