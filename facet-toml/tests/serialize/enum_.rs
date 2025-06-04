@@ -2,7 +2,8 @@
 
 use facet::Facet;
 use facet_testhelpers::test;
-use facet_toml::TomlDeErrorKind;
+
+use crate::assert_serialize;
 
 #[test]
 fn test_unit_only_enum() {
@@ -18,24 +19,17 @@ fn test_unit_only_enum() {
         VariantB,
     }
 
-    assert_eq!(
-        facet_toml::from_str::<Root>("value = 'VariantA'")?,
+    assert_serialize!(
+        Root,
         Root {
             value: UnitOnlyEnum::VariantA,
-        },
+        }
     );
-    assert_eq!(
-        facet_toml::from_str::<Root>("value = 'VariantB'")?,
+    assert_serialize!(
+        Root,
         Root {
             value: UnitOnlyEnum::VariantB,
         },
-    );
-
-    assert_eq!(
-        facet_toml::from_str::<Root>("values = true")
-            .unwrap_err()
-            .kind,
-        TomlDeErrorKind::ExpectedFieldWithName("value")
     );
 }
 
@@ -54,13 +48,18 @@ fn test_single_value_on_non_unit_enum() {
         VariantB(i32),
     }
 
-    assert_eq!(
-        facet_toml::from_str::<Root>("value = 'VariantA'")?,
+    assert_serialize!(
+        Root,
         Root {
             value: WithNonUnitVariant::VariantA
-        },
+        }
     );
-    assert!(facet_toml::from_str::<Root>("value = 'VariantB'").is_err());
+    assert_serialize!(
+        Root,
+        Root {
+            value: WithNonUnitVariant::VariantB(1)
+        }
+    );
 }
 
 #[test]
@@ -77,23 +76,17 @@ fn test_tuple_enum() {
         TwoFields(bool, i16),
     }
 
-    assert_eq!(
-        facet_toml::from_str::<Root>("value = { OneField = 0.5 }")?,
+    assert_serialize!(
+        Root,
         Root {
             value: WithTupleVariants::OneField(0.5)
-        },
+        }
     );
-    assert_eq!(
-        facet_toml::from_str::<Root>(
-            r#"
-            [value.TwoFields]
-            0 = true
-            1 = 1
-            "#
-        )?,
+    assert_serialize!(
+        Root,
         Root {
             value: WithTupleVariants::TwoFields(true, 1)
-        },
+        }
     );
 }
 
@@ -111,26 +104,20 @@ fn test_struct_enum() {
         TwoFields { first: bool, second: u8 },
     }
 
-    assert_eq!(
-        facet_toml::from_str::<Root>("value.OneField.one = 0.5")?,
+    assert_serialize!(
+        Root,
         Root {
             value: WithStructVariants::OneField { one: 0.5 }
-        },
+        }
     );
-    assert_eq!(
-        facet_toml::from_str::<Root>(
-            r#"
-            [value.TwoFields]
-            first = true
-            second = 1
-            "#
-        )?,
+    assert_serialize!(
+        Root,
         Root {
             value: WithStructVariants::TwoFields {
                 first: true,
                 second: 1
             }
-        },
+        }
     );
 }
 
@@ -160,22 +147,16 @@ fn test_nested_struct_enum() {
         },
     }
 
-    assert_eq!(
-        facet_toml::from_str::<Root>("value.OneField.one.NestedOneField.nested_one = 0.5")?,
+    assert_serialize!(
+        Root,
         Root {
             value: WithNestedStructVariants::OneField {
                 one: NestedStructs::NestedOneField { nested_one: 0.5 }
             }
-        },
+        }
     );
-    assert_eq!(
-        facet_toml::from_str::<Root>(
-            r#"
-            [value.TwoFields]
-            first.NestedTwoFields = { nested_first = false, nested_second = 8 }
-            second = 1
-            "#
-        )?,
+    assert_serialize!(
+        Root,
         Root {
             value: WithNestedStructVariants::TwoFields {
                 first: NestedStructs::NestedTwoFields {
@@ -184,7 +165,7 @@ fn test_nested_struct_enum() {
                 },
                 second: 1
             }
-        },
+        }
     );
 }
 
@@ -198,10 +179,7 @@ fn test_enum_root() {
         C,
     }
 
-    assert_eq!(
-        facet_toml::from_str::<Root>("A.value = 1")?,
-        Root::A { value: 1 },
-    );
-    assert_eq!(facet_toml::from_str::<Root>("B = 2")?, Root::B(2));
-    assert_eq!(facet_toml::from_str::<Root>("[C]")?, Root::C);
+    assert_serialize!(Root, Root::A { value: 1 });
+    assert_serialize!(Root, Root::B(2));
+    assert_serialize!(Root, Root::C);
 }
