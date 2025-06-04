@@ -6,3 +6,4 @@ mod map;
 mod option;
 mod scalar;
 mod struct_;
+mod vec_struct;
