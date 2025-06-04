@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.12](https://github.com/facet-rs/facet/compare/facet-core-v0.27.11...facet-core-v0.27.12) - 2025-06-04
+
+### Other
+
+- rename facet-derive(-*) to facet-macros(-*)
+
 ## [0.27.10](https://github.com/facet-rs/facet/compare/facet-core-v0.27.9...facet-core-v0.27.10) - 2025-06-03
 
 ### Other
