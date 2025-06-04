@@ -386,7 +386,7 @@ dependencies = [
 
 [[package]]
 name = "facet"
-version = "0.27.10"
+version = "0.27.11"
 dependencies = [
  "cargo-husky",
  "eyre",
@@ -401,7 +401,7 @@ dependencies = [
 
 [[package]]
 name = "facet-args"
-version = "0.19.12"
+version = "0.19.13"
 dependencies = [
  "eyre",
  "facet",
@@ -430,7 +430,7 @@ dependencies = [
 
 [[package]]
 name = "facet-core"
-version = "0.27.10"
+version = "0.27.11"
 dependencies = [
  "bitflags",
  "bytes",
@@ -449,7 +449,7 @@ dependencies = [
 
 [[package]]
 name = "facet-csv"
-version = "0.24.11"
+version = "0.24.12"
 dependencies = [
  "eyre",
  "facet",
@@ -464,7 +464,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive"
-version = "0.27.10"
+version = "0.27.11"
 dependencies = [
  "facet-core",
  "facet-derive-emit",
@@ -472,7 +472,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-emit"
-version = "0.27.10"
+version = "0.27.11"
 dependencies = [
  "facet-derive-parse",
  "insta",
@@ -484,7 +484,7 @@ dependencies = [
 
 [[package]]
 name = "facet-derive-parse"
-version = "0.27.10"
+version = "0.27.11"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -493,7 +493,7 @@ dependencies = [
 
 [[package]]
 name = "facet-deserialize"
-version = "0.24.16"
+version = "0.24.17"
 dependencies = [
  "ariadne",
  "eyre",
@@ -521,7 +521,7 @@ dependencies = [
 
 [[package]]
 name = "facet-json"
-version = "0.24.11"
+version = "0.24.12"
 dependencies = [
  "bytes",
  "camino",
@@ -546,7 +546,7 @@ dependencies = [
 
 [[package]]
 name = "facet-jsonschema"
-version = "0.23.17"
+version = "0.23.18"
 dependencies = [
  "facet",
  "facet-core",
@@ -569,7 +569,7 @@ dependencies = [
 
 [[package]]
 name = "facet-msgpack"
-version = "0.25.11"
+version = "0.25.12"
 dependencies = [
  "eyre",
  "facet",
@@ -585,7 +585,7 @@ dependencies = [
 
 [[package]]
 name = "facet-pretty"
-version = "0.23.17"
+version = "0.23.18"
 dependencies = [
  "camino",
  "codspeed-divan-compat",
@@ -598,7 +598,7 @@ dependencies = [
 
 [[package]]
 name = "facet-reflect"
-version = "0.27.10"
+version = "0.27.11"
 dependencies = [
  "bitflags",
  "camino",
@@ -616,7 +616,7 @@ dependencies = [
 
 [[package]]
 name = "facet-serialize"
-version = "0.24.11"
+version = "0.24.12"
 dependencies = [
  "eyre",
  "facet",
@@ -675,7 +675,7 @@ dependencies = [
 
 [[package]]
 name = "facet-toml"
-version = "0.25.11"
+version = "0.25.12"
 dependencies = [
  "ariadne",
  "codspeed-divan-compat",
@@ -695,7 +695,7 @@ dependencies = [
 
 [[package]]
 name = "facet-urlencoded"
-version = "0.23.17"
+version = "0.23.18"
 dependencies = [
  "eyre",
  "facet",
@@ -708,7 +708,7 @@ dependencies = [
 
 [[package]]
 name = "facet-xdr"
-version = "0.1.12"
+version = "0.1.13"
 dependencies = [
  "facet",
  "facet-core",
@@ -719,7 +719,7 @@ dependencies = [
 
 [[package]]
 name = "facet-yaml"
-version = "0.25.9"
+version = "0.25.10"
 dependencies = [
  "eyre",
  "facet",

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.27.11](https://github.com/facet-rs/facet/compare/facet-derive-parse-v0.27.10...facet-derive-parse-v0.27.11) - 2025-06-04
+
+### Added
+
+- *(macros)* `facet_fn` attribute macro and `fn_shape!` declarative macro)
+
 ## [0.27.10](https://github.com/facet-rs/facet/compare/facet-derive-parse-v0.27.9...facet-derive-parse-v0.27.10) - 2025-06-03
 
 ### Other

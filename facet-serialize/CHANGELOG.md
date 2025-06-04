@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.24.12](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.11...facet-serialize-v0.24.12) - 2025-06-04
+
+### Other
+
+- updated the following local packages: facet-core, facet-reflect
+
 ## [0.24.11](https://github.com/facet-rs/facet/compare/facet-serialize-v0.24.10...facet-serialize-v0.24.11) - 2025-06-03
 
 ### Other

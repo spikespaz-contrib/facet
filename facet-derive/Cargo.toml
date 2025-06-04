@@ -1,6 +1,6 @@
 [package]
 name = "facet-derive"
-version = "0.27.10"
+version = "0.27.11"
 edition.workspace = true
 repository.workspace = true
 license.workspace = true
@@ -22,8 +22,8 @@ proc-macro = true
 function = ["facet-derive-emit/function"]
 
 [dependencies]
-facet-derive-emit = { version = "0.27.10", path = "../facet-derive-emit" }
+facet-derive-emit = { version = "0.27.11", path = "../facet-derive-emit" }
 
 # cf. https://hachyderm.io/@epage/114141126315983016
 [target.'cfg(any())'.dependencies]
-facet-core = { path = "../facet-core", version = "0.27.10" }
+facet-core = { path = "../facet-core", version = "0.27.11" }
