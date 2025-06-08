@@ -412,7 +412,26 @@ impl core::fmt::Debug for Shape<'_> {
                 }};
             }
 
+            field!("type_identifier", "{:?}", self.type_identifier);
+
+            if !self.type_params.is_empty() {
+                field!("type_params", "{:?}", self.type_params);
+            }
+
+            if let Some(type_tag) = self.type_tag {
+                field!("type_tag", "{:?}", type_tag);
+            }
+
+            if !self.attributes.is_empty() {
+                field!("attributes", "{:?}", self.attributes);
+            }
+
             field!("layout", "{:?}", self.layout);
+
+            // Omit the `inner` field if this shape is not a transparent wrapper.
+            if let Some(inner) = self.inner {
+                field!("inner", "{:?}", inner);
+            }
 
             field!("ty", "{:?}", self.ty);
 
@@ -421,27 +440,8 @@ impl core::fmt::Debug for Shape<'_> {
                 field!("def", "{:?}", self.def);
             }
 
-            field!("type_identifier", "{:?}", self.type_identifier);
-
-            if !self.type_params.is_empty() {
-                field!("type_params", "{:?}", self.type_params);
-            }
-
             if !self.doc.is_empty() {
                 field!("doc", "{:?}", self.doc);
-            }
-
-            if !self.attributes.is_empty() {
-                field!("attributes", "{:?}", self.attributes);
-            }
-
-            if let Some(type_tag) = self.type_tag {
-                field!("type_tag", "{:?}", type_tag);
-            }
-
-            // Omit the `inner` field if this shape is not a transparent wrapper.
-            if let Some(inner) = self.inner {
-                field!("inner", "{:?}", inner);
             }
 
             debug_struct.finish_non_exhaustive()
